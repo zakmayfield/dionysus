@@ -1,8 +1,9 @@
+'use client';
 import { List, ListItem, ListIcon, Flex, Box } from '@chakra-ui/react';
 
 export default function Nav() {
   return (
-    <Flex px={20} borderBottom='1px solid black' borderColor='gray.300'>
+    <Flex px={20} borderBottom='5px solid' borderColor='red'>
       <Box flex='1' display='flex'>
         <Box p={48}>🧃</Box>
       </Box>
