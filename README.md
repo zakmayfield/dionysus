@@ -1,1 +1,1 @@
-Chaser Juice web application created with Next.js.
+Chasers Juice web application created with Next.js.
