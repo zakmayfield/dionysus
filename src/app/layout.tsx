@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <head></head>
+      <head />
       <Box as='body'>
         <Nav />
         <Providers>{children}</Providers>
