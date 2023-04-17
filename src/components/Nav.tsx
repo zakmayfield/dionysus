@@ -17,7 +17,7 @@ export default function Nav() {
         textTransform='uppercase'
       >
         <ListItem>
-          <Text fontSize='2xl' color="blacks.50">Home</Text>
+          <Text fontSize='2xl' color="red">Home</Text>
         </ListItem>
         <ListItem fontSize='2xl'>About Us</ListItem>
         <ListItem>Products</ListItem>
