@@ -5,8 +5,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import logo from '../shared/assets/chasers-juice-logo.png';
 
-
-
 const navigationItems = [
   { label: 'Home', route: '/' },
   { label: 'About Us', route: '/about-us' },
@@ -21,7 +19,7 @@ export default function Nav() {
   return (
     <Flex px={12} borderBottom='1px' borderColor='blackAlpha.300'>
       <Box flex='1' display='flex'>
-        <Image src={logo} alt='Chasers Fresh Juice Logo' width={150} />
+        <Image src={logo} alt='Chasers Fresh Juice Logo' width={125} />
       </Box>
 
       <List
