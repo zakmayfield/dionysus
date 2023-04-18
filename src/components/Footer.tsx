@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <Box bgColor='brand.cream' px={10} pb={10}>
+    <Box as='footer' bgColor='brand.cream' px={10} pb={10}>
       <Grid
         templateColumns='repeat(2, 1fr)'
         placeItems='center'
