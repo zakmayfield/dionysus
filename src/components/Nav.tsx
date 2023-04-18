@@ -8,9 +8,9 @@ import logo from '../shared/assets/chasers-juice-logo.png';
 const navigationItems = [
   { label: 'Home', route: '/' },
   { label: 'About Us', route: '/about-us' },
-  { label: 'Products', route: '/products' },
-  { label: 'F.A.Q.', route: '/faq' },
-  { label: 'Contact Us', route: '/contact-us' },
+  { label: 'Products', route: '.' },
+  { label: 'F.A.Q.', route: '.' },
+  { label: 'Contact Us', route: '.' },
 ];
 
 export default function Nav() {
