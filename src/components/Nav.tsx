@@ -17,7 +17,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <Flex px={12} borderBottom='1px' borderColor='blackAlpha.300'>
+    <Flex px={12} py={3} borderBottom='1px' borderColor='gray.100'>
       <Box flex='1' display='flex'>
         <Image src={logo} alt='Chasers Fresh Juice Logo' width={125} />
       </Box>
