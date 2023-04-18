@@ -2,6 +2,7 @@
 import { Box } from '@chakra-ui/react';
 import { Providers } from './providers';
 import Nav from '../components/Nav';
+import Footer from '@/components/Footer';
 
 export default function RootLayout({
   children,
@@ -14,7 +15,10 @@ export default function RootLayout({
       <Box as='body'>
         <Providers>
           <Nav />
-          {children}
+          <Box as='main' minH='100vh'>
+            {children}
+          </Box>
+          <Footer />
         </Providers>
       </Box>
     </html>
