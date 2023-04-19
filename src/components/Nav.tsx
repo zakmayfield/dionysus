@@ -91,7 +91,7 @@ export default function Nav() {
       display='flex'
       flexFlow='column'
     >
-      <Container maxW='container.lg' display='flex' m='0' px='5' py='2'>
+      <Container maxW='container.lg' display='flex' py='2' px='5'>
         <Box display='flex' flex='1'>
           <Image src={logo} alt='Chasers Juice Logo' width={85} />
         </Box>
@@ -106,99 +106,57 @@ export default function Nav() {
             variant={`outline`}
             aria-label='toggle navigation menu'
             icon={<RxHamburgerMenu />}
-            borderColor={`blackAlpha.700`}
-            borderWidth={`3px`}
-            borderRadius={`lg`} // -> animate to 'full'
             size={`lg`}
             onClick={isOpen ? onClose : onOpen}
           />
         </Box>
       </Container>
 
-      <Box py='5' display={isOpen ? '' : 'none'}>
-        <List
-          color='blackAlpha.500'
-          fontWeight='medium'
-          px='5'
-          display={`flex`}
-          flexFlow={`column`}
-          gap={2}
-          fontSize={`lg`}
-        >
-          {navigationItems.map((item) => (
-            <ListItem
-              key={item.label}
-              color={pathname === item.route ? 'chakra-body-text' : ''}
-              _hover={{ color: 'gray.600' }}
-            >
-              <Link href={item.route}>{item.label}</Link>
-            </ListItem>
-          ))}
-
-          <ListItem mt='5'>
-            <Link href='.'>
-              <Box
-                as='span'
-                color='white'
-                bg='red.400'
-                fontWeight='bold'
-                p={2.5}
-                _hover={{ bg: 'red.600' }}
-                borderRadius={`sm`}
-              >
-                Order
-              </Box>
-            </Link>
-          </ListItem>
-        </List>
-      </Box>
-
-      {/* <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+      <Drawer
+        isOpen={isOpen}
+        placement='right'
+        onClose={onClose}
+      >
+        <DrawerOverlay />
+        <DrawerContent p='5'>
+          <DrawerCloseButton />
+          <List
+            color='blackAlpha.500'
+            fontWeight='medium'
+            px='5'
+            display={`flex`}
+            flexFlow={`column`}
+            gap={2}
+            fontSize={`lg`}
           >
-            <List
-              color='blackAlpha.500'
-              fontWeight='medium'
-              px='5'
-              display={`flex`}
-              flexFlow={`column`}
-              gap={2}
-              fontSize={`lg`}
-            >
-              {navigationItems.map((item) => (
-                <ListItem
-                  key={item.label}
-                  color={pathname === item.route ? 'chakra-body-text' : ''}
-                  _hover={{ color: 'gray.600' }}
-                >
-                  <Link href={item.route}>{item.label}</Link>
-                </ListItem>
-              ))}
-
-              <ListItem mt='5'>
-                <Link href='.'>
-                  <Box
-                    as='span'
-                    color='white'
-                    bg='red.400'
-                    fontWeight='bold'
-                    p={2.5}
-                    _hover={{ bg: 'red.600' }}
-                    borderRadius={`sm`}
-                  >
-                    Order
-                  </Box>
-                </Link>
+            {navigationItems.map((item) => (
+              <ListItem
+                key={item.label}
+                color={pathname === item.route ? 'chakra-body-text' : ''}
+                _hover={{ color: 'gray.600' }}
+              >
+                <Link href={item.route}>{item.label}</Link>
               </ListItem>
-            </List>
-          </motion.div>
-        )}
-      </AnimatePresence> */}
+            ))}
+
+            <ListItem mt='5'>
+              <Link href='.'>
+                <Box
+                  as='span'
+                  color='white'
+                  bg='red.400'
+                  fontWeight='bold'
+                  p={2.5}
+                  _hover={{ bg: 'red.600' }}
+                  borderRadius={`sm`}
+                >
+                  Order
+                </Box>
+              </Link>
+            </ListItem>
+          </List>
+        </DrawerContent>
+      </Drawer>
     </Flex>
   );
 }
