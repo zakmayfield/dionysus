@@ -11,12 +11,21 @@ import {
   useDisclosure,
   Button,
   IconButton,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import logo from '../shared/assets/chasers-juice-logo.png';
 import { RxHamburgerMenu } from 'react-icons/rx';
+import { useEffect, useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const navigationItems = [
   { label: 'Home', route: '/' },
@@ -28,14 +37,10 @@ const navigationItems = [
 
 export default function Nav() {
   const pathname = usePathname();
-  const { getDisclosureProps, getButtonProps } = useDisclosure();
-
-  const buttonProps = getButtonProps();
-  const disclosureProps = getDisclosureProps();
-
-  console.log('disclosure props', disclosureProps);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
+    // // desktop styles
     // <Flex as='nav' px={12} py={3} borderBottom='1px' borderColor='gray.100'>
     //   <Box flex='1' display='flex'>
     //     <Box width={{ base: 100, lg: 125 }}>
@@ -105,11 +110,12 @@ export default function Nav() {
             borderWidth={`3px`}
             borderRadius={`lg`} // -> animate to 'full'
             size={`lg`}
+            onClick={isOpen ? onClose : onOpen}
           />
         </Box>
       </Container>
 
-      <Box py='5' border='1px solid blue'>
+      <Box py='5' display={isOpen ? '' : 'none'}>
         <List
           color='blackAlpha.500'
           fontWeight='medium'
@@ -146,6 +152,53 @@ export default function Nav() {
           </ListItem>
         </List>
       </Box>
+
+      {/* <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <List
+              color='blackAlpha.500'
+              fontWeight='medium'
+              px='5'
+              display={`flex`}
+              flexFlow={`column`}
+              gap={2}
+              fontSize={`lg`}
+            >
+              {navigationItems.map((item) => (
+                <ListItem
+                  key={item.label}
+                  color={pathname === item.route ? 'chakra-body-text' : ''}
+                  _hover={{ color: 'gray.600' }}
+                >
+                  <Link href={item.route}>{item.label}</Link>
+                </ListItem>
+              ))}
+
+              <ListItem mt='5'>
+                <Link href='.'>
+                  <Box
+                    as='span'
+                    color='white'
+                    bg='red.400'
+                    fontWeight='bold'
+                    p={2.5}
+                    _hover={{ bg: 'red.600' }}
+                    borderRadius={`sm`}
+                  >
+                    Order
+                  </Box>
+                </Link>
+              </ListItem>
+            </List>
+          </motion.div>
+        )}
+      </AnimatePresence> */}
     </Flex>
   );
 }
