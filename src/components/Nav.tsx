@@ -11,13 +11,13 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import logo from '../shared/assets/chasers-juice-logo.png';
 import { RxHamburgerMenu } from 'react-icons/rx';
-import { useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const navigationItems = [
@@ -31,6 +31,13 @@ const navigationItems = [
 export default function Nav() {
   const pathname = usePathname();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
+
+  const listItemVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
 
   return (
     // // desktop styles
@@ -77,77 +84,129 @@ export default function Nav() {
     //   </List>
     // </Flex>
 
-    <Flex
-      as='nav'
-      borderBottom='1px'
-      borderColor='gray.200'
-    >
+    <Flex as='nav' borderBottom='1px' borderColor='gray.200'>
       <Container maxW='container.lg' display='flex' py='2' px='5'>
         <Box display='flex' flex='1'>
           <Image src={logo} alt='Chasers Juice Logo' width={85} />
         </Box>
 
-        <Box
-          display='flex'
-          flex='1'
-          justifyContent='flex-end'
-          alignItems='center'
-        >
-          <IconButton
-            variant={`outline`}
-            aria-label='toggle navigation menu'
-            icon={<RxHamburgerMenu />}
-            size={`lg`}
-            onClick={isOpen ? onClose : onOpen}
-          />
-        </Box>
+        {isLargerThanTablet ? (
+          <Box
+            display='flex'
+            flex='4'
+            justifyContent='flex-end'
+            alignItems='center'
+          >
+            <List
+              display='flex'
+              alignItems='center'
+              gap={8}
+              flex='3'
+              justifyContent='flex-end'
+              textTransform='uppercase'
+              fontSize='xs'
+              letterSpacing={1}
+              color='blackAlpha.500'
+              fontWeight='medium'
+            >
+              {navigationItems.map((item) => (
+                <ListItem
+                  as={motion.li}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition='0.5s linear'
+                  key={item.route}
+                  color={pathname === item.route ? 'chakra-body-text' : ''}
+                  _hover={{ color: 'gray.600' }}
+                >
+                  <Link href={item.route}>{item.label}</Link>
+                </ListItem>
+              ))}
+              {/* this should be wrapped in ListItem */}
+              <ListItem
+                as={motion.li}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition='0.5s linear'
+              >
+                <Link href='.'>
+                  <Box
+                    as='span'
+                    color='white'
+                    bg='red.400'
+                    fontWeight='bold'
+                    p={2.5}
+                    _hover={{ bg: 'red.600' }}
+                  >
+                    Order
+                  </Box>
+                </Link>
+              </ListItem>
+            </List>
+          </Box>
+        ) : (
+          <Box
+            display='flex'
+            flex='1'
+            justifyContent='flex-end'
+            alignItems='center'
+          >
+            <IconButton
+              variant={`outline`}
+              aria-label='toggle navigation menu'
+              icon={<RxHamburgerMenu />}
+              size={`lg`}
+              onClick={isOpen ? onClose : onOpen}
+            />
+          </Box>
+        )}
       </Container>
 
-      <Drawer
-        isOpen={isOpen}
-        placement='right'
-        onClose={onClose}
-      >
-        <DrawerOverlay />
-        <DrawerContent p='5'>
-          <DrawerCloseButton />
-          <List
-            color='blackAlpha.500'
-            fontWeight='medium'
-            px='5'
-            display={`flex`}
-            flexFlow={`column`}
-            gap={2}
-            fontSize={`lg`}
-          >
-            {navigationItems.map((item) => (
-              <ListItem
-                key={item.label}
-                color={pathname === item.route ? 'chakra-body-text' : ''}
-                _hover={{ color: 'gray.600' }}
-              >
-                <Link href={item.route}>{item.label}</Link>
-              </ListItem>
-            ))}
-
-            <ListItem mt='5'>
-              <Link href='.'>
-                <Box
-                  as='span'
-                  color='white'
-                  bg='red.400'
-                  fontWeight='bold'
-                  p={2.5}
-                  _hover={{ bg: 'red.600' }}
-                  borderRadius={`sm`}
+      {!isLargerThanTablet && (
+        <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
+          <DrawerOverlay />
+          <DrawerContent p='5'>
+            <DrawerCloseButton />
+            <List
+              color='blackAlpha.500'
+              fontWeight='medium'
+              px='5'
+              display={`flex`}
+              flexFlow={`column`}
+              gap={2}
+              fontSize={`lg`}
+            >
+              {navigationItems.map((item) => (
+                <ListItem
+                  key={item.label}
+                  color={pathname === item.route ? 'chakra-body-text' : ''}
+                  _hover={{ color: 'gray.600' }}
                 >
-                  Order
-                </Box>
-              </Link>
-            </ListItem>
-          </List>
-        </DrawerContent>
-      </Drawer>
+                  <Link href={item.route}>{item.label}</Link>
+                </ListItem>
+              ))}
+
+              <ListItem mt='5'>
+                <Link href='.'>
+                  <Box
+                    as='span'
+                    color='white'
+                    bg='red.400'
+                    fontWeight='bold'
+                    p={2.5}
+                    _hover={{ bg: 'red.600' }}
+                    borderRadius={`sm`}
+                  >
+                    Order
+                  </Box>
+                </Link>
+              </ListItem>
+            </List>
+          </DrawerContent>
+        </Drawer>
+      )}
     </Flex>
   );
 }
