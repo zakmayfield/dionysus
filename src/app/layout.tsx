@@ -1,8 +1,11 @@
 'use client';
-import { Box } from '@chakra-ui/react';
+import { Box, Icon } from '@chakra-ui/react';
 import { Providers } from './providers';
 import Nav from '../components/Nav';
 import Footer from '@/components/Footer';
+import logo from '../shared/assets/chasers-juice-logo.png';
+import Image from 'next/image';
+import { RxHamburgerMenu } from 'react-icons/rx';
 
 export default function RootLayout({
   children,
@@ -12,15 +15,15 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head />
-      <Box as='body'>
+      <body>
         <Providers>
           <Nav />
-          <Box as='main' minH='100vh'>
+          <Box as='main' minH='100vh' border='3px solid red'>
             {children}
           </Box>
-          <Footer />
+          {/* <Footer /> */}
         </Providers>
-      </Box>
+      </body>
     </html>
   );
 }
