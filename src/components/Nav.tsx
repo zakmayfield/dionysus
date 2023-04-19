@@ -111,10 +111,10 @@ export default function Nav() {
           >
             <IconButton
               as={motion.button}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0 }}
-              transition='0.1s linear'
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0 }}
+              transition='0.05s linear'
               variant={`outline`}
               aria-label='toggle navigation menu'
               icon={<RxHamburgerMenu />}
