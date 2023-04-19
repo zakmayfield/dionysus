@@ -88,8 +88,6 @@ export default function Nav() {
       as='nav'
       borderBottom='1px'
       borderColor='gray.200'
-      display='flex'
-      flexFlow='column'
     >
       <Container maxW='container.lg' display='flex' py='2' px='5'>
         <Box display='flex' flex='1'>
