@@ -114,6 +114,7 @@ export default function Nav() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0 }}
+              whileTap={{ scale: 1.2 }}
               transition='0.05s linear'
               variant={`outline`}
               aria-label='toggle navigation menu'
