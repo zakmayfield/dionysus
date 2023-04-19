@@ -40,50 +40,6 @@ export default function Nav() {
   };
 
   return (
-    // // desktop styles
-    // <Flex as='nav' px={12} py={3} borderBottom='1px' borderColor='gray.100'>
-    //   <Box flex='1' display='flex'>
-    //     <Box width={{ base: 100, lg: 125 }}>
-    //       <Image src={logo} alt='Chasers Juice Logo' />
-    //     </Box>
-    //   </Box>
-
-    //   <List
-    //     display='flex'
-    //     alignItems='center'
-    //     gap={8}
-    //     flex='3'
-    //     justifyContent='flex-end'
-    //     textTransform='uppercase'
-    //     fontSize='xs'
-    //     letterSpacing={1}
-    //     color='blackAlpha.500'
-    //     fontWeight='medium'
-    //   >
-    //     {navigationItems.map((item) => (
-    //       <ListItem
-    //         key={item.route}
-    //         color={pathname === item.route ? 'chakra-body-text' : ''}
-    //         _hover={{ color: 'gray.600' }}
-    //       >
-    //         <Link href={item.route}>{item.label}</Link>
-    //       </ListItem>
-    //     ))}
-    //     <Link href='.'>
-    //       <Box
-    //         as='span'
-    //         color='white'
-    //         bg='red.400'
-    //         fontWeight='bold'
-    //         p={2.5}
-    //         _hover={{ bg: 'red.600' }}
-    //       >
-    //         Order
-    //       </Box>
-    //     </Link>
-    //   </List>
-    // </Flex>
-
     <Flex as='nav' borderBottom='1px' borderColor='gray.200'>
       <Container maxW='container.lg' display='flex' py='2' px='5'>
         <Box display='flex' flex='1'>
@@ -112,10 +68,10 @@ export default function Nav() {
               {navigationItems.map((item) => (
                 <ListItem
                   as={motion.li}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition='0.5s linear'
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 50 }}
+                  transition='0.1s linear'
                   key={item.route}
                   color={pathname === item.route ? 'chakra-body-text' : ''}
                   _hover={{ color: 'gray.600' }}
@@ -126,10 +82,10 @@ export default function Nav() {
               {/* this should be wrapped in ListItem */}
               <ListItem
                 as={motion.li}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition='0.5s linear'
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 50 }}
+                transition='0.1s linear'
               >
                 <Link href='.'>
                   <Box
@@ -154,6 +110,11 @@ export default function Nav() {
             alignItems='center'
           >
             <IconButton
+              as={motion.button}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition='0.1s linear'
               variant={`outline`}
               aria-label='toggle navigation menu'
               icon={<RxHamburgerMenu />}
@@ -167,16 +128,17 @@ export default function Nav() {
       {!isLargerThanTablet && (
         <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
           <DrawerOverlay />
-          <DrawerContent p='5'>
-            <DrawerCloseButton />
+          <DrawerContent p='5' pt='12'>
+            <DrawerCloseButton size={`lg`} />
             <List
               color='blackAlpha.500'
-              fontWeight='medium'
+              fontWeight='light'
               px='5'
               display={`flex`}
               flexFlow={`column`}
               gap={2}
-              fontSize={`lg`}
+              fontSize={`2xl`}
+              letterSpacing={`wider`}
             >
               {navigationItems.map((item) => (
                 <ListItem
@@ -188,16 +150,17 @@ export default function Nav() {
                 </ListItem>
               ))}
 
-              <ListItem mt='5'>
+              <ListItem mt='8'>
                 <Link href='.'>
                   <Box
                     as='span'
                     color='white'
                     bg='red.400'
-                    fontWeight='bold'
+                    fontWeight='light'
                     p={2.5}
                     _hover={{ bg: 'red.600' }}
                     borderRadius={`sm`}
+                    width={`full`}
                   >
                     Order
                   </Box>
