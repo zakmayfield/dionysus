@@ -42,7 +42,7 @@ export default function Nav() {
 
   return (
     <Flex as="nav" borderBottom="1px" borderColor="gray.200">
-      <Container maxW="container.lg" display="flex" py="2" px="5">
+      <Container maxW="container.lg" display="flex" py="2" px="5" w="100%">
         <Box display="flex" flex="1">
           <Image src={logo} alt="Chasers Juice Logo" width={85} />
         </Box>
