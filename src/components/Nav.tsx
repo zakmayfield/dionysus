@@ -1,11 +1,5 @@
 "use client";
-import {
-  List,
-  ListItem,
-  Flex,
-  Box,
-  Button,
-} from "@chakra-ui/react";
+import { List, ListItem, Flex, Box, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -49,9 +43,9 @@ export default function Nav() {
             <Link href={item.route}>{item.label}</Link>
           </ListItem>
         ))}
-          <Button as={Link} href="#">
-            Order
-          </Button>
+        <Button as={Link} href="#">
+          Order
+        </Button>
       </List>
     </Flex>
   );

@@ -1,7 +1,7 @@
-'use client';
-import { Box } from '@chakra-ui/react';
-import { Providers } from './providers';
-import Nav from '../components/Nav';
+"use client";
+import { Box } from "@chakra-ui/react";
+import Nav from "../components/Nav";
+import { Providers } from "./providers";
 
 export default function RootLayout({
   children,
@@ -9,9 +9,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <head />
-      <Box as='body'>
+      <Box as="body">
         <Providers>
           <Nav />
           {children}
