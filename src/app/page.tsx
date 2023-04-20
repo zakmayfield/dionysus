@@ -1,6 +1,6 @@
 'use client';
-import { Container } from '@chakra-ui/react';
+import HomeContainer from '@/components/home-page/HomeContainer';
 
 export default function Home() {
-  return <Container border='2px solid blue'>Home</Container>;
+  return <HomeContainer />;
 }
