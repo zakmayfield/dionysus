@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */
 const isFunction = (value: any): value is Function =>
-  typeof value === "function";
+  typeof value === 'function';
 
 export function runIfFn<T, U>(
   valueOrFn: T | ((...fnArgs: U[]) => T),

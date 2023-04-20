@@ -6,14 +6,14 @@ import type {
   StyleObjectOrFn,
   SystemStyleInterpolation,
   ThemingProps,
-} from "@chakra-ui/styled-system";
-import { Styles } from "@chakra-ui/theme-tools";
+} from '@chakra-ui/styled-system';
+import { Styles } from '@chakra-ui/theme-tools';
 
-type ColorMode = "light" | "dark";
+type ColorMode = 'light' | 'dark';
 type Dict = Record<string, any>;
 
 type ColorModeOptions = {
-  initialColorMode?: "light" | "dark" | "system";
+  initialColorMode?: 'light' | 'dark' | 'system';
   useSystemColorMode?: boolean;
   disableTransitionOnChange?: boolean;
 };
@@ -51,14 +51,14 @@ export type Colors = RecursiveObject<
   Record<string, Partial<ColorHues>> | string
 >;
 
-export type ThemeDirection = "ltr" | "rtl";
+export type ThemeDirection = 'ltr' | 'rtl';
 
 export interface ComponentDefaultProps
-  extends Omit<ThemingProps, "styleConfig">,
+  extends Omit<ThemingProps, 'styleConfig'>,
     Dict {}
 
 export interface ThemeComponentProps<T extends ChakraTheme = ChakraTheme>
-  extends Omit<ThemingProps, "styleConfig"> {
+  extends Omit<ThemingProps, 'styleConfig'> {
   colorMode: ColorMode;
   theme: T;
   [x: string]: any;

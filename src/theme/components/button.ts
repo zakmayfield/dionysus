@@ -1,24 +1,24 @@
-import { defineStyle, defineStyleConfig } from "@chakra-ui/styled-system";
-import { mode, transparentize } from "@chakra-ui/theme-tools";
-import { runIfFn } from "../utils/run-if-fn";
+import { defineStyle, defineStyleConfig } from '@chakra-ui/styled-system';
+import { mode, transparentize } from '@chakra-ui/theme-tools';
+import { runIfFn } from '../utils/run-if-fn';
 
 const baseStyle = defineStyle({
-  lineHeight: "1.2",
-  borderRadius: "md",
-  fontWeight: "semibold",
-  transitionProperty: "common",
-  transitionDuration: "normal",
+  lineHeight: '1.2',
+  borderRadius: 'md',
+  fontWeight: 'semibold',
+  transitionProperty: 'common',
+  transitionDuration: 'normal',
   _focusVisible: {
-    boxShadow: "outline",
+    boxShadow: 'outline',
   },
   _disabled: {
     opacity: 0.4,
-    cursor: "not-allowed",
-    boxShadow: "none",
+    cursor: 'not-allowed',
+    boxShadow: 'none',
   },
   _hover: {
     _disabled: {
-      bg: "initial",
+      bg: 'initial',
     },
   },
 });
@@ -26,7 +26,7 @@ const baseStyle = defineStyle({
 const variantGhost = defineStyle((props) => {
   const { colorScheme: c, theme } = props;
 
-  if (c === "gray") {
+  if (c === 'gray') {
     return {
       color: mode(`inherit`, `whiteAlpha.900`)(props),
       _hover: {
@@ -41,7 +41,7 @@ const variantGhost = defineStyle((props) => {
 
   return {
     color: mode(`${c}.600`, `${c}.200`)(props),
-    bg: "transparent",
+    bg: 'transparent',
     _hover: {
       bg: mode(`${c}.50`, darkHoverBg)(props),
     },
@@ -55,12 +55,12 @@ const variantOutline = defineStyle((props) => {
   const { colorScheme: c } = props;
   const borderColor = mode(`gray.200`, `whiteAlpha.300`)(props);
   return {
-    border: "1px solid",
-    borderColor: c === "gray" ? borderColor : "currentColor",
-    ".chakra-button__group[data-attached][data-orientation=horizontal] > &:not(:last-of-type)":
-      { marginEnd: "-1px" },
-    ".chakra-button__group[data-attached][data-orientation=vertical] > &:not(:last-of-type)":
-      { marginBottom: "-1px" },
+    border: '1px solid',
+    borderColor: c === 'gray' ? borderColor : 'currentColor',
+    '.chakra-button__group[data-attached][data-orientation=horizontal] > &:not(:last-of-type)':
+      { marginEnd: '-1px' },
+    '.chakra-button__group[data-attached][data-orientation=vertical] > &:not(:last-of-type)':
+      { marginBottom: '-1px' },
     ...runIfFn(variantGhost, props),
   };
 });
@@ -75,23 +75,23 @@ type AccessibleColor = {
 /** Accessible color overrides for less accessible colors. */
 const accessibleColorMap: { [key: string]: AccessibleColor } = {
   yellow: {
-    bg: "yellow.400",
-    color: "black",
-    hoverBg: "yellow.500",
-    activeBg: "yellow.600",
+    bg: 'yellow.400',
+    color: 'black',
+    hoverBg: 'yellow.500',
+    activeBg: 'yellow.600',
   },
   cyan: {
-    bg: "cyan.400",
-    color: "black",
-    hoverBg: "cyan.500",
-    activeBg: "cyan.600",
+    bg: 'cyan.400',
+    color: 'black',
+    hoverBg: 'cyan.500',
+    activeBg: 'cyan.600',
   },
 };
 
 const variantSolid = defineStyle((props) => {
   const { colorScheme: c } = props;
 
-  if (c === "gray") {
+  if (c === 'gray') {
     const bg = mode(`gray.100`, `whiteAlpha.200`)(props);
 
     return {
@@ -108,7 +108,7 @@ const variantSolid = defineStyle((props) => {
 
   const {
     bg = `${c}.500`,
-    color = "white",
+    color = 'white',
     hoverBg = `${c}.600`,
     activeBg = `${c}.700`,
   } = accessibleColorMap[c] ?? {};
@@ -132,14 +132,14 @@ const variantLink = defineStyle((props) => {
   const { colorScheme: c } = props;
   return {
     padding: 0,
-    height: "auto",
-    lineHeight: "normal",
-    verticalAlign: "baseline",
+    height: 'auto',
+    lineHeight: 'normal',
+    verticalAlign: 'baseline',
     color: mode(`${c}.500`, `${c}.200`)(props),
     _hover: {
-      textDecoration: "underline",
+      textDecoration: 'underline',
       _disabled: {
-        textDecoration: "none",
+        textDecoration: 'none',
       },
     },
     _active: {
@@ -149,12 +149,12 @@ const variantLink = defineStyle((props) => {
 });
 
 const variantUnstyled = defineStyle({
-  bg: "none",
-  color: "inherit",
-  display: "inline",
-  lineHeight: "inherit",
-  m: "0",
-  p: "0",
+  bg: 'none',
+  color: 'inherit',
+  display: 'inline',
+  lineHeight: 'inherit',
+  m: '0',
+  p: '0',
 });
 
 const variants = {
@@ -167,28 +167,28 @@ const variants = {
 
 const sizes = {
   lg: defineStyle({
-    h: "12",
-    minW: "12",
-    fontSize: "lg",
-    px: "6",
+    h: '12',
+    minW: '12',
+    fontSize: 'lg',
+    px: '6',
   }),
   md: defineStyle({
-    h: "10",
-    minW: "10",
-    fontSize: "md",
-    px: "4",
+    h: '10',
+    minW: '10',
+    fontSize: 'md',
+    px: '4',
   }),
   sm: defineStyle({
-    h: "8",
-    minW: "8",
-    fontSize: "sm",
-    px: "3",
+    h: '8',
+    minW: '8',
+    fontSize: 'sm',
+    px: '3',
   }),
   xs: defineStyle({
-    h: "6",
-    minW: "6",
-    fontSize: "xs",
-    px: "2",
+    h: '6',
+    minW: '6',
+    fontSize: 'xs',
+    px: '2',
   }),
 };
 
@@ -197,8 +197,8 @@ export const buttonTheme = defineStyleConfig({
   variants,
   sizes,
   defaultProps: {
-    variant: "solid",
-    size: "md",
-    colorScheme: "primary",
+    variant: 'solid',
+    size: 'md',
+    colorScheme: 'primary',
   },
 });
