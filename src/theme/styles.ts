@@ -1,21 +1,21 @@
-import { Styles } from '@chakra-ui/theme-tools';
+import { Styles } from "@chakra-ui/theme-tools";
 
 export const styles: Styles = {
   global: {
     body: {
-      fontFamily: 'body',
-      color: 'chakra-body-text',
-      bg: 'chakra-body-bg',
-      transitionProperty: 'background-color',
-      transitionDuration: 'normal',
-      lineHeight: 'base',
+      fontFamily: "body",
+      color: "chakra-body-text",
+      bg: "chakra-body-bg",
+      transitionProperty: "background-color",
+      transitionDuration: "normal",
+      lineHeight: "base",
     },
-    '*::placeholder': {
-      color: 'chakra-placeholder-color',
+    "*::placeholder": {
+      color: "chakra-placeholder-color",
     },
-    '*, *::before, &::after': {
-      borderColor: 'chakra-border-color',
-      wordWrap: 'break-word',
+    "*, *::before, &::after": {
+      borderColor: "chakra-border-color",
+      wordWrap: "break-word",
     },
   },
 };
