@@ -1,12 +1,17 @@
 'use client';
 import { Box } from '@chakra-ui/react';
+import Hero from '../../shared/assets/home-hero.jpeg';
 
 export default function HomeHero() {
   return (
-    <Box bg={`yellow.200`} textAlign={`center`}>
-      <Box bgImage={`url('../shared/assets/home-hero.jpeg')`}>
-        <Box>Hero</Box>
-      </Box>
+    <Box textAlign={`center`}>
+      <Box
+        bgPosition='center'
+        bgRepeat='no-repeat'
+        bgSize={``}
+        bgImage={Hero.src}
+        minH={`67vh`}
+      ></Box>
     </Box>
   );
 }
