@@ -89,16 +89,9 @@ export default function Nav() {
                 transition="0.1s linear"
               >
                 <Link href=".">
-                  <Box
-                    as="span"
-                    color="white"
-                    bg="red.400"
-                    fontWeight="bold"
-                    p={2.5}
-                    _hover={{ bg: "red.600" }}
-                  >
+                  <Button as={Link} href="#">
                     Order
-                  </Box>
+                  </Button>
                 </Link>
               </ListItem>
             </List>
