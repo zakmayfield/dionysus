@@ -8,9 +8,9 @@ export default function HomeHero() {
       <Box
         bgPosition='center'
         bgRepeat='no-repeat'
-        bgSize={``}
+        bgSize={`cover`}
         bgImage={Hero.src}
-        minH={`67vh`}
+        minH={{ base: `67vh`, md: '32vh' }}
       ></Box>
     </Box>
   );
