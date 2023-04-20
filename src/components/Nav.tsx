@@ -19,6 +19,7 @@ import { usePathname } from 'next/navigation';
 import logo from '../shared/assets/chasers-juice-logo.png';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ContentContainer } from '@/shared/components';
 
 const navigationItems = [
   { label: 'Home', route: '/' },
@@ -41,7 +42,7 @@ export default function Nav() {
 
   return (
     <Flex as='nav' borderBottom='1px' borderColor='gray.200'>
-      <Container maxW='container.lg' display='flex' py='2' px='5'>
+      <ContentContainer display='flex' py='2' px='8'>
         <Box display='flex' flex='1'>
           <Image src={logo} alt='Chasers Juice Logo' width={85} />
         </Box>
@@ -124,7 +125,7 @@ export default function Nav() {
             />
           </Box>
         )}
-      </Container>
+      </ContentContainer>
 
       {!isLargerThanTablet && (
         <Drawer isOpen={isOpen} placement='right' onClose={onClose}>

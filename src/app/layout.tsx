@@ -18,7 +18,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <Nav />
-          <Box as='main' minH='100vh' border='3px solid red'>
+          <Box as='main' minH='100vh' bg={`red.200`}>
             {children}
           </Box>
           <Footer />

@@ -1,5 +1,5 @@
 'use client';
-import HomeContainer from '@/components/home-page/HomeContainer';
+import HomeContainer from '@/components/home/HomeContainer';
 
 export default function Home() {
   return <HomeContainer />;
