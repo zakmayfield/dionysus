@@ -35,11 +35,6 @@ export default function Nav() {
 
   const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
 
-  // const listItemVariants = {
-  //   hidden: { opacity: 0 },
-  //   visible: { opacity: 1 },
-  // };
-
   return (
     <Flex as='nav' borderBottom='1px' borderColor='gray.200'>
       <XlContentContainer display='flex' py='2' px='8'>
