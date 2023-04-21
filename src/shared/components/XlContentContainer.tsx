@@ -1,12 +1,12 @@
 import { Container, ContainerProps } from '@chakra-ui/react';
 import { PropsWithChildren } from 'react';
 
-type ContentContainerProps = ContainerProps & PropsWithChildren;
+type XlContentContainerProps = ContainerProps & PropsWithChildren;
 
-export const ContentContainer = ({
+export const XlContentContainer = ({
   children,
   ...props
-}: ContentContainerProps) => {
+}: XlContentContainerProps) => {
   return (
     <Container maxW='container.xl' px='8' {...props}>
       {children}
