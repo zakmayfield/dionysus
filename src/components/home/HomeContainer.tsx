@@ -1,7 +1,7 @@
 'use client';
 import { Box } from '@chakra-ui/react';
-import HomeHero from './HomeHero';
 import Showcase from '../showcase/Showcase';
+import HomeHero from './HomeHero';
 import { ContentContainer } from '@/shared/components';
 
 export default function HomeContainer() {
