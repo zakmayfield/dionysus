@@ -57,12 +57,12 @@ export default function Nav() {
             <List
               display='flex'
               alignItems='center'
-              gap={8}
+              gap='8'
               flex='3'
               justifyContent='flex-end'
               textTransform='uppercase'
               fontSize='xs'
-              letterSpacing={1}
+              letterSpacing='0'
               color='blackAlpha.500'
               fontWeight='medium'
             >
@@ -110,10 +110,10 @@ export default function Nav() {
               exit={{ scale: 0 }}
               whileTap={{ scale: 1.2 }}
               transition='0.05s linear'
-              variant={`outline`}
+              variant='outline'
               aria-label='toggle navigation menu'
               icon={<RxHamburgerMenu />}
-              size={`lg`}
+              size='lg'
               onClick={isOpen ? onClose : onOpen}
             />
           </Box>
