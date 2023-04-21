@@ -1,8 +1,8 @@
 import { Box, Flex, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
-import logo from '../shared/assets/chasers-juice-logo.png';
 import Image from 'next/image';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import Link from 'next/link';
+import logo from '../shared/assets/chasers-juice-logo.png';
 
 export default function Footer() {
   return (
