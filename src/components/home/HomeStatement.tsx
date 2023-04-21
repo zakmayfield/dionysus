@@ -2,7 +2,7 @@ import { Box, Container, Heading, Text } from '@chakra-ui/react';
 
 export default function HomeStatement() {
   return (
-    <Box textAlign='center' bg='secondary.500'>
+    <Box textAlign='center'>
       <Container
         maxW='container.sm'
         mx='auto'
