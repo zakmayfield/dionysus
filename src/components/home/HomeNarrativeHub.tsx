@@ -5,7 +5,7 @@ import { ContentContainer } from '@/shared/components';
 export default function HomeNarrativeHub() {
   return (
     <Box as='section'>
-      <ContentContainer maxW='container.xl'>
+      <ContentContainer maxW='container.2xl'>
         <Heading as='h2' textAlign='center'>
           Who We Are
         </Heading>
