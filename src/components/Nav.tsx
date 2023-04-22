@@ -19,7 +19,7 @@ import { usePathname } from 'next/navigation';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { motion } from 'framer-motion';
 import logo from '../shared/assets/chasers-juice-logo.png';
-import { ContentContainer } from '@/shared/components';
+import { ContentContainer } from '~shared/components';
 
 const navigationItems = [
   { label: 'Home', route: '/' },
@@ -62,14 +62,14 @@ export default function Nav() {
               color='blackAlpha.500'
               fontWeight='medium'
             >
-              {navigationItems.map((item) => (
+              {navigationItems.map((item, i) => (
                 <ListItem
                   as={motion.li}
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 50 }}
                   transition='0.1s linear'
-                  key={item.route}
+                  key={i}
                   color={pathname === item.route ? 'chakra-body-text' : ''}
                   _hover={{ color: 'gray.600' }}
                 >
@@ -83,11 +83,9 @@ export default function Nav() {
                 exit={{ opacity: 0, x: 50 }}
                 transition='0.1s linear'
               >
-                <Link href='.'>
-                  <Button as={Link} href='#'>
-                    Order
-                  </Button>
-                </Link>
+                <Button as={Link} href='#'>
+                  Order
+                </Button>
               </ListItem>
             </List>
           </Box>

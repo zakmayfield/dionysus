@@ -1,0 +1,12 @@
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: #dde3e4; /* blu.400 */
+}
+
+.swiper-horizontal
+  > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+  .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+  .swiper-pagination-bullet {
+  background-color: #b66875; /* crimson.100  */
+}
