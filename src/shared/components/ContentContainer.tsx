@@ -8,7 +8,7 @@ export const ContentContainer = ({
   ...props
 }: ContentContainerProps) => {
   return (
-    <Container maxW='container.xl' px='8' {...props}>
+    <Container maxW='container.lg' p='0' m='0' mx='auto' {...props}>
       {children}
     </Container>
   );
