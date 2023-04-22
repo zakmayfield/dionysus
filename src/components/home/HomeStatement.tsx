@@ -1,10 +1,15 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
-import { SmContentContainer } from '@/shared/components';
+import { ContentContainer } from '@/shared/components';
 
 export default function HomeStatement() {
   return (
     <Box textAlign='center'>
-      <SmContentContainer letterSpacing='wide' pt='28' pb='28'>
+      <ContentContainer
+        maxW='container.sm'
+        letterSpacing='wide'
+        pt='28'
+        pb='28'
+      >
         <Heading as='h2' fontSize='4xl'>
           Freshly Pressed with ♥
         </Heading>
@@ -17,7 +22,7 @@ export default function HomeStatement() {
         <Text fontWeight='light' letterSpacing='wider'>
           We hope to see you around
         </Text>
-      </SmContentContainer>
+      </ContentContainer>
     </Box>
   );
 }

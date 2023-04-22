@@ -1,12 +1,12 @@
 import { Container, ContainerProps } from '@chakra-ui/react';
 import { PropsWithChildren } from 'react';
 
-type LgContentContainerProps = ContainerProps & PropsWithChildren;
+type ContentContainerProps = ContainerProps & PropsWithChildren;
 
-export const LgContentContainer = ({
+export const ContentContainer = ({
   children,
   ...props
-}: LgContentContainerProps) => {
+}: ContentContainerProps) => {
   return (
     <Container maxW='container.lg' p='0' m='0' mx='auto' {...props}>
       {children}
