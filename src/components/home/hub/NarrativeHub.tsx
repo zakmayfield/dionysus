@@ -1,42 +1,47 @@
-import { Grid, GridItem, useMediaQuery } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 
 /*
-  ? isLargerThanTablet renders essentially the same component, with mostly the same styles so i should probably break this into its own component
+    Layout
+
+    Mobile:
+    img
+    cta
+    img
+    cta
+
+    Desktop:
+    img cta
+    cta img
 */
 
 export default function NarrativeHub() {
-  const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
-
   return (
-    <Grid templateColumns={{ base: '1fr' }} border='2px solid red'>
-      <Grid
-        border='2px solid red'
-        templateColumns={{ base: '1fr', md: '1fr 1fr' }}
-        placeItems='center'
+    <Flex flexFlow='column'>
+      <Flex
+        flexFlow={{ base: 'column', md: 'row' }}
+        w='full'
+        minH={{ base: '100vh', md: 'sm' }}
       >
-        <GridItem>Img 1</GridItem>
-        <GridItem>CTA A</GridItem>
-      </Grid>
+        <Box flex='1' bg='red.300'>
+          img 1
+        </Box>
+        <Box flex='1' bg='purple.300'>
+          cta a
+        </Box>
+      </Flex>
 
-      {!isLargerThanTablet ? (
-        <Grid
-          border='2px solid red'
-          templateColumns={{ base: '1fr', md: '1fr 1fr' }}
-          placeItems='center'
-        >
-          <GridItem>Img 2</GridItem>
-          <GridItem>CTA B</GridItem>
-        </Grid>
-      ) : (
-        <Grid
-          border='2px solid red'
-          templateColumns={{ base: '1fr', md: '1fr 1fr' }}
-          placeItems='center'
-        >
-          <GridItem>CTA B</GridItem>
-          <GridItem>Img 2</GridItem>
-        </Grid>
-      )}
-    </Grid>
+      <Flex
+        flexFlow={{ base: 'column', md: 'row-reverse' }}
+        w='full'
+        minH={{ base: '100vh', md: 'sm' }}
+      >
+        <Box flex='1' bg='blue.300'>
+          img 2
+        </Box>
+        <Box flex='1' bg='orange.300'>
+          cta c
+        </Box>
+      </Flex>
+    </Flex>
   );
 }
