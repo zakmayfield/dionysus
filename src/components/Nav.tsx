@@ -35,19 +35,15 @@ export default function Nav() {
 
   const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
 
-  // const listItemVariants = {
-  //   hidden: { opacity: 0 },
-  //   visible: { opacity: 1 },
-  // };
-
   return (
     <Flex as='nav' borderBottom='1px' borderColor='gray.200'>
-      <ContentContainer display='flex' py='2' px='8'>
+      <ContentContainer maxW='container.2xl' display='flex' py='2' px='8'>
         <Box display='flex' flex='1'>
           <Image src={logo} alt='Chasers Juice Logo' width={85} />
         </Box>
 
         {isLargerThanTablet ? (
+          // * desktop nav view
           <Box
             display='flex'
             flex='4'
@@ -94,6 +90,7 @@ export default function Nav() {
             </List>
           </Box>
         ) : (
+          // * mobile nav view
           <Box
             display='flex'
             flex='1'
