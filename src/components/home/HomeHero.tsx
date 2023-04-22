@@ -1,5 +1,5 @@
 'use client';
-import { Box, useMediaQuery } from '@chakra-ui/react';
+import { useMediaQuery, Image } from '@chakra-ui/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, A11y } from 'swiper';
 import { desktopHeroImages, mobileHeroImages } from './constants';
@@ -26,13 +26,7 @@ export default function HomeHero() {
     >
       {images.map((img, i) => (
         <SwiperSlide key={i}>
-          <Box
-            bgPosition='center'
-            bgRepeat='no-repeat'
-            bgSize='cover'
-            bgImage={img.src}
-            minH={{ md: '617px', base: '700' }}
-          ></Box>
+          <Image src={img.src} alt={img.alt} w='100%' />
         </SwiperSlide>
       ))}
     </Swiper>
