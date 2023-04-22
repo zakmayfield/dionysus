@@ -75,7 +75,6 @@ export default function Nav() {
                   <Link href={item.route}>{item.label}</Link>
                 </ListItem>
               ))}
-              {/* this should be wrapped in ListItem */}
               <ListItem
                 as={motion.li}
                 initial={{ opacity: 0, x: 50 }}
