@@ -1,12 +1,11 @@
-import { Box, Container, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/react';
+import { ContentContainer } from '@/shared/components';
 
 export default function HomeStatement() {
   return (
     <Box textAlign='center'>
-      <Container
+      <ContentContainer
         maxW='container.sm'
-        mx='auto'
-        p='0'
         letterSpacing='wide'
         pt='28'
         pb='28'
@@ -23,7 +22,7 @@ export default function HomeStatement() {
         <Text fontWeight='light' letterSpacing='wider'>
           We hope to see you around
         </Text>
-      </Container>
+      </ContentContainer>
     </Box>
   );
 }

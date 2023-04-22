@@ -1,1 +1,1 @@
-export * from './XlContentContainer';
+export * from './ContentContainer';
