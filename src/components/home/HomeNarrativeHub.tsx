@@ -1,10 +1,17 @@
-import { Box } from '@chakra-ui/react';
-import { MdContentContainer } from '@/shared/components/MdContentContainer';
+import { Box, Heading } from '@chakra-ui/react';
+import NarrativeHub from './hub/NarrativeHub';
+import { LgContentContainer } from '@/shared/components';
 
 export default function HomeNarrativeHub() {
   return (
-    <Box>
-      <MdContentContainer>HomeNarrativeHub</MdContentContainer>
+    <Box as='section'>
+      <LgContentContainer>
+        <Heading as='h2' textAlign='center'>
+          Who We Are
+        </Heading>
+
+        <NarrativeHub />
+      </LgContentContainer>
     </Box>
   );
 }

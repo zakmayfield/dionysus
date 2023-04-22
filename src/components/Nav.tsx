@@ -43,6 +43,7 @@ export default function Nav() {
         </Box>
 
         {isLargerThanTablet ? (
+          // * desktop nav view
           <Box
             display='flex'
             flex='4'
@@ -75,7 +76,6 @@ export default function Nav() {
                   <Link href={item.route}>{item.label}</Link>
                 </ListItem>
               ))}
-              {/* this should be wrapped in ListItem */}
               <ListItem
                 as={motion.li}
                 initial={{ opacity: 0, x: 50 }}
@@ -92,6 +92,7 @@ export default function Nav() {
             </List>
           </Box>
         ) : (
+          // * mobile nav view
           <Box
             display='flex'
             flex='1'

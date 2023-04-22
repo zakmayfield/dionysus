@@ -1,5 +1,5 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
-import { SmContentContainer } from '@/shared/components/SmContentContainer';
+import { SmContentContainer } from '@/shared/components';
 
 export default function HomeStatement() {
   return (
