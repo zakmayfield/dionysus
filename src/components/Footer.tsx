@@ -6,7 +6,7 @@ import logo from '../shared/assets/chasers-juice-logo.png';
 
 export default function Footer() {
   return (
-    <Box as='footer' bgColor='gray.200' px='10' pb='10'>
+    <Box as='footer' bgColor='tertiary.50' px='10' pb='10'>
       <Grid
         templateColumns='repeat(2, 1fr)'
         placeItems='center'
