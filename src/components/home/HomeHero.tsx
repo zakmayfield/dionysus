@@ -1,34 +1,77 @@
 'use client';
-import { useMediaQuery, Image } from '@chakra-ui/react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, A11y } from 'swiper';
-import { desktopHeroImages, mobileHeroImages } from './constants';
-import './swiper.css';
-import 'swiper/css';
-import 'swiper/swiper-bundle.css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Box } from '@chakra-ui/react';
+import { AnimatePresence } from 'framer-motion';
+import { useRotatingText } from '@/shared/hooks';
+import Hero from '~shared/assets/home-hero.jpeg';
+import { MotionText } from '@/shared/components';
+
+const buzzWords = [
+  'best',
+  'freshest',
+  'tastiest',
+  'purest',
+  'smoothest',
+  'yummiest',
+];
 
 export default function HomeHero() {
-  const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
-  const images = isLargerThanTablet ? desktopHeroImages : mobileHeroImages;
+  const adjective = useRotatingText(buzzWords);
   return (
-    <Swiper
-      modules={[Pagination, Navigation, A11y, Autoplay]}
-      className='mySwiper'
-      navigation={{ enabled: true }}
-      pagination={{ clickable: true, dynamicBullets: true }}
-      loop={true}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: true,
-      }}
-    >
-      {images.map((img, i) => (
-        <SwiperSlide key={i}>
-          <Image src={img.src} alt={img.alt} w='100%' />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <Box textAlign={`center`}>
+      <Box
+        bgPosition={{ md: 'center', base: 'bottom 0px left 50%' }}
+        bgRepeat='no-repeat'
+        bgSize='cover'
+        bgImage={Hero.src}
+        minH={{ base: `65vh`, md: '50vh' }}
+        display='flex'
+        justifyContent='center'
+        alignItems='center'
+        position='relative'
+      >
+        <Box
+          position='absolute'
+          left='0'
+          top='0'
+          h='full'
+          w='full'
+          overflow='hidden'
+          bgColor='white'
+          opacity='25%'
+        />
+        <Box>
+          <MotionText
+            as='h2'
+            style={{ position: 'relative' }}
+            textTransform='lowercase'
+            fontSize={{ lg: '7xl', sm: '6xl', base: '5xl' }}
+          >
+            Ontario&apos;s
+            <AnimatePresence>
+              <MotionText
+                as='span'
+                key={adjective}
+                fontWeight='semibold'
+                initial={{ translateY: -50, opacity: 0, position: 'absolute' }}
+                animate={{ translateY: 0, opacity: 1, position: 'relative' }}
+                exit={{ translateY: 50, opacity: 0, position: 'absolute' }}
+                transition={{
+                  duration: 0.5,
+                  type: 'spring',
+                  stiffness: 200,
+                  damping: 20,
+                }}
+                display={{ md: 'inline-block', base: 'block' }}
+                color='lightAccent.700'
+                px='4'
+              >
+                {adjective}
+              </MotionText>
+            </AnimatePresence>
+            juice
+          </MotionText>
+        </Box>
+      </Box>
+    </Box>
   );
 }
