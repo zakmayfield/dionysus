@@ -102,7 +102,12 @@ export default function Footer() {
             <Image src={logo} alt='Chasers Juice logo' width='65' />
           </Box>
 
-          <Text w='full' fontSize='xs' letterSpacing='0.5'>
+          <Text
+            w='full'
+            fontSize='xs'
+            fontWeight='semibold'
+            letterSpacing='0.5'
+          >
             CHASERS FRESH JUICE INC. 218 North Queen St. Etobicoke, ON M9C 4Y1
           </Text>
         </Flex>
