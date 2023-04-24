@@ -18,7 +18,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { motion } from 'framer-motion';
-import logo from '../shared/assets/chasers-juice-logo.png';
+import logo from '~shared/assets/chasers-juice-logo.png';
 import { ContentContainer } from '~shared/components';
 
 const navigationItems = [
@@ -71,7 +71,7 @@ export default function Nav() {
                   transition='0.1s linear'
                   key={i}
                   color={pathname === item.route ? 'chakra-body-text' : ''}
-                  _hover={{ color: 'gray.600' }}
+                  _hover={{ color: 'primary.700' }}
                 >
                   <Link href={item.route}>{item.label}</Link>
                 </ListItem>

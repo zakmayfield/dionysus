@@ -1,8 +1,21 @@
-import { Box, Flex, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+import {
+  Box,
+  BoxProps,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Text,
+  Link,
+} from '@chakra-ui/react';
 import Image from 'next/image';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import Link from 'next/link';
-import logo from '../shared/assets/chasers-juice-logo.png';
+import NextLink from 'next/link';
+import { motion } from 'framer-motion';
+import { SocialMediaLinks } from './SocialMediaLinks';
+import logo from '~shared/assets/chasers-juice-logo.png';
+
+export type MotionBoxProps = Omit<BoxProps, 'transition'>;
+export const MotionBox = motion<MotionBoxProps>(Box);
 
 export default function Footer() {
   return (
@@ -30,12 +43,28 @@ export default function Footer() {
               Contact Us
             </Heading>
 
-            <Text fontSize='sm' fontWeight='semi-bold'>
+            <Link
+              as={NextLink}
+              fontSize='sm'
+              transition='ease'
+              transitionDuration='200ms'
+              _hover={{ color: 'primary.600' }}
+              href='tel:416-259-1557'
+              display='block'
+            >
               416-259-1557
-            </Text>
-            <Text fontSize='sm' fontWeight='semi-bold'>
+            </Link>
+            <Link
+              as={NextLink}
+              fontSize='sm'
+              transition='ease'
+              transitionDuration='200ms'
+              _hover={{ color: 'primary.600' }}
+              href='mailto:orders@chasersjuice.com'
+              display='block'
+            >
               orders@chasersjuice.com
-            </Text>
+            </Link>
           </Box>
         </GridItem>
 
@@ -50,18 +79,7 @@ export default function Footer() {
               Follow Us
             </Heading>
 
-            <Flex justifyContent='space-between'>
-              <Link href='.'>
-                <Box border='1px solid black' display='inline-block' p='2.5'>
-                  <FaFacebookF />
-                </Box>
-              </Link>
-              <Link href='.'>
-                <Box border='1px solid black' display='inline-block' p='2.5'>
-                  <FaInstagram />
-                </Box>
-              </Link>
-            </Flex>
+            <SocialMediaLinks />
           </Box>
         </GridItem>
       </Grid>
