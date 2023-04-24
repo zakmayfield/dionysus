@@ -39,38 +39,37 @@ export default function HomeHero() {
           bgColor='white'
           opacity='25%'
         />
-        <Box>
-          <MotionText
-            as='h2'
-            style={{ position: 'relative' }}
-            textTransform='lowercase'
-            fontSize={{ lg: '7xl', sm: '6xl', base: '5xl' }}
-          >
-            Ontario&apos;s
-            <AnimatePresence>
-              <MotionText
-                as='span'
-                key={adjective}
-                fontWeight='semibold'
-                initial={{ translateY: -50, opacity: 0, position: 'absolute' }}
-                animate={{ translateY: 0, opacity: 1, position: 'relative' }}
-                exit={{ translateY: 50, opacity: 0, position: 'absolute' }}
-                transition={{
-                  duration: 0.5,
-                  type: 'spring',
-                  stiffness: 200,
-                  damping: 20,
-                }}
-                display={{ md: 'inline-block', base: 'block' }}
-                color='lightAccent.700'
-                px='4'
-              >
-                {adjective}
-              </MotionText>
-            </AnimatePresence>
-            juice
-          </MotionText>
-        </Box>
+        <MotionText
+          as='h2'
+          style={{ position: 'relative' }}
+          textTransform='lowercase'
+          fontSize={{ lg: '7xl', sm: '6xl', base: '5xl' }}
+          textAlign='center'
+        >
+          Ontario&apos;s
+          <AnimatePresence>
+            <MotionText
+              as='span'
+              key={adjective}
+              fontWeight='semibold'
+              initial={{ translateY: -50, opacity: 0, position: 'absolute' }}
+              animate={{ translateY: 0, opacity: 1, position: 'relative' }}
+              exit={{ translateY: 50, opacity: 0, position: 'absolute' }}
+              transition={{
+                duration: 0.5,
+                type: 'spring',
+                stiffness: 200,
+                damping: 20,
+              }}
+              display={{ md: 'inline-block', base: 'block' }}
+              color='lightAccent.700'
+              px='4'
+            >
+              {adjective}
+            </MotionText>
+          </AnimatePresence>
+          juice
+        </MotionText>
       </Box>
     </Box>
   );
