@@ -8,11 +8,17 @@ export default function Footer() {
   return (
     <Box as='footer' bgColor='tertiary.50' px='10' pb='10'>
       <Grid
-        templateColumns='repeat(2, 1fr)'
+        templateColumns={{ md: 'repeat(2, 1fr)' }}
         placeItems='center'
         textAlign='center'
+        pt={{ md: '0', base: '8' }}
       >
-        <GridItem lineHeight='5' letterSpacing='.5' p='16'>
+        <GridItem
+          lineHeight='5'
+          letterSpacing='.5'
+          px='16'
+          py={{ md: '16', base: '6' }}
+        >
           <Box h='100'>
             <Heading
               as='h3'
@@ -33,7 +39,12 @@ export default function Footer() {
           </Box>
         </GridItem>
 
-        <GridItem lineHeight='5' letterSpacing='.5' p='16'>
+        <GridItem
+          lineHeight='5'
+          letterSpacing='.5'
+          px='16'
+          py={{ md: '16', base: '6' }}
+        >
           <Box h='100'>
             <Heading as='h3' fontSize='medium' textTransform='uppercase' pb='5'>
               Follow Us
@@ -63,8 +74,13 @@ export default function Footer() {
           borderColor='gray.700'
           textAlign='center'
           alignItems='center'
+          flexDir={{ md: 'row', base: 'column' }}
         >
-          <Box position='absolute' left='0'>
+          <Box
+            position={{ md: 'absolute', base: 'relative' }}
+            left={{ md: '0', base: undefined }}
+            mb='4'
+          >
             <Image src={logo} alt='Chasers Juice logo' width='65' />
           </Box>
 
