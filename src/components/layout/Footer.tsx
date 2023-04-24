@@ -1,6 +1,5 @@
 import {
   Box,
-  BoxProps,
   Flex,
   Grid,
   GridItem,
@@ -10,12 +9,8 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import NextLink from 'next/link';
-import { motion } from 'framer-motion';
 import { SocialMediaLinks } from './SocialMediaLinks';
 import logo from '~shared/assets/chasers-juice-logo.png';
-
-export type MotionBoxProps = Omit<BoxProps, 'transition'>;
-export const MotionBox = motion<MotionBoxProps>(Box);
 
 export default function Footer() {
   return (
