@@ -65,7 +65,8 @@ export default function HomeHero() {
               }}
               display={{ md: 'inline-block', base: 'block' }}
               color='lightAccent.700'
-              px='4'
+              pl='4'
+              pr='7'
             >
               {adjective}
             </MotionText>
