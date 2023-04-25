@@ -20,14 +20,20 @@ export default function NarrativeHub() {
   return (
     <Flex flexFlow='column' letterSpacing='wide'>
       {/* this could be it's own component, maybe HubRow */}
-      <Flex flexFlow={{ base: 'column', md: 'row' }} w='full' minH='sm'>
+      <Flex
+        flexFlow={{ base: 'column', md: 'row' }}
+        w='full'
+        minH='sm'
+        bg='tertiary.400'
+      >
         <Box
           bgImage={lemonade.src}
           flex='1'
           bgPosition='center'
           bgRepeat='no-repeat'
           bgSize='cover'
-        ></Box>
+          minH={{ base: '50vh', md: '' }}
+        />
 
         <Flex flex='1' alignItems='center'>
           <HubCtaTile
@@ -37,13 +43,19 @@ export default function NarrativeHub() {
         </Flex>
       </Flex>
 
-      <Flex flexFlow={{ base: 'column', md: 'row-reverse' }} w='full' minH='sm'>
+      <Flex
+        flexFlow={{ base: 'column', md: 'row-reverse' }}
+        w='full'
+        minH='sm'
+        bg='tertiary.300'
+      >
         <Box
           bgImage={pom.src}
           flex='1'
           bgPosition='center'
           bgRepeat='no-repeat'
           bgSize='cover'
+          minH={{ base: '50vh', md: '' }}
         />
 
         <Flex flex='1' alignItems='center'>
