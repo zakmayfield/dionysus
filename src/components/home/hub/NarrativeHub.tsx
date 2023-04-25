@@ -1,5 +1,7 @@
 import { Box, Flex } from '@chakra-ui/react';
-
+import HubCtaTile from './HubCtaTile';
+import lemonade from '~shared/assets/compressed/lemonade3.jpeg';
+import pom from '~shared/assets/compressed/pom1.jpeg';
 /*
     Layout
 
@@ -16,31 +18,52 @@ import { Box, Flex } from '@chakra-ui/react';
 
 export default function NarrativeHub() {
   return (
-    <Flex flexFlow='column'>
+    <Flex flexFlow='column' letterSpacing='wide'>
+      {/* this could be it's own component, maybe HubRow */}
       <Flex
         flexFlow={{ base: 'column', md: 'row' }}
         w='full'
-        minH={{ base: '100vh', md: 'sm' }}
+        minH='sm'
+        bg='tertiary.400'
       >
-        <Box flex='1' bg='red.300'>
-          img 1
-        </Box>
-        <Box flex='1' bg='purple.300'>
-          cta a
-        </Box>
+        <Box
+          bgImage={lemonade.src}
+          flex='1'
+          bgPosition='center'
+          bgRepeat='no-repeat'
+          bgSize='cover'
+          minH={{ base: '50vh', md: '' }}
+        />
+
+        <Flex flex='1' alignItems='center'>
+          <HubCtaTile
+            title='Example Title'
+            content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quas quod voluptas temporibus facilis dolorem veniam alias!'
+          />
+        </Flex>
       </Flex>
 
       <Flex
         flexFlow={{ base: 'column', md: 'row-reverse' }}
         w='full'
-        minH={{ base: '100vh', md: 'sm' }}
+        minH='sm'
+        bg='tertiary.300'
       >
-        <Box flex='1' bg='blue.300'>
-          img 2
-        </Box>
-        <Box flex='1' bg='orange.300'>
-          cta c
-        </Box>
+        <Box
+          bgImage={pom.src}
+          flex='1'
+          bgPosition='center'
+          bgRepeat='no-repeat'
+          bgSize='cover'
+          minH={{ base: '50vh', md: '' }}
+        />
+
+        <Flex flex='1' alignItems='center'>
+          <HubCtaTile
+            title='Example Title'
+            content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quas quod voluptas temporibus facilis dolorem veniam alias!'
+          />
+        </Flex>
       </Flex>
     </Flex>
   );

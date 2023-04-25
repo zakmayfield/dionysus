@@ -18,6 +18,7 @@ export default function HomeHero() {
   const adjective = useRotatingText(buzzWords);
   return (
     <Box textAlign={`center`}>
+      {/* minH 80vh doesn't cover enough of the screen, i'm seeing the very tip of the next section's content */}
       <Box
         bgPosition={{ md: 'bottom 58% left 50%', base: 'bottom 45% left 50%' }}
         bgRepeat='no-repeat'
