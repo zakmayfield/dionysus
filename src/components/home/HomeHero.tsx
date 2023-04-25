@@ -25,7 +25,7 @@ export default function HomeHero() {
   return (
     <Box textAlign='center'>
       <Box
-        bgPosition={{ md: 'bottom 58% left 50%', base: 'bottom 45% left 50%' }}
+        bgPosition={{ md: 'bottom 25% left 50%', base: 'bottom 45% left 50%' }}
         bgRepeat='no-repeat'
         bgSize='cover'
         bgImage={Hero.src}
