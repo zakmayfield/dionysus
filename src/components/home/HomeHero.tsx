@@ -29,7 +29,7 @@ export default function HomeHero() {
         bgRepeat='no-repeat'
         bgSize='cover'
         bgImage={Hero.src}
-        minH={{ base: `65vh`, md: '85vh' }}
+        minH={{ base: `65vh`, md: '93vh' }}
         display='flex'
         justifyContent='center'
         alignItems='center'
