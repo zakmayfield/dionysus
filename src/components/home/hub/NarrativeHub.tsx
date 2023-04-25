@@ -1,5 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react';
-import HubContentTile from './HubContentTile';
+import HubCtaTile from './HubCtaTile';
 import lemonade from '~shared/assets/compressed/lemonade1.jpeg';
 import pom from '~shared/assets/compressed/pom1.jpeg';
 /*
@@ -18,23 +18,20 @@ import pom from '~shared/assets/compressed/pom1.jpeg';
 
 export default function NarrativeHub() {
   return (
-    <Flex flexFlow='column'>
+    <Flex flexFlow='column' letterSpacing='wide'>
       {/* this could be it's own component, maybe HubRow */}
-      <Flex
-        flexFlow={{ base: 'column', md: 'row' }}
-        w='full'
-        minH={{ base: '50vh' }}
-      >
+      <Flex flexFlow={{ base: 'column', md: 'row' }} w='full' minH='sm'>
         <Box
           bgImage={lemonade.src}
           flex='1'
           bgPosition='center'
           bgRepeat='no-repeat'
           bgSize='cover'
-        />
-        <Flex flex='1' justifyContent='center' alignItems='center'>
-          <HubContentTile
-            title='Hello there'
+        ></Box>
+
+        <Flex flex='1' alignItems='center'>
+          <HubCtaTile
+            title='Example Title'
             content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quas quod voluptas temporibus facilis dolorem veniam alias!'
           />
         </Flex>
@@ -48,12 +45,13 @@ export default function NarrativeHub() {
           bgRepeat='no-repeat'
           bgSize='cover'
         />
-        <Box flex='1' justifyContent='center' alignItems='center'>
-          <HubContentTile
-            title='Hello there'
+
+        <Flex flex='1' alignItems='center'>
+          <HubCtaTile
+            title='Example Title'
             content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quas quod voluptas temporibus facilis dolorem veniam alias!'
           />
-        </Box>
+        </Flex>
       </Flex>
     </Flex>
   );
