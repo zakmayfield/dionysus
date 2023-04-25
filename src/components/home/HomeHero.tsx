@@ -2,7 +2,7 @@
 import { Box } from '@chakra-ui/react';
 import { AnimatePresence } from 'framer-motion';
 import { useRotatingText } from '@/shared/hooks';
-import Hero from '~shared/assets/home-hero.jpeg';
+import Hero from '~shared/assets/home-hero.jpg';
 import { MotionText } from '@/shared/components';
 
 const buzzWords = [
@@ -19,11 +19,11 @@ export default function HomeHero() {
   return (
     <Box textAlign={`center`}>
       <Box
-        bgPosition={{ md: 'center', base: 'bottom 0px left 50%' }}
+        bgPosition={{ md: 'bottom 58% left 50%', base: 'bottom 45% left 50%' }}
         bgRepeat='no-repeat'
         bgSize='cover'
         bgImage={Hero.src}
-        minH={{ base: `65vh`, md: '50vh' }}
+        minH={{ base: `65vh`, md: '80vh' }}
         display='flex'
         justifyContent='center'
         alignItems='center'
@@ -37,12 +37,13 @@ export default function HomeHero() {
           w='full'
           overflow='hidden'
           bgColor='white'
-          opacity='25%'
+          opacity='30%'
         />
         <MotionText
           as='h2'
           style={{ position: 'relative' }}
           textTransform='lowercase'
+          fontWeight='semibold'
           fontSize={{ lg: '7xl', sm: '6xl', base: '5xl' }}
           textAlign='center'
         >
@@ -51,7 +52,8 @@ export default function HomeHero() {
             <MotionText
               as='span'
               key={adjective}
-              fontWeight='semibold'
+              fontWeight='bold'
+              fontStyle='italic'
               initial={{ translateY: -50, opacity: 0, position: 'absolute' }}
               animate={{ translateY: 0, opacity: 1, position: 'relative' }}
               exit={{ translateY: 50, opacity: 0, position: 'absolute' }}
