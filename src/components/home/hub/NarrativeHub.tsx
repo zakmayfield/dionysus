@@ -1,6 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react';
 import HubCtaTile from './HubCtaTile';
-import lemonade from '~shared/assets/compressed/lemonade1.jpeg';
+import lemonade from '~shared/assets/compressed/lemonade3.jpeg';
 import pom from '~shared/assets/compressed/pom1.jpeg';
 /*
     Layout
