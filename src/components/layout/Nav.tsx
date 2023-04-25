@@ -57,7 +57,7 @@ export default function Nav() {
               flex='3'
               justifyContent='flex-end'
               textTransform='uppercase'
-              fontSize='xs'
+              fontSize='sm'
               letterSpacing='0'
               color='blackAlpha.500'
               fontWeight='medium'
