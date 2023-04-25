@@ -37,8 +37,8 @@ export default function NarrativeHub() {
 
         <Flex flex='1' alignItems='center'>
           <HubCtaTile
-            title='Example Title'
-            content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quas quod voluptas temporibus facilis dolorem veniam alias!'
+            title='Juiced then Delivered'
+            content='We begin each day at 7am creating all of our juice orders so we can deliver to our Toronto customers that very same day. Check our delivery map to see if we deliver to your area.'
           />
         </Flex>
       </Flex>
@@ -60,8 +60,8 @@ export default function NarrativeHub() {
 
         <Flex flex='1' alignItems='center'>
           <HubCtaTile
-            title='Example Title'
-            content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quas quod voluptas temporibus facilis dolorem veniam alias!'
+            title='Fresh is Best'
+            content='Our juices are made from all-natural, fresh ingredients with no sugars or preservatives added. Because fresh is best, we rely on the natural flavours of the fruits, vegetables and herbs we use in our products.'
           />
         </Flex>
       </Flex>

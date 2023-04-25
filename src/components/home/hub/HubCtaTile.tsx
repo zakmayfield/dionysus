@@ -1,4 +1,5 @@
 import { Box, Flex, Button, Heading, Text } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 type HubCtaTileProps = {
   title: string;
@@ -11,7 +12,7 @@ export default function HubCtaTile({ title, content }: HubCtaTileProps) {
       flexFlow='column'
       alignItems='space-between'
       textAlign={{ base: 'center', md: 'left' }}
-      px='8'
+      px='12'
       my={{ base: '12', md: 0 }}
     >
       <Heading as='h3' fontWeight='semibold'>
@@ -21,7 +22,9 @@ export default function HubCtaTile({ title, content }: HubCtaTileProps) {
       <Text my='5'>{content}</Text>
 
       <Box>
-        <Button>Learn More</Button>
+        <Button as={NextLink} href='.'>
+          Learn More
+        </Button>
       </Box>
     </Flex>
   );

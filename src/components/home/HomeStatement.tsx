@@ -1,4 +1,5 @@
-import { Box, Heading, Text, Icon } from '@chakra-ui/react';
+import { Box, Heading, Text, Icon, Button } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import { AiFillHeart } from 'react-icons/ai';
 import { ContentContainer } from '@/shared/components';
 
@@ -23,9 +24,9 @@ export default function HomeStatement() {
           There is nothing fresher than juice that is juiced and delivered on
           the same day!
         </Text>
-        <Text fontWeight='light' letterSpacing='wider'>
-          We hope to see you soon!
-        </Text>
+        <Button as={NextLink} href='.'>
+          Learn more
+        </Button>
       </ContentContainer>
     </Box>
   );
