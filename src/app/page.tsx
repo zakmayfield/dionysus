@@ -6,7 +6,7 @@ async function getData() {
 
   const data = await fetch(url);
 
-  return data.json();
+  return await data.json();
 }
 
 export default async function Home() {
