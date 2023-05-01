@@ -1,5 +1,5 @@
-import { GalleryContextProvider } from '@/components/home/context/GalleryContext';
-import HomePage from '@/components/home/HomePage';
+import { GalleryContextProvider } from '@/features/home/context/GalleryContext';
+import HomePage from '@/features/home/HomePage';
 import { getInstagramData } from '@/shared/utils/getInstagramData';
 
 export default async function Home() {
