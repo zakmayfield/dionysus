@@ -3,7 +3,7 @@ import { useState, useLayoutEffect } from 'react';
 import { Box, Text } from '@chakra-ui/react';
 import { AnimatePresence } from 'framer-motion';
 import { useRotatingText } from '@/shared/hooks';
-import Hero from '~shared/assets/home-hero.jpg';
+import Hero from '~shared/assets/compressed/home-hero.jpeg';
 import { MotionText } from '@/shared/components';
 
 const buzzWords = [
