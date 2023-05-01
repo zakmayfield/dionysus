@@ -3,6 +3,7 @@ import { Box } from '@chakra-ui/react';
 import HomeHero from './HomeHero';
 import HomeStatement from './HomeStatement';
 import HomeNarrativeHub from './HomeNarrativeHub';
+import InstagramGallery from './InstagramGallery';
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <HomeHero />
       <HomeStatement />
       <HomeNarrativeHub />
+      <InstagramGallery />
     </Box>
   );
 }
