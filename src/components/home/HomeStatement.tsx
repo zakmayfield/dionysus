@@ -1,3 +1,4 @@
+'use client';
 import { Box, Heading, Text, Icon, Button } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { AiFillHeart } from 'react-icons/ai';

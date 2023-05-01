@@ -1,3 +1,4 @@
+'use client';
 import { Box, useMediaQuery, Image, Flex } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import { useGalleryContext } from '@/context/GalleryContext';
