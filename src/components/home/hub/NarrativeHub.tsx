@@ -60,8 +60,8 @@ export default function NarrativeHub() {
 
         <Flex flex='1' alignItems='center'>
           <HubCtaTile
-            title='Fresh is Best'
-            content='Our juices are made from all-natural, fresh ingredients with no sugars or preservatives added. Because fresh is best, we rely on the natural flavours of the fruits, vegetables and herbs we use in our products.'
+            title='No Waste'
+            content='We are committed to finding new and innovative ways to limit the amount of waste we produce by using as much of each fruit as possible. For the small parts we cannot use, have sourced a company that recycles and renews biological waste into electrical energy.'
           />
         </Flex>
       </Flex>
