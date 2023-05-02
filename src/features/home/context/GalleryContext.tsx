@@ -18,7 +18,7 @@ const GalleryContext = createContext<ContextType>({
 });
 
 type GalleryProviderProps = PropsWithChildren & {
-  data: string;
+  data: Post[];
 };
 
 export const GalleryContextProvider = ({
@@ -26,7 +26,7 @@ export const GalleryContextProvider = ({
   children,
 }: GalleryProviderProps) => {
   return (
-    <GalleryContext.Provider value={{ data: JSON.parse(data).data }}>
+    <GalleryContext.Provider value={{ data }}>
       {children}
     </GalleryContext.Provider>
   );

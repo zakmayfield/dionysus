@@ -7,5 +7,5 @@ export const getInstagramData = async () => {
 
   const data = await response.json();
 
-  return JSON.stringify(data);
+  return data;
 };
