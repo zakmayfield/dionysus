@@ -19,11 +19,11 @@ export const HomeHero = () => {
   return (
     <Box
       w='full'
-      minH={{ md: '1000px', sm: '700px', base: '440px' }}
+      minH={{ md: '1000px', sm: '700px', base: '500px' }}
       position='relative'
       overflow='hidden'
-      bg='white'
     >
+      {/* FRESH heading: */}
       <Flex
         position='absolute'
         w='full'
@@ -45,6 +45,8 @@ export const HomeHero = () => {
           Fresh
         </Heading>
       </Flex>
+
+      {/* Centered bottle of juice for large view */}
       {isLargerThanTablet && (
         <Flex
           position='absolute'
@@ -57,9 +59,9 @@ export const HomeHero = () => {
           <Box>
             <NextImage
               src={FeaturedJuice.src}
-              alt='Bottle of orange juice'
-              width={FeaturedJuice.width / (isLargerThanTablet ? 1.5 : 2)}
-              height={FeaturedJuice.height / (isLargerThanTablet ? 1.5 : 2)}
+              alt='Bottle of chasers juice orange juice'
+              width={FeaturedJuice.width / 1.5}
+              height={FeaturedJuice.height / 1.5}
               quality={100}
               style={{
                 filter: 'drop-shadow(30px 15px 4px rgba(0, 0, 0, 0.08))',
@@ -68,22 +70,17 @@ export const HomeHero = () => {
           </Box>
         </Flex>
       )}
+
+      {/* Left side text section */}
       <Flex
         w={{ md: '50%', base: 'full' }}
         h='full'
         position='absolute'
-        top='0'
-        left='0'
         justifyContent={{ md: 'center', base: 'flex-start' }}
         alignItems='center'
         zIndex={30}
       >
-        <Box
-          position='relative'
-          maxW='prose'
-          pl='8'
-          pr={{ xl: '8', md: '20', base: '8' }}
-        >
+        <Box position='relative' pl='8' pr={{ xl: '8', md: '20', base: '8' }}>
           <HeroAnimatedText />
           <Box
             maxW={{ sm: '50ch', base: '20ch' }}
@@ -105,18 +102,20 @@ export const HomeHero = () => {
               </Text>
             )}
           </Box>
-          <Button as={NextLink} href='.' mt='6'>
+          <Button as={NextLink} href='.' mt='6' size={{ sm: 'md', base: 'sm' }}>
             Order
           </Button>
         </Box>
       </Flex>
+
+      {/* Right side images */}
       <Flex
         bg={{ md: 'rgb(248,206,88)', base: 'transparent' }}
         w={{ md: '50%', base: '70%' }}
         h='full'
         position='absolute'
         top='0'
-        right={{ md: '0', base: '-14vw' }}
+        right='0'
         justifyContent={{ md: 'center', base: 'flex-end' }}
         alignItems='center'
       >
@@ -124,30 +123,23 @@ export const HomeHero = () => {
           {isLargerThanTablet ? (
             <NextImage
               src={FeaturedFruit.src}
-              alt='Bottle of orange juice'
+              alt='Creative orange spiral peeled with straw'
               width={FeaturedFruit.width / 1.5}
               height={FeaturedFruit.height / 1.5}
               quality={100}
             />
           ) : (
-            <Box
-              position='relative'
-              top='0'
-              right='16'
-              zIndex={2}
-              transform='rotate(10deg)'
-            >
-              <NextImage
-                src={FeaturedJuice.src}
-                alt='Bottle of orange juice'
-                width={FeaturedJuice.width / 2.5}
-                height={FeaturedJuice.height / 2.5}
-                quality={100}
-                style={{
-                  filter: 'drop-shadow(30px 15px 4px rgba(0, 0, 0, 0.08))',
-                }}
-              />
-            </Box>
+            <NextImage
+              src={FeaturedJuice.src}
+              alt='Bottle of chasers juice orange juice'
+              width={FeaturedJuice.width / 2.5}
+              height={FeaturedJuice.height / 2.5}
+              quality={100}
+              style={{
+                filter: 'drop-shadow(30px 15px 4px rgba(0, 0, 0, 0.08))',
+                transform: 'rotate(10deg)',
+              }}
+            />
           )}
         </Box>
       </Flex>
