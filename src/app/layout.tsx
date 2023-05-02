@@ -2,8 +2,8 @@
 import { Box } from '@chakra-ui/react';
 import Head from 'next/head';
 import { Providers } from './providers';
-import Footer from '@/components/layout/Footer';
-import Nav from '@/components/layout/Nav';
+import Footer from '@/features/layout/Footer';
+import Nav from '@/features/layout/Nav';
 
 export default function RootLayout({
   children,
