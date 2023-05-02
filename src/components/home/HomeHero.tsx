@@ -1,6 +1,14 @@
-import { Box, Flex, Heading, Text, useMediaQuery } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Text,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import React from 'react';
 import NextImage from 'next/image';
+import NextLink from 'next/link';
 import { HeroAnimatedText } from './HeroAnimatedText';
 import FeaturedJuice from '@/shared/assets/home/centre-juice.png';
 import FeaturedFruit from '@/shared/assets/home/fruit-splash.png';
@@ -97,6 +105,9 @@ export const HomeHero = () => {
               </Text>
             )}
           </Box>
+          <Button as={NextLink} href='.' mt='6'>
+            Order
+          </Button>
         </Box>
       </Flex>
       <Flex
