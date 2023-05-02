@@ -1,8 +1,9 @@
 'use client';
 import { Box } from '@chakra-ui/react';
-import Nav from '../components/Nav';
+import Head from 'next/head';
 import { Providers } from './providers';
-import Footer from '@/components/Footer';
+import Footer from '@/features/layout/Footer';
+import Nav from '@/features/layout/Nav';
 
 export default function RootLayout({
   children,
@@ -11,11 +12,33 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <head />
+      <Head>
+        <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-touch-icon.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/favicon-32x32.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/favicon-16x16.png'
+        />
+        <link rel='manifest' href='/site.webmanifest' />
+        <meta name='msapplication-TileColor' content='#da532c' />
+        <meta name='theme-color' content='#ffffff' />
+      </Head>
       <body>
         <Providers>
           <Nav />
-          <Box as='main' minH='100vh' bg={`red.200`}>
+          <Box as='main' minH='100vh'>
             {children}
           </Box>
           <Footer />

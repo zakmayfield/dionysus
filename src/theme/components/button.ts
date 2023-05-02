@@ -40,7 +40,7 @@ const variantGhost = defineStyle((props) => {
   const darkActiveBg = transparentize(`${c}.200`, 0.24)(theme);
 
   return {
-    color: mode(`${c}.600`, `${c}.200`)(props),
+    color: mode(`${c}.500`, `${c}.200`)(props),
     bg: 'transparent',
     _hover: {
       bg: mode(`${c}.50`, darkHoverBg)(props),
@@ -62,6 +62,7 @@ const variantOutline = defineStyle((props) => {
     '.chakra-button__group[data-attached][data-orientation=vertical] > &:not(:last-of-type)':
       { marginBottom: '-1px' },
     ...runIfFn(variantGhost, props),
+    color: `${c}.500`,
   };
 });
 

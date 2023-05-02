@@ -1,6 +1,6 @@
 'use client';
-import HomeContainer from '@/components/home/HomeContainer';
+import HomePage from '@/features/home/HomePage';
 
 export default function Home() {
-  return <HomeContainer />;
+  return <HomePage />;
 }

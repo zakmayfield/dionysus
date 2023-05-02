@@ -21,6 +21,12 @@ export const theme = extendTheme({
   components,
   styles,
   config,
+  sizes: {
+    container: {
+      '2xl': '96rem',
+      '3xl': '120rem',
+    },
+  },
 });
 
 export type Theme = typeof theme;
