@@ -23,7 +23,6 @@ export const HeroAnimatedText = () => {
       <MotionText
         as='h1'
         style={{ position: 'relative' }}
-        textTransform='lowercase'
         fontWeight='semibold'
         fontSize={{ lg: '4xl', sm: '3xl', base: '2xl' }}
       >
