@@ -30,7 +30,7 @@ const InstagramSwiper = () => {
           return (
             <Flex key={post.id}>
               <NextLink href={post.permalink} target='_blank'>
-                <MotionBox whileHover={{ scale: 1.2 }}>
+                <MotionBox whileHover={{ scale: 1.1 }}>
                   <AspectRatio ratio={1 / 1}>
                     <Image
                       boxSize='xs'
