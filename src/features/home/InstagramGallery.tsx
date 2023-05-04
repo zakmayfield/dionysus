@@ -30,7 +30,19 @@ const InstagramCarousel = () => {
           return (
             <Flex key={post.id}>
               <NextLink href={post.permalink} target='_blank'>
-                <MotionBox whileHover={{ scale: 1.1 }}>
+                <Box position='relative' mt='2'>
+                  {/* Overlay that disappears on hover: */}
+                  <MotionBox
+                    position='absolute'
+                    top='0'
+                    left='0'
+                    w='full'
+                    h='full'
+                    bgColor='black'
+                    opacity='15%'
+                    zIndex={10}
+                    whileHover={{ opacity: '0%' }}
+                  />
                   <AspectRatio ratio={1 / 1}>
                     <Image
                       boxSize='xs'
@@ -40,7 +52,7 @@ const InstagramCarousel = () => {
                       mx='auto'
                     />
                   </AspectRatio>
-                </MotionBox>
+                </Box>
               </NextLink>
             </Flex>
           );
