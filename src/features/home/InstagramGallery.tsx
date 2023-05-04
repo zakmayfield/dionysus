@@ -6,7 +6,7 @@ import { ContentContainer, MotionBox } from '@/shared/components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const InstagramSwiper = () => {
+const InstagramCarousel = () => {
   const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
   const { data } = useGalleryContext();
 
@@ -54,7 +54,7 @@ export const InstagramGallery = () => {
   return (
     <Box>
       <ContentContainer maxW='container.2xl' px='0'>
-        <InstagramSwiper />
+        <InstagramCarousel />
       </ContentContainer>
     </Box>
   );
