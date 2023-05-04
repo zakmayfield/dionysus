@@ -1,6 +1,13 @@
-'use client';
+import 'server-only';
+import { GalleryContextProvider } from '@/features/home/context/GalleryContext';
 import HomePage from '@/features/home/HomePage';
+import { getInstagramData } from '@/shared/utils/getInstagramData';
 
-export default function Home() {
-  return <HomePage />;
+export default async function Home() {
+  const { data } = await getInstagramData();
+  return (
+    <GalleryContextProvider data={data}>
+      <HomePage />
+    </GalleryContextProvider>
+  );
 }
