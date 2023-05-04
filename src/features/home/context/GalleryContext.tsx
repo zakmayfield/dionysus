@@ -9,11 +9,11 @@ export interface Post {
   permalink: string;
 }
 
-type ContextType = {
+export type GalleryContextValues = {
   data: Post[];
 };
 
-const GalleryContext = createContext<ContextType>({
+const GalleryContext = createContext<GalleryContextValues>({
   data: [],
 });
 

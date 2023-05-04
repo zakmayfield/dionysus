@@ -1,7 +1,8 @@
 import { Box, Flex, useMediaQuery, Image, AspectRatio } from '@chakra-ui/react';
 import Slider from 'react-slick';
+import NextLink from 'next/link';
 import { useGalleryContext } from './context/GalleryContext';
-import { ContentContainer } from '@/shared/components';
+import { ContentContainer, MotionBox } from '@/shared/components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -28,15 +29,19 @@ const InstagramSwiper = () => {
         {data.map((post) => {
           return (
             <Flex key={post.id}>
-              <AspectRatio ratio={1 / 1}>
-                <Image
-                  boxSize='xs'
-                  fit='scale-down'
-                  src={post.media_url}
-                  alt='Instagram Post by @chasersjuicetoronto'
-                  mx='auto'
-                />
-              </AspectRatio>
+              <NextLink href={post.permalink} target='_blank'>
+                <MotionBox whileHover={{ scale: 1.2 }}>
+                  <AspectRatio ratio={1 / 1}>
+                    <Image
+                      boxSize='xs'
+                      fit='scale-down'
+                      src={post.media_url}
+                      alt='Instagram Post by @chasersjuicetoronto'
+                      mx='auto'
+                    />
+                  </AspectRatio>
+                </MotionBox>
+              </NextLink>
             </Flex>
           );
         })}
@@ -48,7 +53,7 @@ const InstagramSwiper = () => {
 export const InstagramGallery = () => {
   return (
     <Box>
-      <ContentContainer maxW='container.2xl' py='12'>
+      <ContentContainer maxW='container.2xl' px='0'>
         <InstagramSwiper />
       </ContentContainer>
     </Box>
