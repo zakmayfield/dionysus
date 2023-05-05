@@ -92,7 +92,7 @@ const InstagramCarousel = ({ data }: InstagramCarouselProps) => {
                     zIndex={10}
                     whileHover={{ opacity: '100%' }}
                   >
-                    <Box bg='blackAlpha.600' w='full' h='full' p='6'>
+                    <Box bg='blackAlpha.700' w='full' h='full' p='6'>
                       <Text color='white' noOfLines={6}>
                         {post.caption}
                       </Text>
