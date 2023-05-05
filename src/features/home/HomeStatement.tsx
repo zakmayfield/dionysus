@@ -1,6 +1,7 @@
 import { Box, Heading, Text, Button } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { ContentContainer } from '@/shared/components';
+import routes from '@/shared/routes';
 
 export default function HomeStatement() {
   return (
@@ -22,7 +23,7 @@ export default function HomeStatement() {
           There is nothing more delicious than juice that is juiced and
           delivered on the same day!
         </Text>
-        <Button as={NextLink} href='.'>
+        <Button as={NextLink} variant='outline' href={routes.about}>
           Learn More
         </Button>
       </ContentContainer>
