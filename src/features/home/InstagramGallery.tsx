@@ -23,8 +23,8 @@ const NextIcon = ({ ...props }: ButtonProps) => (
   <Button variant='unstyled' py='10' {...props}>
     <Icon
       as={BsChevronRight}
-      color='white'
-      _hover={{ transform: 'scale(1.2)', color: 'primary.400' }}
+      color='tertiary.900'
+      _hover={{ transform: 'scale(1.2)' }}
       transition='all ease 500ms'
       w='14'
       h='14'
@@ -35,8 +35,8 @@ const PrevIcon = ({ ...props }: ButtonProps) => (
   <Button variant='unstyled' py='10' {...props}>
     <Icon
       as={BsChevronLeft}
-      color='white'
-      _hover={{ transform: 'scale(1.2)', color: 'primary.400' }}
+      color='tertiary.900'
+      _hover={{ transform: 'scale(1.2)' }}
       transition='all ease 500ms'
       w='14'
       h='14'
@@ -69,6 +69,10 @@ const InstagramCarousel = () => {
     nextArrow: <NextIcon onClick={NextTrigger} />,
     prevArrow: <PrevIcon onClick={PrevTrigger} />,
   };
+
+  if (!data || data.length < 1) {
+    return null;
+  }
 
   return (
     <Box>
