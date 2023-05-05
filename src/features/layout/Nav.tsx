@@ -24,10 +24,10 @@ import routes from '@/shared/routes';
 
 const navigationItems = [
   { label: 'Home', route: routes.home },
-  { label: 'About Us', route: routes.about },
+  { label: 'About', route: routes.about },
   { label: 'Products', route: routes.products },
   { label: 'F.A.Q.', route: routes.faq },
-  { label: 'Contact Us', route: routes.contact },
+  { label: 'Contact', route: routes.contact },
 ];
 
 export default function Nav() {
