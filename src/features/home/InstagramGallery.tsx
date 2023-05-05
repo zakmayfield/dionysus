@@ -13,7 +13,7 @@ import {
 import Slider from 'react-slick';
 import NextLink from 'next/link';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
-import { useGalleryContext } from './context/GalleryContext';
+import { Post, useGalleryContext } from './context/GalleryContext';
 import { ContentContainer, MotionBox } from '@/shared/components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -44,9 +44,12 @@ const PrevIcon = ({ ...props }: ButtonProps) => (
   </Button>
 );
 
-const InstagramCarousel = () => {
+type InstagramCarouselProps = {
+  data: Post[];
+};
+
+const InstagramCarousel = ({ data }: InstagramCarouselProps) => {
   const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
-  const { data } = useGalleryContext();
   const sliderRef = useRef<Slider>(null);
 
   const NextTrigger = () => {
@@ -69,10 +72,6 @@ const InstagramCarousel = () => {
     nextArrow: <NextIcon onClick={NextTrigger} />,
     prevArrow: <PrevIcon onClick={PrevTrigger} />,
   };
-
-  if (!data || data.length < 1) {
-    return null;
-  }
 
   return (
     <Box>
@@ -119,10 +118,15 @@ const InstagramCarousel = () => {
 };
 
 export const InstagramGallery = () => {
+  const { data } = useGalleryContext();
+
+  if (!data || data.length < 1) {
+    return null;
+  }
   return (
     <Box>
       <ContentContainer maxW='container.2xl' px='0'>
-        <InstagramCarousel />
+        <InstagramCarousel data={data} />
       </ContentContainer>
     </Box>
   );
