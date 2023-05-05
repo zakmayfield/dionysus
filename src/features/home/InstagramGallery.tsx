@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useRef } from 'react';
 import {
   Box,
   Flex,
   useMediaQuery,
-  Image,
   AspectRatio,
   Text,
   Button,
@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import NextLink from 'next/link';
+import NextImage from 'next/image';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import { Post, useGalleryContext } from './context/GalleryContext';
 import { ContentContainer, MotionBox } from '@/shared/components';
@@ -19,7 +20,16 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './instagram-gallery.css';
 
-const NextIcon = ({ ...props }: ButtonProps) => (
+type SlickButtonFixProps = ButtonProps & {
+  slideCount?: number;
+  currentSlide?: number;
+};
+
+const NextIcon = ({
+  currentSlide,
+  slideCount,
+  ...props
+}: SlickButtonFixProps) => (
   <Button variant='unstyled' py='10' {...props}>
     <Icon
       as={BsChevronRight}
@@ -31,7 +41,11 @@ const NextIcon = ({ ...props }: ButtonProps) => (
     />
   </Button>
 );
-const PrevIcon = ({ ...props }: ButtonProps) => (
+const PrevIcon = ({
+  currentSlide,
+  slideCount,
+  ...props
+}: SlickButtonFixProps) => (
   <Button variant='unstyled' py='10' {...props}>
     <Icon
       as={BsChevronLeft}
@@ -107,12 +121,11 @@ const InstagramCarousel = ({ data }: InstagramCarouselProps) => {
                     </Box>
                   </MotionBox>
                   <AspectRatio ratio={1 / 1}>
-                    <Image
-                      boxSize='xs'
-                      fit='scale-down'
+                    <NextImage
                       src={post.media_url}
                       alt='Instagram Post by @chasersjuicetoronto'
-                      mx='auto'
+                      width={350}
+                      height={350}
                     />
                   </AspectRatio>
                 </Box>
