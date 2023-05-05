@@ -23,7 +23,7 @@ const NextIcon = ({ ...props }: ButtonProps) => (
   <Button variant='unstyled' py='10' {...props}>
     <Icon
       as={BsChevronRight}
-      color='tertiary.900'
+      color='white'
       _hover={{ transform: 'scale(1.2)' }}
       transition='all ease 500ms'
       w='14'
@@ -35,7 +35,7 @@ const PrevIcon = ({ ...props }: ButtonProps) => (
   <Button variant='unstyled' py='10' {...props}>
     <Icon
       as={BsChevronLeft}
-      color='tertiary.900'
+      color='white'
       _hover={{ transform: 'scale(1.2)' }}
       transition='all ease 500ms'
       w='14'
@@ -80,7 +80,7 @@ const InstagramCarousel = ({ data }: InstagramCarouselProps) => {
           return (
             <Flex key={post.id}>
               <NextLink href={post.permalink} target='_blank'>
-                <Box position='relative' mt='2'>
+                <Box position='relative' mb='-2'>
                   {/* Overlay that appears on hover: */}
                   <MotionBox
                     position='absolute'
@@ -92,7 +92,15 @@ const InstagramCarousel = ({ data }: InstagramCarouselProps) => {
                     zIndex={10}
                     whileHover={{ opacity: '100%' }}
                   >
-                    <Box bg='blackAlpha.700' w='full' h='full' p='6'>
+                    <Box
+                      bg='blackAlpha.700'
+                      w='full'
+                      h='full'
+                      p='6'
+                      display='flex'
+                      justifyContent='center'
+                      alignItems='center'
+                    >
                       <Text color='white' noOfLines={6}>
                         {post.caption}
                       </Text>
