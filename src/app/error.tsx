@@ -1,6 +1,6 @@
 'use client'; // Error components must be Client components
 
-import { Box, Button, Flex, Heading } from '@chakra-ui/react';
+import { Button, Flex, Heading } from '@chakra-ui/react';
 import { useEffect } from 'react';
 
 export default function Error({
