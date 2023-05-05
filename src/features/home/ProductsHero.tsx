@@ -1,7 +1,9 @@
 import React from 'react';
 import { Box, Button, Heading, Text, useMediaQuery } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import HeroBg from '@/shared/assets/juice/citrus-group-bg.jpg';
 import { ParallaxHero } from '@/shared/components';
+import routes from '@/shared/routes';
 
 export const ProductsHero = () => {
   const [isLargerThanSmallLaptop] = useMediaQuery('(min-width: 992px)');
@@ -30,7 +32,12 @@ export const ProductsHero = () => {
               products with many customization options, take a look at what we
               offer.
             </Text>
-            <Button variant='outline' colorScheme='blackAlpha'>
+            <Button
+              as={NextLink}
+              href={routes.products}
+              variant='outline'
+              colorScheme='blackAlpha'
+            >
               <Text color='blacks.700'>View Products</Text>
             </Button>
           </Box>
