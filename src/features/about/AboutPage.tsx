@@ -64,7 +64,9 @@ export default function AboutPage() {
         bgSize='cover'
         bgImage={currentTabData?.img}
       >
+        {/* Overylay */}
         {/* <Box position='absolute' inset='0' bg='rgba(0, 0, 0, 0.5)' /> */}
+        
         {/* <Image
           src={currentTabData?.img}
           alt='fruit'
