@@ -2,6 +2,7 @@ import { Box, Flex } from '@chakra-ui/react';
 import HubCtaTile from './HubCtaTile';
 import lemonade from '~shared/assets/compressed/lemonade3.jpeg';
 import pom from '~shared/assets/compressed/pom1.jpeg';
+import routes from '@/shared/routes';
 /*
     Layout
 
@@ -39,6 +40,9 @@ export default function NarrativeHub() {
           <HubCtaTile
             title='Juiced then Delivered'
             content='We begin each day at 7am creating all of our juice orders so we can deliver to our Toronto customers that very same day. Check our delivery map to see if we deliver to your area.'
+            buttonLabel='Delivery Area'
+            // TODO: update this route to appropriate route when created
+            route={routes.about}
           />
         </Flex>
       </Flex>
@@ -61,7 +65,10 @@ export default function NarrativeHub() {
         <Flex flex='1' alignItems='center'>
           <HubCtaTile
             title='No Waste'
-            content='We are committed to finding new and innovative ways to limit the amount of waste we produce by using as much of each fruit as possible. For the small parts we cannot use, have sourced a company that recycles and renews biological waste into electrical energy.'
+            content='We are committed to finding new and innovative ways to limit the amount of waste we produce by using as much of each fruit as possible. For the small parts we cannot use, we have sourced a company that recycles and renews biological waste into electrical energy.'
+            buttonLabel='Our Philosophy'
+            // TODO: update this route to appropriate route when created
+            route={routes.about}
           />
         </Flex>
       </Flex>

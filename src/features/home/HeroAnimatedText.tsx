@@ -1,5 +1,5 @@
 import { Text } from '@chakra-ui/react';
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { MotionText } from '@/shared/components';
 import { useRotatingText } from '@/shared/hooks';
@@ -15,7 +15,7 @@ export const HeroAnimatedText = () => {
   ];
   const text = useRotatingText(buzzWords);
   const [adjective, setAdjective] = useState<string | null>(null);
-  useLayoutEffect(() => {
+  useEffect(() => {
     setAdjective(text);
   }, [text]);
   return (

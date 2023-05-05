@@ -167,6 +167,18 @@ const variants = {
 };
 
 const sizes = {
+  '2xl': defineStyle({
+    h: '16',
+    minW: '16',
+    fontSize: '2xl',
+    px: '10',
+  }),
+  xl: defineStyle({
+    h: '14',
+    minW: '14',
+    fontSize: 'xl',
+    px: '8',
+  }),
   lg: defineStyle({
     h: '12',
     minW: '12',

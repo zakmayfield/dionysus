@@ -4,9 +4,16 @@ import NextLink from 'next/link';
 type HubCtaTileProps = {
   title: string;
   content: string;
+  buttonLabel?: string;
+  route: string;
 };
 
-export default function HubCtaTile({ title, content }: HubCtaTileProps) {
+export default function HubCtaTile({
+  title,
+  content,
+  route,
+  buttonLabel = 'Learn More',
+}: HubCtaTileProps) {
   return (
     <Flex
       flexFlow='column'
@@ -22,8 +29,8 @@ export default function HubCtaTile({ title, content }: HubCtaTileProps) {
       <Text my='5'>{content}</Text>
 
       <Box>
-        <Button as={NextLink} href='.'>
-          Learn More
+        <Button as={NextLink} href={route}>
+          {buttonLabel}
         </Button>
       </Box>
     </Flex>
