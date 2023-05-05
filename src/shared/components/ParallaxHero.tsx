@@ -5,11 +5,11 @@ import { ContentContainer } from './ContentContainer';
 import { MotionBox, MotionBoxProps } from './motion-chakra';
 
 type ParallaxHeroProps = React.PropsWithChildren & {
-  bgImgSrc: string;
+  bgImageSrc: string;
   showOverlay?: boolean;
   overlayColor?: string;
   /** Props to be passed to the image */
-  imageProps?: Pick<
+  bgImageProps?: Pick<
     MotionBoxProps,
     | 'backgroundPosition'
     | 'backgroundRepeat'
@@ -24,11 +24,11 @@ type ParallaxHeroProps = React.PropsWithChildren & {
 };
 
 export const ParallaxHero = ({
-  bgImgSrc,
+  bgImageSrc,
   showOverlay = false,
   overlayColor = 'whiteAlpha.300',
   childOffsetPosition = { sm: '-28rem', base: '-96' },
-  imageProps,
+  bgImageProps,
   children,
 }: ParallaxHeroProps) => {
   const { scrollY } = useScroll();
@@ -68,12 +68,12 @@ export const ParallaxHero = ({
         style={{ y, scale: 1.15 }}
         py={`${heightNumbers / 2}${heightUnit}`}
         backgroundColor='white'
-        backgroundImage={bgImgSrc}
+        backgroundImage={bgImageSrc}
         backgroundPosition='center'
         backgroundRepeat='no-repeat'
         backgroundSize='cover'
         position='relative'
-        {...imageProps}
+        {...bgImageProps}
       >
         {showOverlay && (
           <Box

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Button, Heading, Text, useMediaQuery } from '@chakra-ui/react';
-import HeroBg from '@/shared/assets/juice/citrus-bg5.jpg';
+import HeroBg from '@/shared/assets/juice/citrus-group-bg.jpg';
 import { ParallaxHero } from '@/shared/components';
 
 export const ProductsHero = () => {
@@ -8,8 +8,8 @@ export const ProductsHero = () => {
   return (
     <Box my='16'>
       <ParallaxHero
-        bgImgSrc={HeroBg.src}
-        imageProps={{ backgroundPosition: 'left 20% center' }}
+        bgImageSrc={HeroBg.src}
+        bgImageProps={{ backgroundPosition: 'left 20% center' }}
         showOverlay={!isLargerThanSmallLaptop}
         overlayColor='whiteAlpha.800'
       >
