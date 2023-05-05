@@ -26,6 +26,7 @@ const InstagramCarousel = () => {
   return (
     <Box>
       <Slider {...sliderSettings}>
+        {/* TODO we need error handling for this data, when there is no data/access this breaks */}
         {data.map((post) => {
           return (
             <Flex key={post.id}>
