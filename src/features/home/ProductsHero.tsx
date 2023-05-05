@@ -20,8 +20,7 @@ export const ProductsHero = () => {
             <Heading
               as='h3'
               size='lg'
-              fontFamily='Londrina Outline'
-              letterSpacing='widest'
+              fontWeight='semibold'
               color='blacks.800'
               mb='4'
             >

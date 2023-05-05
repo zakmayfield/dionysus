@@ -23,7 +23,7 @@ export default function HomeStatement() {
           delivered on the same day!
         </Text>
         <Button as={NextLink} href='.'>
-          Learn more
+          Learn More
         </Button>
       </ContentContainer>
     </Box>
