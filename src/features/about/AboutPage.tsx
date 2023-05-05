@@ -9,7 +9,7 @@ import {
   TabPanel,
   Heading,
 } from '@chakra-ui/react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { ContentContainer } from '@/shared/components';
 import blueberries from '@/shared/assets/about/blueberries.jpeg';
 import mixedberries from '@/shared/assets/about/mixedberries.jpeg';
@@ -66,7 +66,7 @@ export default function AboutPage() {
       >
         {/* Overylay */}
         {/* <Box position='absolute' inset='0' bg='rgba(0, 0, 0, 0.5)' /> */}
-        
+
         {/* <Image
           src={currentTabData?.img}
           alt='fruit'
@@ -81,7 +81,7 @@ export default function AboutPage() {
             letterSpacing='widest'
             fontSize='5xl'
           >
-            About
+            {currentTabData.tabName}
           </Heading>
         </Box>
       </Flex>
