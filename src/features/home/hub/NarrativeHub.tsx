@@ -65,7 +65,7 @@ export default function NarrativeHub() {
         <Flex flex='1' alignItems='center'>
           <HubCtaTile
             title='No Waste'
-            content='We are committed to finding new and innovative ways to limit the amount of waste we produce by using as much of each fruit as possible. For the small parts we cannot use, have sourced a company that recycles and renews biological waste into electrical energy.'
+            content='We are committed to finding new and innovative ways to limit the amount of waste we produce by using as much of each fruit as possible. For the small parts we cannot use, we have sourced a company that recycles and renews biological waste into electrical energy.'
             buttonLabel='Our Philosophy'
             // TODO: update this route to appropriate route when created
             route={routes.about}
