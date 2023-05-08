@@ -1,4 +1,5 @@
 import { sharedMetadata } from '@/shared/metadata';
+import { AboutPage } from '@/features/about';
 
 export const metadata = {
   ...sharedMetadata,
@@ -6,5 +7,5 @@ export const metadata = {
 };
 
 export default function About() {
-  return <div>About</div>;
+  return <AboutPage />;
 }
