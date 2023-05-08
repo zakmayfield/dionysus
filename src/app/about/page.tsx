@@ -1,5 +1,5 @@
 import { sharedMetadata } from '@/shared/metadata';
-import AboutPage from '@/features/about/AboutPage';
+import { AboutPage } from '@/features/about';
 
 export const metadata = {
   ...sharedMetadata,
