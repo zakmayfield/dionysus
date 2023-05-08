@@ -9,6 +9,7 @@ import {
   Button,
   Icon,
   ButtonProps,
+  Image,
 } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import NextLink from 'next/link';
@@ -121,7 +122,7 @@ const InstagramCarousel = ({ data }: InstagramCarouselProps) => {
                     </Box>
                   </MotionBox>
                   <AspectRatio ratio={1 / 1}>
-                    <NextImage
+                    <Image
                       src={post.media_url}
                       alt='Instagram Post by @chasersjuicetoronto'
                       width={350}
