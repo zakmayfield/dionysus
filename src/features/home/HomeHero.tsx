@@ -13,6 +13,7 @@ import { HeroAnimatedText } from './HeroAnimatedText';
 import FeaturedJuice from '@/shared/assets/home/centre-juice.png';
 import FeaturedFruit from '@/shared/assets/home/fruit-splash.png';
 import routes from '@/shared/routes';
+import { FadeInBox } from '@/shared/components';
 
 export const HomeHero = () => {
   const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
@@ -33,18 +34,20 @@ export const HomeHero = () => {
         justifyContent='center'
         top={{ md: 0, base: '-2vh' }}
       >
-        <Heading
-          as='h3'
-          textTransform='uppercase'
-          fontFamily='Londrina Outline'
-          letterSpacing='widest'
-          fontSize={{ lg: '320px', sm: '200px', base: '150px' }}
-          lineHeight='none'
-          fontWeight='light'
-          color={{ md: 'blackAlpha.800', base: 'blacks.600' }}
-        >
-          Fresh
-        </Heading>
+        <FadeInBox>
+          <Heading
+            as='h3'
+            textTransform='uppercase'
+            fontFamily='Londrina Outline'
+            letterSpacing='widest'
+            fontSize={{ lg: '320px', sm: '200px', base: '150px' }}
+            lineHeight='none'
+            fontWeight='light'
+            color={{ md: 'blackAlpha.800', base: 'blacks.600' }}
+          >
+            Fresh
+          </Heading>
+        </FadeInBox>
       </Flex>
 
       {/* Centered bottle of juice for large view */}
@@ -57,7 +60,7 @@ export const HomeHero = () => {
           justifyContent='center'
           alignItems='center'
         >
-          <Box>
+          <FadeInBox>
             <NextImage
               src={FeaturedJuice.src}
               alt='Bottle of chasers juice orange juice'
@@ -68,7 +71,7 @@ export const HomeHero = () => {
                 filter: 'drop-shadow(30px 15px 4px rgba(0, 0, 0, 0.08))',
               }}
             />
-          </Box>
+          </FadeInBox>
         </Flex>
       )}
 
@@ -81,37 +84,39 @@ export const HomeHero = () => {
         alignItems='center'
         zIndex={30}
       >
-        <Box position='relative' pl='8' pr={{ xl: '8', md: '20', base: '8' }}>
-          <HeroAnimatedText />
-          <Box
-            maxW={{ sm: '50ch', base: '20ch' }}
-            fontSize={{ lg: 'md', base: 'sm' }}
-            mt='4'
-          >
-            <Text>
-              Founded in Toronto over 20 years ago, we know how to do fresh
-              juice.
-            </Text>
-            {isLargerThanMobile && (
-              <Text mt='2'>
-                <Text as='strong' fontWeight='semibold'>
-                  Fresh is best!&nbsp;
-                </Text>
-                Our juices are made from all-natural ingredients with no sugars
-                or preservatives added. We rely on the natural flavours of the
-                fruits, vegetables and herbs we use in our products.
+        <FadeInBox>
+          <Box position='relative' pl='8' pr={{ xl: '8', md: '20', base: '8' }}>
+            <HeroAnimatedText />
+            <Box
+              maxW={{ sm: '50ch', base: '20ch' }}
+              fontSize={{ lg: 'md', base: 'sm' }}
+              mt='4'
+            >
+              <Text>
+                Founded in Toronto over 20 years ago, we know how to do fresh
+                juice.
               </Text>
-            )}
+              {isLargerThanMobile && (
+                <Text mt='2'>
+                  <Text as='strong' fontWeight='semibold'>
+                    Fresh is best!&nbsp;
+                  </Text>
+                  Our juices are made from all-natural ingredients with no
+                  sugars or preservatives added. We rely on the natural flavours
+                  of the fruits, vegetables and herbs we use in our products.
+                </Text>
+              )}
+            </Box>
+            <Button
+              as={NextLink}
+              href={routes.contact}
+              mt='6'
+              size={{ sm: 'md', base: 'sm' }}
+            >
+              Order
+            </Button>
           </Box>
-          <Button
-            as={NextLink}
-            href={routes.contact}
-            mt='6'
-            size={{ sm: 'md', base: 'sm' }}
-          >
-            Order
-          </Button>
-        </Box>
+        </FadeInBox>
       </Flex>
 
       {/* Right side images */}
@@ -125,29 +130,31 @@ export const HomeHero = () => {
         justifyContent={{ md: 'center', base: 'flex-end' }}
         alignItems='center'
       >
-        <Box position='relative' zIndex={20}>
-          {isLargerThanTablet ? (
-            <NextImage
-              src={FeaturedFruit.src}
-              alt='Creative orange spiral peeled with straw'
-              width={FeaturedFruit.width / 1.5}
-              height={FeaturedFruit.height / 1.5}
-              quality={100}
-            />
-          ) : (
-            <NextImage
-              src={FeaturedJuice.src}
-              alt='Bottle of chasers juice orange juice'
-              width={FeaturedJuice.width / 2.5}
-              height={FeaturedJuice.height / 2.5}
-              quality={100}
-              style={{
-                filter: 'drop-shadow(30px 15px 4px rgba(0, 0, 0, 0.08))',
-                transform: 'rotate(10deg)',
-              }}
-            />
-          )}
-        </Box>
+        <FadeInBox>
+          <Box position='relative' zIndex={20}>
+            {isLargerThanTablet ? (
+              <NextImage
+                src={FeaturedFruit.src}
+                alt='Creative orange spiral peeled with straw'
+                width={FeaturedFruit.width / 1.5}
+                height={FeaturedFruit.height / 1.5}
+                quality={100}
+              />
+            ) : (
+              <NextImage
+                src={FeaturedJuice.src}
+                alt='Bottle of chasers juice orange juice'
+                width={FeaturedJuice.width / 2.5}
+                height={FeaturedJuice.height / 2.5}
+                quality={100}
+                style={{
+                  filter: 'drop-shadow(30px 15px 4px rgba(0, 0, 0, 0.08))',
+                  transform: 'rotate(10deg)',
+                }}
+              />
+            )}
+          </Box>
+        </FadeInBox>
       </Flex>
     </Box>
   );
