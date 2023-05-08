@@ -38,19 +38,6 @@ function DeliveryInfo() {
   );
 }
 
-/*
-    Layout
-
-    Mobile
-    Map - 50vh
-    Legend - 20 vh
-
-    Desktop
-    Map Legend
-    
-    or same as mobile, but larger, feels boxy right now
- */
-
 function MapContainer() {
   return (
     <Flex

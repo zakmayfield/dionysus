@@ -100,7 +100,6 @@ export default function AboutPage() {
               ))}
             </TabList>
 
-            {/* in TabPanels render a component that returns the TabPanel with respective content */}
             <TabPanels>
               <TabPanel p='0'>
                 <About />
