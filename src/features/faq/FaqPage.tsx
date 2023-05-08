@@ -32,7 +32,7 @@ export const FaqPage = () => {
           >
             <ContentContainer maxW='container.2xl' px='0'>
               <Flex flexDir={{ md: 'row', base: 'column' }} flex='1'>
-                <VStack alignItems='flex-start' flex='1'>
+                <VStack alignItems='flex-start' flex='1' pr='8' pb='8'>
                   <Text color='secondary.500' fontWeight='bold' fontSize='4xl'>
                     0{point.key}
                   </Text>
