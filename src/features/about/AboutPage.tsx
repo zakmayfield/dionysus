@@ -9,7 +9,7 @@ import {
   TabPanel,
   Heading,
 } from '@chakra-ui/react';
-// import Image from 'next/image';
+import { About, Philosophy, Wholesale, DeliveryArea } from './TabContent';
 import { ContentContainer } from '@/shared/components';
 import blueberries from '@/shared/assets/about/blueberries.jpeg';
 import mixedberries from '@/shared/assets/about/mixedberries.jpeg';
@@ -64,16 +64,7 @@ export default function AboutPage() {
         bgSize='cover'
         bgImage={currentTabData?.img}
       >
-        {/* Overylay */}
-        {/* <Box position='absolute' inset='0' bg='rgba(0, 0, 0, 0.5)' /> */}
-
-        {/* <Image
-          src={currentTabData?.img}
-          alt='fruit'
-          width={2000}
-          height={500}
-        /> */}
-
+        {/* consider changing hero bg images to Next Images, for optimzation purposes? ** sidenote, on first render of the images there is a flash when the image is being rendered */}
         <Box textTransform='capitalize' color='white' zIndex='2'>
           <Heading
             as='h1'
@@ -84,10 +75,13 @@ export default function AboutPage() {
             {currentTabData.tabName}
           </Heading>
         </Box>
+
+        {/* Overylay */}
+        <Box position='absolute' inset='0' bg='rgba(0, 0, 0, 0.3)' />
       </Flex>
 
       {/* Tab Container */}
-      <ContentContainer maxW='container.2xl'>
+      <ContentContainer maxW='container.2xl' px={{ base: '0', md: '8' }}>
         <Box>
           <Tabs
             align='center'
@@ -96,24 +90,29 @@ export default function AboutPage() {
           >
             <TabList>
               {tabData.map((el) => (
-                <Tab key={el.id} textTransform='capitalize'>
+                <Tab
+                  key={el.id}
+                  textTransform='capitalize'
+                  fontSize={{ base: 'x-small', sm: 'sm', md: 'md' }}
+                >
                   {el.tabName}
                 </Tab>
               ))}
             </TabList>
 
+            {/* in TabPanels render a component that returns the TabPanel with respective content */}
             <TabPanels>
-              <TabPanel>
-                <p>one</p>
+              <TabPanel p='0'>
+                <About />
               </TabPanel>
-              <TabPanel>
-                <p>two</p>
+              <TabPanel p='0'>
+                <Philosophy />
               </TabPanel>
-              <TabPanel>
-                <p>three</p>
+              <TabPanel p='0'>
+                <Wholesale />
               </TabPanel>
-              <TabPanel>
-                <p>four</p>
+              <TabPanel p='0'>
+                <DeliveryArea />
               </TabPanel>
             </TabPanels>
           </Tabs>
