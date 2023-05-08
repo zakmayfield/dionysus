@@ -5,12 +5,17 @@ import HomeNarrativeHub from './HomeNarrativeHub';
 import { HomeHero } from './HomeHero';
 import InstagramGallery from './InstagramGallery';
 import { ProductsHero } from './ProductsHero';
+import { FadeInBox } from '@/shared/components/FadeInBox';
 
 export default function HomePage() {
   return (
     <Box m='0' p='0' w='full'>
-      <HomeHero />
-      <HomeStatement />
+      <FadeInBox>
+        <HomeHero />
+      </FadeInBox>
+      <FadeInBox>
+        <HomeStatement />
+      </FadeInBox>
       <HomeNarrativeHub />
       <ProductsHero />
       <InstagramGallery />
