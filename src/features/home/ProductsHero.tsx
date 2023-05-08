@@ -2,9 +2,8 @@ import React from 'react';
 import { Box, Button, Heading, Text, useMediaQuery } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import HeroBg from '@/shared/assets/juice/citrus-group-bg.jpg';
-import { ParallaxHero } from '@/shared/components';
+import { ParallaxHero, FadeInBox } from '@/shared/components';
 import routes from '@/shared/routes';
-import { FadeInBox } from '@/shared/components/FadeInBox';
 
 export const ProductsHero = () => {
   const [isLargerThanSmallLaptop] = useMediaQuery('(min-width: 992px)');

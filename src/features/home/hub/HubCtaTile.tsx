@@ -1,6 +1,6 @@
 import { Box, Flex, Button, Heading, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { FadeInBox } from '@/shared/components/FadeInBox';
+import { FadeInBox } from '@/shared/components';
 
 type HubCtaTileProps = {
   title: string;

@@ -5,7 +5,7 @@ import HomeNarrativeHub from './HomeNarrativeHub';
 import { HomeHero } from './HomeHero';
 import InstagramGallery from './InstagramGallery';
 import { ProductsHero } from './ProductsHero';
-import { FadeInBox } from '@/shared/components/FadeInBox';
+import { FadeInBox } from '@/shared/components';
 
 export default function HomePage() {
   return (
