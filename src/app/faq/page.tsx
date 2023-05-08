@@ -1,3 +1,4 @@
+import { FaqPage } from '@/features/faq/FaqPage';
 import { sharedMetadata } from '@/shared/metadata';
 
 export const metadata = {
@@ -6,5 +7,5 @@ export const metadata = {
 };
 
 export default function Faq() {
-  return <div>FAQ</div>;
+  return <FaqPage />;
 }
