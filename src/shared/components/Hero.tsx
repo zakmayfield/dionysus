@@ -1,11 +1,11 @@
 import { Heading, Box, Flex } from '@chakra-ui/react';
 
-type TabData = {
+type HeroProps = {
   title: string;
   imgSrc: string;
 };
 
-export const Hero = ({ title, imgSrc }: TabData) => {
+export const Hero = ({ title, imgSrc }: HeroProps) => {
   return (
     <Flex
       w='full'
