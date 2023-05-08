@@ -1,43 +1,12 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
+import { useActiveTab } from '../../shared/hooks/useActiveTab';
 import { tabData } from './constants';
 import { About, Philosophy, Wholesale, DeliveryArea } from './TabContent';
 import { ContentContainer, Hero } from '@/shared/components';
 
 export const AboutPage = () => {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
-  const tab = searchParams?.get('tab') ?? '';
-  const qs = new URLSearchParams();
-
-  function handleOnChange(index: number) {
-    const selectedTab = tabData[index];
-    const tabParam = selectedTab.param;
-
-    qs.set('tab', tabParam);
-    router.push(`${pathname}?${qs.toString()}`);
-  }
-
-  let currentTabData = tabData.find(
-    (tabDataItem) => tabDataItem.param === tab
-  ) as (typeof tabData)[number];
-
-  if (!currentTabData) {
-    currentTabData = tabData[0];
-    qs.set('tab', currentTabData.param);
-    router.push(`${pathname}?${qs.toString()}`);
-  }
-
-  const { tabName, imgSrc } = currentTabData;
-
-  const [activeTab, setActiveTab] = useState(() => currentTabData.id);
-
-  useEffect(() => {
-    setActiveTab(currentTabData.id);
-  }, [currentTabData]);
+  const { tabName, imgSrc, activeTab, handleOnChange } = useActiveTab();
 
   return (
     <Box m='0' p='0' w='full'>
