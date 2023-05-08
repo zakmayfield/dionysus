@@ -1,0 +1,108 @@
+{
+    "faq": [
+        {
+            "key": "1",
+            "title": "Getting Chasers Juice",
+            "subtitle": "Available for Business and Public",
+            "faqs": [
+                {
+                    "question": "How do I get Chasers Juice?",
+                    "answerKey": "1.1"
+                },
+                {
+                    "question": "How do I set up an account with Chasers Fresh Juice? Is it free?",
+                    "answerKey": "1.2"
+                },
+                {
+                    "question": "What are your hours of operation?",
+                    "answerKey": "1.3"
+                }
+            ]
+        },
+        {
+            "key": "2",
+            "title": "Ordering Chasers Juice",
+            "subtitle": "Order Online or Call Us",
+            "faqs": [
+                {
+                    "question": "How do I place an order? Is there a deadline?",
+                    "answerKey": "2.1"
+                },
+                {
+                    "question": "Email",
+                    "answerKey": "2.2"
+                },
+                {
+                    "question": "Over the phone",
+                    "answerKey": "2.3"
+                }
+            ]
+        },
+        {
+            "key": "3",
+            "title": "Delivering Chasers Juice",
+            "subtitle": "Delivery Time and Minimum Order",
+            "faqs": [
+                {
+                    "question": "When will my juice be delivered?",
+                    "answerKey": "3.1"
+                },
+                {
+                    "question": "Can you deliver outside of your regular delivery hours?",
+                    "answerKey": "3.2"
+                },
+                {
+                    "question": "Can I request a guaranteed delivery time?",
+                    "answerKey": "3.3"
+                },
+                {
+                    "question": "Is there a minimum order?",
+                    "answerKey": "3.4"
+                },
+                {
+                    "question": "Where do you deliver?",
+                    "answerKey": "3.5"
+                },
+                {
+                    "question": "What sizes do you sell your juice in?",
+                    "answerKey": "3.6"
+                },
+                {
+                    "question": "Where is Chasers Fresh Juice located?",
+                    "answerKey": "3.7"
+                }
+            ]
+        },
+        {
+            "key": "4",
+            "title": "About Chasers Juice",
+            "subtitle": "Expiry Date, Ingredients, Cost",
+            "faqs": [
+                {
+                    "question": "What is the expiry date on your juices? Are they shelf-stable?",
+                    "answerKey": "4.1"
+                },
+                {
+                    "question": "What ingredients do you use in your products? Do you only use real fruits & vegetables?",
+                    "answerKey": "4.2"
+                },
+                {
+                    "question": "Are your products organic?",
+                    "answerKey": "4.3"
+                },
+                {
+                    "question": "How does your cleanse package work?",
+                    "answerKey": "4.4"
+                },
+                {
+                    "question": "How much do your products cost? Is it expensive?",
+                    "answerKey": "4.5"
+                },
+                {
+                    "question": "What do you mean by raw and unpasteurized? No additives?",
+                    "answerKey": "4.6"
+                }
+            ]
+        }
+    ]
+}
