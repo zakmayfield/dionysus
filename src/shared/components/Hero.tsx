@@ -1,15 +1,11 @@
 import { Heading, Box, Flex } from '@chakra-ui/react';
 
 type TabData = {
-  currentTabData: {
-    id: number;
-    tabName: string;
-    param: string;
-    img: string;
-  };
+  title: string;
+  imgSrc: string;
 };
 
-export const TabHero = ({ currentTabData }: TabData) => {
+export const Hero = ({ title, imgSrc }: TabData) => {
   return (
     <Flex
       w='full'
@@ -20,7 +16,7 @@ export const TabHero = ({ currentTabData }: TabData) => {
       bgPosition='center'
       bgRepeat='no-repeat'
       bgSize='cover'
-      bgImage={currentTabData?.img}
+      bgImage={imgSrc}
     >
       {/* consider changing hero bg images to Next Images, for optimzation purposes? ** sidenote, on first render of the images there is a flash when the image is being rendered */}
       <Box textTransform='capitalize' color='white' zIndex='2'>
@@ -30,7 +26,7 @@ export const TabHero = ({ currentTabData }: TabData) => {
           letterSpacing='widest'
           fontSize='5xl'
         >
-          {currentTabData.tabName}
+          {title}
         </Heading>
       </Box>
 

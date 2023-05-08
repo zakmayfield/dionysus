@@ -2,12 +2,11 @@
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 import { About, Philosophy, Wholesale, DeliveryArea } from './TabContent';
-import { ContentContainer } from '@/shared/components';
+import { ContentContainer, Hero } from '@/shared/components';
 import blueberries from '@/shared/assets/about/blueberries.jpeg';
 import mixedberries from '@/shared/assets/about/mixedberries.jpeg';
 import redberries from '@/shared/assets/about/redberries.jpeg';
 import moreberries from '@/shared/assets/about/moreberries.jpeg';
-import { TabHero } from '@/shared/components/TabHero';
 
 /*
   Tabs on the about page, when clicked will set the URL query params to tab=TAB_NAME
@@ -22,14 +21,24 @@ export default function AboutPage() {
   const qs = new URLSearchParams();
 
   const tabData = [
-    { id: 0, tabName: 'about', param: 'ABOUT', img: blueberries.src },
-    { id: 1, tabName: 'philosophy', param: 'PHILOSOPHY', img: moreberries.src },
-    { id: 2, tabName: 'wholesale', param: 'WHOLESALE', img: mixedberries.src },
+    { id: 0, tabName: 'about', param: 'ABOUT', imgSrc: blueberries.src },
+    {
+      id: 1,
+      tabName: 'philosophy',
+      param: 'PHILOSOPHY',
+      imgSrc: moreberries.src,
+    },
+    {
+      id: 2,
+      tabName: 'wholesale',
+      param: 'WHOLESALE',
+      imgSrc: mixedberries.src,
+    },
     {
       id: 3,
       tabName: 'delivery Area',
       param: 'DELIVERY_AREA',
-      img: redberries.src,
+      imgSrc: redberries.src,
     },
   ];
 
@@ -43,10 +52,11 @@ export default function AboutPage() {
     (tabDataItem) => tabDataItem.param === tab
   ) as (typeof tabData)[number];
 
+  const { tabName, imgSrc } = currentTabData;
+
   return (
     <Box m='0' p='0' w='full'>
-      {/* Hero Image */}
-      <TabHero currentTabData={currentTabData} />
+      <Hero title={tabName} imgSrc={imgSrc} />
 
       {/* Tab Container */}
       <ContentContainer maxW='container.2xl' px={{ base: '0', md: '8' }}>
