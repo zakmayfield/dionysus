@@ -10,9 +10,7 @@ import { FadeInBox } from '@/shared/components';
 export default function HomePage() {
   return (
     <Box m='0' p='0' w='full'>
-      <FadeInBox>
-        <HomeHero />
-      </FadeInBox>
+      <HomeHero />
       <FadeInBox>
         <HomeStatement />
       </FadeInBox>
