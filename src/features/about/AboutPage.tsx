@@ -1,20 +1,13 @@
 'use client';
-import { Box, Flex } from '@chakra-ui/react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
-import {
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel,
-  Heading,
-} from '@chakra-ui/react';
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 import { About, Philosophy, Wholesale, DeliveryArea } from './TabContent';
 import { ContentContainer } from '@/shared/components';
 import blueberries from '@/shared/assets/about/blueberries.jpeg';
 import mixedberries from '@/shared/assets/about/mixedberries.jpeg';
 import redberries from '@/shared/assets/about/redberries.jpeg';
 import moreberries from '@/shared/assets/about/moreberries.jpeg';
+import { TabHero } from '@/shared/components/TabHero';
 
 /*
   Tabs on the about page, when clicked will set the URL query params to tab=TAB_NAME
@@ -53,32 +46,7 @@ export default function AboutPage() {
   return (
     <Box m='0' p='0' w='full'>
       {/* Hero Image */}
-      <Flex
-        w='full'
-        minH={{ base: '300px' }}
-        position='relative'
-        justifyContent='center'
-        alignItems='center'
-        bgPosition='center'
-        bgRepeat='no-repeat'
-        bgSize='cover'
-        bgImage={currentTabData?.img}
-      >
-        {/* consider changing hero bg images to Next Images, for optimzation purposes? ** sidenote, on first render of the images there is a flash when the image is being rendered */}
-        <Box textTransform='capitalize' color='white' zIndex='2'>
-          <Heading
-            as='h1'
-            fontWeight='light'
-            letterSpacing='widest'
-            fontSize='5xl'
-          >
-            {currentTabData.tabName}
-          </Heading>
-        </Box>
-
-        {/* Overylay */}
-        <Box position='absolute' inset='0' bg='rgba(0, 0, 0, 0.3)' />
-      </Flex>
+      <TabHero currentTabData={currentTabData} />
 
       {/* Tab Container */}
       <ContentContainer maxW='container.2xl' px={{ base: '0', md: '8' }}>

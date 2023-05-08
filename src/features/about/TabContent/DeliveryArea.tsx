@@ -1,12 +1,4 @@
-import {
-  Box,
-  Text,
-  Stack,
-  Heading,
-  List,
-  ListItem,
-  Flex,
-} from '@chakra-ui/react';
+import { Box, Text, Stack, Flex } from '@chakra-ui/react';
 import { ContentContainer } from '@/shared/components';
 import map from '@/shared/assets/about/delivery-area-map.jpeg';
 
