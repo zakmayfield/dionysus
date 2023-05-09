@@ -20,7 +20,7 @@ export const Hero = ({ title, imgSrc }: HeroProps) => {
       bgImage={imgSrc}
     >
       {/* consider changing hero bg images to Next Images, for optimzation purposes? ** sidenote, on first render of the images there is a flash when the image is being rendered */}
-      <FadeInBox textTransform='capitalize' color='white' zIndex='2'>
+      <FadeInBox textTransform='capitalize' color='white' zIndex='2' px='6'>
         <Heading
           as='h1'
           fontWeight='light'
