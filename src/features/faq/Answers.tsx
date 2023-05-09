@@ -66,11 +66,11 @@ const Faq1C = () => {
       <Box>
         <Text>The office hours are:</Text>
         <List>
-          <ListItem>Monday: 8am &ndash; 3pm</ListItem>
-          <ListItem>Tuesday: 8am &ndash; 3pm</ListItem>
-          <ListItem>Wednesday: 8am &ndash; 3pm</ListItem>
-          <ListItem>Thursday: 8am &ndash; 3pm</ListItem>
-          <ListItem>Friday: 8am &ndash; 3pm</ListItem>
+          <ListItem>Monday: 7am &ndash; 3:30pm</ListItem>
+          <ListItem>Tuesday: 7am &ndash; 3:30pm</ListItem>
+          <ListItem>Wednesday: 7am &ndash; 3:30pm</ListItem>
+          <ListItem>Thursday: 7am &ndash; 3:30pm</ListItem>
+          <ListItem>Friday: 7am &ndash; 3:30pm</ListItem>
         </List>
       </Box>
       <Text>Our delivery hours are from: 12pm-7pm everyday.</Text>
@@ -184,7 +184,7 @@ const Faq3A = () => {
       <Text>
         For Toronto and some GTA locations we delivery: Monday &ndash; Friday.
         For other GTA locations and locations outside of the GTA we deliver:
-        Monday &ndash; Thursday.
+        Tuesdays & Thursdays.
       </Text>
       <Text>
         For more information about our delivery area,&nbsp;
