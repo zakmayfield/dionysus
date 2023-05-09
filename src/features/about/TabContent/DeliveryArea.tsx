@@ -1,4 +1,4 @@
-import { Box, Text, Stack, Flex } from '@chakra-ui/react';
+import { Box, Text, Stack, Flex, FlexProps } from '@chakra-ui/react';
 import { ContentContainer } from '@/shared/components';
 import map from '@/shared/assets/about/delivery-area-map.jpeg';
 
@@ -85,9 +85,15 @@ function MapContainer() {
         bgSize='cover'
         w='full'
       />
-      <Flex flex='1' justifyContent='center' alignItems='center'>
-        Legend
-      </Flex>
+      <Legend />
+    </Flex>
+  );
+}
+
+function Legend({ ...props }: FlexProps) {
+  return (
+    <Flex flex='1' justifyContent='center' alignItems='center' {...props}>
+      <Box></Box>
     </Flex>
   );
 }
