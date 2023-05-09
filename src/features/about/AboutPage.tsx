@@ -50,6 +50,7 @@ export const AboutPage = () => {
           </Tabs>
         </Box>
       </ContentContainer>
+
       <OrderHero />
     </Box>
   );
