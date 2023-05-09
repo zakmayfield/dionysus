@@ -2,7 +2,7 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 import { useActiveTab } from '../../shared/hooks/useActiveTab';
 import { tabData } from './constants';
-import { About, Philosophy, Wholesale, DeliveryArea } from './TabContent';
+import { About, Philosophy, Wholesale, DeliveryArea } from './TabPanels';
 import { ContentContainer, Hero } from '@/shared/components';
 
 export const AboutPage = () => {

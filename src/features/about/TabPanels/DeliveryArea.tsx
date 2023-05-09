@@ -150,7 +150,7 @@ function LegendItem({ color, content }: LegendItemProps) {
         w={{ md: '50px', base: '35px' }}
         maxW={{ md: '50px', base: '35px' }}
         h={{ md: '50px', base: '35px' }}
-        borderRadius='full'
+        borderRadius='md'
         bg={color}
         flex='1'
         mt='2px'
