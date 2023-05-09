@@ -1,4 +1,5 @@
-import { Box, Text, Stack, Flex, FlexProps } from '@chakra-ui/react';
+import { Box, Text, Stack, Flex, StackProps, Heading } from '@chakra-ui/react';
+import { LegendItemProps, legendData } from './constants';
 import { ContentContainer } from '@/shared/components';
 import map from '@/shared/assets/about/delivery-area-map.jpeg';
 
@@ -72,7 +73,8 @@ function DeliveryInfo() {
 function MapContainer() {
   return (
     <Flex
-      minH='70vh'
+      h='80vh'
+      minH='40vh'
       justifyContent='center'
       alignItems='center'
       flexFlow='column'
@@ -85,15 +87,59 @@ function MapContainer() {
         bgSize='cover'
         w='full'
       />
-      <Legend />
+      <Legend my='10' />
     </Flex>
   );
 }
 
-function Legend({ ...props }: FlexProps) {
+function Legend({ ...props }: StackProps) {
   return (
-    <Flex flex='1' justifyContent='center' alignItems='center' {...props}>
-      <Box></Box>
+    <Stack w='full' textAlign='left' flex='1' justify='center' {...props}>
+      <Heading
+        as='h2'
+        fontWeight='light'
+        letterSpacing='wide'
+        fontStyle='italic'
+        fontSize='xl'
+        mb='2'
+      >
+        Delivery Legend
+      </Heading>
+
+      <Flex justifyContent='space-around' alignItems='start' w='full'>
+        {legendData.map((item) => (
+          <LegendItem
+            key={item.title}
+            color={item.color}
+            content={item.content}
+          />
+        ))}
+      </Flex>
+    </Stack>
+  );
+}
+
+function LegendItem({ color, content }: LegendItemProps) {
+  const heading = content.split(':')[0];
+  const body = content.split(':')[1];
+  return (
+    <Flex flex='1' justify='left' align='start' gap='6'>
+      <Box
+        w='45px'
+        maxW='45px'
+        h='45px'
+        border='2px solid black'
+        borderRadius='md'
+        bg={color}
+        flex='1'
+        mt='5px'
+      />
+      <Stack flex='2'>
+        <Text fontWeight='bold' letterSpacing='wider'>
+          {heading}
+        </Text>{' '}
+        <Text> {body}</Text>
+      </Stack>
     </Flex>
   );
 }
