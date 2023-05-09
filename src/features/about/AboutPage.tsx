@@ -14,7 +14,11 @@ export const AboutPage = () => {
       <Hero title={tabName} imgSrc={imgSrc} />
 
       {/* Tab Container */}
-      <ContentContainer maxW='container.2xl' px={{ base: '0', md: '8' }}>
+      <ContentContainer
+        maxW='container.2xl'
+        px={{ base: '0', md: '8' }}
+        minH='90vh'
+      >
         <Box>
           <Tabs
             align='center'
