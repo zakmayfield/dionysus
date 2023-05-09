@@ -16,6 +16,7 @@ type HeroContentBoxProps = BoxProps & {
   buttonLabel: string;
   href: string;
   colorScheme?: string;
+  variant?: 'solid' | 'outline';
 };
 
 export const HeroContentBox = ({
@@ -24,13 +25,19 @@ export const HeroContentBox = ({
   buttonLabel,
   href,
   colorScheme = 'blacks',
+  variant = 'outline',
   ...props
 }: HeroContentBoxProps) => {
   const { colors } = useTheme();
   return (
     <FadeInBox>
       <Box w='full' display='flex' justifyContent='flex-end' px='12' {...props}>
-        <Box border='3px solid' borderColor={colors[colorScheme][700]} p='6'>
+        <Box
+          border='3px solid'
+          borderColor={colors[colorScheme][700]}
+          p='6'
+          bg={variant === 'outline' ? undefined : colors[colorScheme][300]}
+        >
           <Heading
             as='h3'
             size='lg'
@@ -40,16 +47,32 @@ export const HeroContentBox = ({
           >
             {title}
           </Heading>
-          <Text maxW='30ch' mb='6'>
+          <Text
+            maxW='30ch'
+            mb='6'
+            color={
+              variant === 'outline'
+                ? colors[colorScheme][800]
+                : colors[colorScheme][900]
+            }
+          >
             {description}
           </Text>
           <Button
             as={NextLink}
             href={href}
-            variant='outline'
-            colorScheme={colorScheme}
+            variant={variant === 'outline' ? 'outline' : 'solid'}
+            colorScheme={colorScheme === 'blacks' ? 'blackAlpha' : colorScheme}
           >
-            <Text color={colors[colorScheme][800]}>{buttonLabel}</Text>
+            <Text
+              color={
+                variant === 'outline'
+                  ? colors[colorScheme][800]
+                  : colors[colorScheme][900]
+              }
+            >
+              {buttonLabel}
+            </Text>
           </Button>
         </Box>
       </Box>

@@ -12,12 +12,12 @@ export type LegendItemProps = {
 export const legendData = [
   {
     title: 'main',
-    content: 'Main: Mon-Sat delivery',
+    content: 'Main: Mon-Fri delivery',
     color: LegendColors.MAIN,
   },
   {
     title: 'secondary',
-    content: 'Secondary: Mon-Thu delivery',
+    content: 'Secondary: Tue & Thu delivery',
     color: LegendColors.SECONDARY,
   },
   {
