@@ -61,7 +61,7 @@ export const ParallaxHero = ({
   const heightNumbers = Number(height.match(/\d+/g)?.join(''));
 
   return (
-    <ContentContainer maxW='container.2xl' h={height} overflow='hidden' px='0'>
+    <Box h={height} overflow='hidden' px='0'>
       <MotionBox
         ref={ref}
         initial={{ y: 0 }}
@@ -86,11 +86,16 @@ export const ParallaxHero = ({
           />
         )}
       </MotionBox>
-      <Box position='relative' zIndex={10}>
+      <ContentContainer
+        maxW='container.2xl'
+        px='0'
+        position='relative'
+        zIndex={10}
+      >
         <Box w='full' position='absolute' zIndex={30} top={childOffsetPosition}>
           {children}
         </Box>
-      </Box>
-    </ContentContainer>
+      </ContentContainer>
+    </Box>
   );
 };

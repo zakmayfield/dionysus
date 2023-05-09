@@ -43,6 +43,7 @@ export default function Footer() {
               fontSize='sm'
               transition='ease'
               transitionDuration='200ms'
+              color='black'
               _hover={{ color: 'primary.600' }}
               href='tel:416-259-1557'
               display='block'
@@ -54,6 +55,7 @@ export default function Footer() {
               fontSize='sm'
               transition='ease'
               transitionDuration='200ms'
+              color='black'
               _hover={{ color: 'primary.600' }}
               href='mailto:orders@chasersjuice.com'
               display='block'

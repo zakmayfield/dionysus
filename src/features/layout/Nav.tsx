@@ -21,6 +21,7 @@ import { motion } from 'framer-motion';
 import logo from '~shared/assets/chasers-juice-logo.png';
 import { ContentContainer } from '~shared/components';
 import routes from '@/shared/routes';
+import { getPathname } from '@/shared/utils';
 
 const navigationItems = [
   { label: 'Home', route: routes.home },
@@ -39,7 +40,7 @@ export default function Nav() {
   return (
     <Flex as='nav' borderBottom='1px' borderColor='gray.200'>
       <ContentContainer maxW='container.2xl' display='flex' py='2'>
-        <Box display='flex' flex='1'>
+        <Box as={Link} display='flex' flex='1' href={routes.home}>
           <Image src={logo} alt='Chasers Juice Logo' width={85} />
         </Box>
 
@@ -60,7 +61,7 @@ export default function Nav() {
               textTransform='uppercase'
               fontSize='sm'
               letterSpacing='0'
-              color='blackAlpha.500'
+              color='chakra-body-text'
               fontWeight='medium'
             >
               {navigationItems.map((item, i) => (
@@ -71,7 +72,9 @@ export default function Nav() {
                   exit={{ opacity: 0, x: 50 }}
                   transition='0.1s linear'
                   key={i}
-                  color={pathname === item.route ? 'chakra-body-text' : ''}
+                  color={
+                    pathname === getPathname(item.route) ? 'primary.700' : ''
+                  }
                   _hover={{ color: 'primary.700' }}
                 >
                   <Link href={item.route}>{item.label}</Link>
