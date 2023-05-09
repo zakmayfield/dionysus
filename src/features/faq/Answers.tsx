@@ -32,7 +32,7 @@ const Faq1A = () => {
           delivery area
         </Link>
         &nbsp; to ensure we can deliver to you. We also offer pick-ups at our
-        Etobicoke location if you would prefer that.
+        Etobicoke location.
       </Text>
       <Text>
         <Text as='strong'>For the public:&nbsp;</Text>
@@ -340,7 +340,7 @@ const Faq4C = () => {
       <Text>
         The reason we do not offer and label all of our products as organic is
         because as well as purchasing organic we also value buying local as much
-        as possible. We do our best to purchase as much produce as locally as
+        as possible. We do our best to purchase as much local produce as
         possible and sometimes we cannot purchase local and organic at the same
         time while keeping costs low.
       </Text>
@@ -431,8 +431,8 @@ const Faq4F = () => {
         add anything! We do not add any other additional preservatives and other
         chemical additives to increase the shelf life of our juices. We believe
         it takes away from the freshness, taste and naturalness of the juices.
-        We want our products to be as healthy as possible which is why we choose
-        to keep them raw.
+        We want our products to be as healthy as possible, which is why we
+        choose to keep them raw.
       </Text>
     </VStack>
   );
