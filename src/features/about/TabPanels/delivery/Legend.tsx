@@ -6,9 +6,9 @@ export const Legend = ({ ...props }: StackProps) => {
     <Stack
       w='full'
       textAlign='left'
-      flex='1'
       justify='center'
-      my='10'
+      mt='12'
+      mb='20'
       px='5'
       {...props}
     >
@@ -50,7 +50,7 @@ function LegendItem({ color, content }: LegendItemProps) {
       justify='left'
       align='start'
       gap={{ md: '6', base: '8' }}
-      mb={{ md: '0', base: '3' }}
+      mb={{ md: '0', base: '6' }}
       w='full'
     >
       {/* Legend color marker */}
@@ -65,10 +65,12 @@ function LegendItem({ color, content }: LegendItemProps) {
         boxShadow='7px 7px 20px 0 rgba(0,0,0, 0.4)'
       />
       <Stack flex='2'>
-        <Text fontWeight='' letterSpacing='wider' fontSize={{ md: 'lg' }}>
+        <Text fontWeight='' letterSpacing='wider' fontSize='lg'>
           {heading}
         </Text>{' '}
-        <Text maxW='sm'> {body}</Text>
+        <Text maxW='sm' color='blacks.600'>
+          {body}
+        </Text>
       </Stack>
     </Flex>
   );

@@ -5,7 +5,6 @@ import map from '@/shared/assets/about/delivery-area-map.jpeg';
 export const MapContainer = () => {
   return (
     <Flex
-      h={{ md: '53vh', base: '80vh' }}
       minH='40vh'
       justifyContent='center'
       alignItems='center'
@@ -13,11 +12,12 @@ export const MapContainer = () => {
     >
       {/* map bg image */}
       <Box
-        flex='10'
         bgImage={map.src}
-        bgPosition={{ base: 'center', md: 'center bottom 5%' }}
+        pb='50vh'
+        bgPosition={{ base: 'left -22vh bottom', md: 'center bottom 5%' }}
         bgRepeat='no-repeat'
         bgSize='cover'
+        h='full'
         w='full'
       />
       <Legend />

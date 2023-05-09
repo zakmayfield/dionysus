@@ -7,7 +7,7 @@ export const DeliveryInfo = () => {
         direction={{ base: 'column', md: 'row' }}
         spacing={{ base: '6', md: '10' }}
         justify='center'
-        align={{ base: 'center', md: 'flex-start' }}
+        align='center'
         px={{ base: '4', md: '0' }}
         textAlign='left'
       >

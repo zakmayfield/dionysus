@@ -6,7 +6,7 @@ export const DeliveryArea = () => {
   return (
     <Box as='section'>
       {/* delivery area intro */}
-      <ContentContainer maxW='container.lg' letterSpacing='wide' my='16'>
+      <ContentContainer maxW='container.lg' letterSpacing='wide' my='20'>
         <DeliveryInfo />
       </ContentContainer>
 
