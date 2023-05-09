@@ -12,7 +12,7 @@ export const DeliveryArea = () => {
       </ContentContainer>
 
       {/* map image container */}
-      <ContentContainer maxW='container.lg'>
+      <ContentContainer maxW='container.lg' px={{ base: '2', md: '0' }}>
         <MapContainer />
       </ContentContainer>
     </Box>
@@ -73,40 +73,55 @@ function DeliveryInfo() {
 function MapContainer() {
   return (
     <Flex
-      h='80vh'
+      h={{ md: '52vh', base: '80vh' }}
       minH='40vh'
       justifyContent='center'
       alignItems='center'
       flexFlow='column'
     >
+      {/* map bg image */}
       <Box
-        flex='6'
+        flex='10'
         bgImage={map.src}
-        bgPosition={{ base: 'center', md: 'center' }}
+        bgPosition={{ base: 'center', md: 'center bottom 5%' }}
         bgRepeat='no-repeat'
         bgSize='cover'
         w='full'
       />
-      <Legend my='10' />
+      <Legend />
     </Flex>
   );
 }
 
 function Legend({ ...props }: StackProps) {
   return (
-    <Stack w='full' textAlign='left' flex='1' justify='center' {...props}>
+    <Stack
+      w='full'
+      textAlign='left'
+      flex='1'
+      justify='center'
+      my='10'
+      px='5'
+      {...props}
+    >
       <Heading
         as='h2'
         fontWeight='light'
         letterSpacing='wide'
-        fontStyle='italic'
         fontSize='xl'
-        mb='2'
+        mb='8'
+        textAlign={{ md: 'left', base: 'left' }}
       >
         Delivery Legend
       </Heading>
 
-      <Flex justifyContent='space-around' alignItems='start' w='full'>
+      <Flex
+        w='full'
+        flexFlow={{ md: 'row', base: 'column' }}
+        justifyContent='space-around'
+        alignItems='start'
+        fontSize={{ md: 'sm', base: '' }}
+      >
         {legendData.map((item) => (
           <LegendItem
             key={item.title}
@@ -123,22 +138,29 @@ function LegendItem({ color, content }: LegendItemProps) {
   const heading = content.split(':')[0];
   const body = content.split(':')[1];
   return (
-    <Flex flex='1' justify='left' align='start' gap='6'>
+    <Flex
+      justify='left'
+      align='start'
+      gap={{ md: '6', base: '8' }}
+      mb={{ md: '0', base: '3' }}
+      w='full'
+    >
+      {/* Legend color marker */}
       <Box
-        w='45px'
-        maxW='45px'
-        h='45px'
-        border='2px solid black'
-        borderRadius='md'
+        w={{ md: '50px', base: '35px' }}
+        maxW={{ md: '50px', base: '35px' }}
+        h={{ md: '50px', base: '35px' }}
+        borderRadius='full'
         bg={color}
         flex='1'
-        mt='5px'
+        mt='2px'
+        boxShadow='7px 7px 20px 0 rgba(0,0,0, 0.4)'
       />
       <Stack flex='2'>
-        <Text fontWeight='bold' letterSpacing='wider'>
+        <Text fontWeight='' letterSpacing='wider' fontSize={{ md: 'lg' }}>
           {heading}
         </Text>{' '}
-        <Text> {body}</Text>
+        <Text maxW='sm'> {body}</Text>
       </Stack>
     </Flex>
   );
