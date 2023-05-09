@@ -13,5 +13,5 @@ export default {
   about: aboutRoute(AboutRouteParams.ABOUT),
   philosophy: aboutRoute(AboutRouteParams.PHILOSOPHY),
   wholesale: aboutRoute(AboutRouteParams.WHOLESALE),
-  delivery_area: aboutRoute(AboutRouteParams.DELIVERY_AREA),
+  deliveryArea: aboutRoute(AboutRouteParams.DELIVERY_AREA),
 } as const;
