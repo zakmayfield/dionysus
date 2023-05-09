@@ -86,7 +86,6 @@ export const FaqSection = ({ section }: FaqSectionProps) => {
           <VStack
             as={Accordion}
             allowToggle
-            allowMultiple
             flex='1'
             alignItems='flex-start'
             spacing='1'
