@@ -1,14 +1,17 @@
 'use client';
 import React from 'react';
-import { Box, Heading } from '@chakra-ui/react';
-import { Hero } from '@/shared/components';
-import HeroImg from '@/shared/assets/juice/prev-home-hero.jpeg';
+import { Box, Heading, Text, Button } from '@chakra-ui/react';
+import { ProductsStatement } from './ProductsStatement';
+import { ProductsOffering } from './ProductsOffering';
+import { ContentContainer, Hero } from '@/shared/components';
+import HeroImg from '@/shared/assets/juice/product-hero-beach.jpeg';
 
 export const ProductsPage = () => {
   return (
     <Box>
       <Hero title='Products' imgSrc={HeroImg.src} />
-      <Heading>Products</Heading>
+      <ProductsOffering />
+      <ProductsStatement />
     </Box>
   );
 };
