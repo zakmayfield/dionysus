@@ -1,11 +1,9 @@
 export function getPathname(urlString: string) {
-  // Create a temporary <a> element
-  const tempLink = document.createElement('a');
-  tempLink.href = urlString;
+  const questionMarkIndex = urlString.indexOf('?');
 
-  // Access the pathname property on the <a>
-  const pathname = tempLink.pathname;
-
-  // Return the extracted pathname
+  const pathname = urlString.substring(
+    0,
+    questionMarkIndex !== -1 ? questionMarkIndex : undefined
+  );
   return pathname;
 }
