@@ -1,8 +1,9 @@
 'use client';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 import { useActiveTab } from '../../shared/hooks/useActiveTab';
+import { OrderHero } from './OrderHero';
 import { tabData } from './constants';
-import { About, Philosophy, Wholesale, DeliveryArea } from './TabContent';
+import { About, Philosophy, Wholesale, DeliveryArea } from './TabPanels';
 import { ContentContainer, Hero } from '@/shared/components';
 
 export const AboutPage = () => {
@@ -13,7 +14,11 @@ export const AboutPage = () => {
       <Hero title={tabName} imgSrc={imgSrc} />
 
       {/* Tab Container */}
-      <ContentContainer maxW='container.2xl' px={{ base: '0', md: '8' }}>
+      <ContentContainer
+        maxW='container.2xl'
+        px={{ base: '0', md: '8' }}
+        minH='90vh'
+      >
         <Box>
           <Tabs
             align='center'
@@ -49,6 +54,8 @@ export const AboutPage = () => {
           </Tabs>
         </Box>
       </ContentContainer>
+
+      <OrderHero />
     </Box>
   );
 };
