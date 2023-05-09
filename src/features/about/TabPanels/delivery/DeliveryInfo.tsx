@@ -1,24 +1,6 @@
-import { Box, Text, Stack, Flex } from '@chakra-ui/react';
-import { ContentContainer } from '@/shared/components';
-import map from '@/shared/assets/about/delivery-area-map.jpeg';
+import { Box, Text, Stack } from '@chakra-ui/react';
 
-export const DeliveryArea = () => {
-  return (
-    <Box as='section'>
-      {/* delivery area intro */}
-      <ContentContainer maxW='container.lg' letterSpacing='wide' my='16'>
-        <DeliveryInfo />
-      </ContentContainer>
-
-      {/* map image container */}
-      <ContentContainer maxW='container.lg'>
-        <MapContainer />
-      </ContentContainer>
-    </Box>
-  );
-};
-
-function DeliveryInfo() {
+export const DeliveryInfo = () => {
   return (
     <Box>
       <Stack
@@ -67,27 +49,4 @@ function DeliveryInfo() {
       </Stack>
     </Box>
   );
-}
-
-function MapContainer() {
-  return (
-    <Flex
-      minH='70vh'
-      justifyContent='center'
-      alignItems='center'
-      flexFlow='column'
-    >
-      <Box
-        flex='6'
-        bgImage={map.src}
-        bgPosition={{ base: 'center', md: 'center' }}
-        bgRepeat='no-repeat'
-        bgSize='cover'
-        w='full'
-      />
-      <Flex flex='1' justifyContent='center' alignItems='center'>
-        Legend
-      </Flex>
-    </Flex>
-  );
-}
+};
