@@ -1,0 +1,99 @@
+{
+  "products": [
+    {
+      "title": "Citrus",
+      "description": [
+        "Our citrus juices include: pure lemon juice, pure lime juice, orange juice and ruby red grapefruit juice. We offer a large variety of sizes of fresh and frozen versions of our citrus juices. In fact, we use many of our pure citrus juices as bases in many of our other mixed juice creations! On average, over 350 pounds of both lemons and limes are squeezed every day by our production team and about 18,000 tons of citrus every week. It takes a lot of citrus fruits to make our raw juices. In only two litres of Chasers orange juice, there are over two dozen oranges!"
+      ],
+      "imgKey": "citrus"
+    },
+    {
+      "title": "Fruits & Vegetable Juices",
+      "description": [
+        "We have a very long list of fruit and vegetable juices that we offer. This list might in fact be our longest list of products, as it is infinite! Yes, INFINITE! We offer our customers the ability to create their own custom juices that are tailored to your individual needs. This makes the different possibilities of fruit and vegetable juice mixes in the thousands if not more. We offer a list of single fruits and single vegetable juices, as well as a list of suggested mixes. This includes juices like our most popular Lychee-Cactus Pear Juice, Strawberry-Mango-Orange Juice, Blueberry-Banana-Orange Juice, Chasers Mixed Greens Juice, Carrot-Apple-Ginger Juice, Pineapple-Green Apple-Mint Juice and many, many more! We are more than happy to help pick the best juice for you and what you’re looking for, send us an email and let’s talk!"
+      ],
+      "imgKey": "fruit_blends"
+    },
+    {
+      "title": "Bar, Cocktail Mixes & Syrups",
+      "description": [
+        "Chasers Juice bar and cocktail mixes are raw juice mixes that are specially made to work with the needs of bars and restaurants. This includes: Lemon and lime bar mixes, margarita juice mix, pina colada juice mix, mojito juice mix, sangria juice mix and many more. Because these juices are raw and fresh, the taste is unparalleled and beats any powdered mixes any day!",
+        "We also offer a large variety of syrups ranging from simple syrup to lavender syrup and other spice infused syrups. We love getting creative and infusing different spices and flavours into our syrups such as rhubarb, ginger and chili. As syrups are a staple in many cocktails and other beverages, we strive to make the most flavourful and creative syrups to make the most flavourful and creative drinks!"
+      ],
+      "imgKey": "cocktail"
+    },
+    {
+      "title": "Nut Milks",
+      "description": [
+        "Yes we do milk all kinds of nuts! All of our plant based milks are raw, unpasteurized, gluten and dairy free. We believe plant based milks taste, creamy texture and health properties make it far superior to any animal milk…And it’s tons of fun to make! The extraction process takes some time and patience but the results are oh so delicious. If you have never tried a nut based or plant based milk before and wonder what it must taste like? Well we can tell you that our almond milk tastes like almonds, and our cashew milk tastes like cashews! It’s really that simple!",
+        "We also know that when giving up dairy it’s hard to give up chocolate milk too, and we have a solution. We’ve made a delicious chocolate version of each nut milk that we offer, and it is made with organic raw cacao. Currently we offer cashew milk and almond milk as well as chocolate cashew milk and chocolate almond milk.",
+        "We follow all of the necessary allergen protocols as set out by the Canadian Food Inspection Agency to ensure we do not contaminate our other products as we are a facility that processes nuts and other products as well."
+      ],
+      "imgKey": "nut_milk"
+    },
+    {
+      "title": "Organic",
+      "description": [
+        "We offer a group of different organic juices that are made with all organic products and produce. We purchase and create these organic juices separately then our regular products.",
+        "The reason we do not offer and label all of our products as organic is because as well as purchasing organic we also value buying local as much as possible. We do our best to purchase as much produce as locally as possible and sometimes we cannot purchase local and organic at the same time while keeping costs low.",
+        "In the spirit of keeping our prices as affordable as possible and offering fresh same day products, not all of the produce we purchase is organic for our regular products that are not on our organics list.",
+        "BUT we do purchase organic whenever and wherever possible, so it often happens that most of the juices and other products not on the organics list have actually been made with organic produce even though we do not advertise it as such."
+      ],
+      "imgKey": "organic"
+    },
+    {
+      "title": "Lemonade & Limeade",
+      "description": [
+        "Similar to most of our other juice products we offer, Chasers Juice lemonades and limeades are also customizable! We have a list of suggested lemonade mixes and limeade mixes but we offer our customers the ability to create their very own creative mixes. We love seeing the different exciting combinations our customers make. Some of our favourites include: Lavender lemonade, lychee limeade, chili lemonade and blueberry hibiscus lemonade. All of our lemonade and limeade products are made fresh daily with our very own 100% pure lemon and lime juice made completely from scratch.",
+        "Remember that lemonade stand you had as a kid? The one where you tirelessly squeezed every last drop of lemon into, to then have your neighbours smile in absolute delight when they tried it? Our lemonade and limeade will take you right back there! We don’t use any powders like the generic brands or any other overly processed ingredients. It’s plain and simple and just plain delicious!"
+      ],
+      "imgKey": "lemonade"
+    },
+    {
+      "title": "Iced Teas, Ciders & Specialty Blends",
+      "description": [
+        "Chasers Juice iced teas and ciders are the perfect drinks for the summer and winter weathers! Our apple cider is sure to keep your insides warm and your taste buds happy in the cold snowy weather. While our lemon-thai-basil green tea has a wonderful tang to it to wake your senses up in the summertime! We have a large variety of ciders and iced teas that can be customized as well! Some of our favourites include: Pumpkin-orange cider, cranberry-pear cider, apricot cider, pomegranate-acai berry iced tea, apple-strawberry earl grey iced tea, and our ruby red grapefruit green tea!",
+        "Chasers Juice also offers a delicious spicy list of chili-pepper blended juices! We blend these juices with real chili peppers to ensure the spice and taste is as natural as possible. Some of our favourites include: Chili-lime-cucumber juice, mango-chili pepper juice, strawberry-guava-chili pepper juice, and even watermelon-chili-pepper juice. If you love having that zing of spice in different, unique and tasty ways, these chili-pepper blends are for you!"
+      ],
+      "imgKey": "tea_cider"
+    },
+    {
+      "title": "Smoothies & Purees",
+      "description": [
+        "Chasers Juice offers a fully customizable list of smoothie options and as well as a list of fruit puree options. Whether you’re looking for single serve smoothies in small bottles to sell in your health-focused establishment or large quantities of pureed fruit for a bigger batch of your own creation, we have got you covered! We offer all kinds of sizing options to meet your deliciously creative vision!",
+        "We also have the best breakfast smoothie options for those just looking for your morning smoothie!"
+      ],
+      "imgKey": "smoothies"
+    },
+    {
+      "title": "Cleanses",
+      "description": [
+        "Fruit and vegetable juices are the cleansers of the human digestive system. Despite a healthy effort, we still consume many processed foods, refined sugars, food dyes, preservatives and other ingredients that have no nutritional value, and can in fact do our guts and digestive system great harm. A diet of solely fruit and vegetable juices and nut based milk, will reset our body enabling it to function at its maximum capacity. When you drink only fresh pressed, raw fruit and vegetable juice for a certain length of time, you’re greatly reducing the amount of input and stress that your gut experiences on most normal days. This gives your body the time to heal and recharge, while also taking in essential vitamins and phytonutrients. The blending or mastication of raw fruit and vegetables allows us to enjoy the benefits of their rich enzymes and vitamins within 15 minutes after we drink them, rather than waiting the 3 to 4 hours it takes our bodies to break down and digest the solid raw fruits and veggies themselves. Drinking plant-based juices also greatly reduces the amount of inflammation in your body over all.",
+        "Because of this, you’ll be able to feel the effects of the cleanse within the first 3 days. You’ll have more energy, great sleep, glowing skin, no more sugar cravings…and the list goes on. It’s also a great way to help you kickstart your journey to eating a more healthy and balanced diet.",
+        "We offer three different kinds of fresh and raw juice cleanses:",
+        "1. Chasers Greens Revolution Cleanse is designed to promote a gentle cleanse of your intestines, promoting an alkaline shift in your body. It is packed full of spinach, kale, parsley, cucumber and celery juices…Basically all of the greens you wish you ate on a daily basis! The Chasers Greens Revolution Cleanse kit packs a high nutritional value and it’s also made fresh, raw and is fully vegan. Available for a cleanse 2-7 days long.",
+        "2. Chasers Intermediate Cleanse is our fresh juice cleanse for savvy juicers. Each juice has been hand selected for its potency and cleansing power. The juices included on this cleanse are a series of blended greens, fresh green apples and other local fruits, berries and some fresh and sweet plant-based cashew milk to finish it off. Available for a cleanse 2-7 days long.",
+        "3. Chasers 3-Day Juice Revolution Cleanse is the perfect cleanse package for a juicer of any experience. This cleanse includes a large variety of juices including a spicy lemonade with cayenne pepper; a greens blend of several different types of vegetables; a blend of acai and blueberries; a coconut water and wheatgrass blend and lastly a sweet, nutritious cashew milk to top it off. These juices contain antiseptics, probiotics, antioxidants and electrolytes which help rehydrate the body. Available for a 3 day cleanse only.",
+        "As a disclaimer, we always recommend drinking water throughout the day alongside any of our juice cleanses. This ensures everything is still moving smoothly throughout the body during your raw juice cleanse."
+      ],
+      "imgKey": "cleanse"
+    },
+    {
+      "title": "Garnishes",
+      "description": [
+        "Chasers Juice offers all kinds of garnishes of all shapes and sizes! Whether you’re just looking for some garnishes for your daily bar needs or a large order for a 600 person event, we have got you covered! Add some citrus flavour to your drinks with a wedge of lemon or lime! Chasers creates all garnishes from fresh, premium fruit. Wedges, wheels, twists and peels are made fresh to order each day.",
+        "We cut and package wedges, wheels, peels, twists and zest of lemon, lime, oranges and grapefruit to our customers everyday. We also offer other various fruit and vegetable garnishes such as: pineapple wedges, strawberry slices and cucumber slices.",
+        "Garnishes are great for on the bar and restaurant use as it saves the bar and kitchen the hassle of purchasing, washing, cutting, cleaning up the fruity mess and any wastage. We take care of all of that and deliver your garnishes to you in a clean and tidy package you can easily store in bar fridges and quickly access whenever needed."
+      ],
+      "imgKey": "garnish"
+    },
+    {
+      "title": "Ice Pops",
+      "description": [
+        "Chasers Juice normally offers a FRESH juice experience but we are now offering a FROZEN juice experience with our new Ice Pops! Made from organic ingredients and our 100% fresh juice! These healthy frozen treats come in a large variety of flavours and colours fitting for any event, restaurant or bar.",
+        "These nutritious and fully vegan popsicles are not your regular flavoured sugar water popsicles, because they aren’t made from that but instead, they are made from real and all-natural ingredients, sweetened and flavoured by fruit’s natural sugars and flavours. Some of the popsicles even have actual chunks of fruit in the middle! Chasers Ice Pops can be enjoyed on their own or even put inside of a cocktail for the summer season. They are a great healthy treat alternative, packed with nourishment instead of added sugars, colours and artificial flavouring. Let’s get creative and colourful! Custom ingredient & labelling options are available."
+      ],
+      "imgKey": "ice_pops"
+    }
+  ]
+}

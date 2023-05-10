@@ -13,7 +13,6 @@ import {
 } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import NextLink from 'next/link';
-import NextImage from 'next/image';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import { Post, useGalleryContext } from './context/GalleryContext';
 import { ContentContainer, MotionBox } from '@/shared/components';
@@ -99,10 +98,7 @@ const InstagramCarousel = ({ data }: InstagramCarouselProps) => {
                   {/* Overlay that appears on hover: */}
                   <MotionBox
                     position='absolute'
-                    top='0'
-                    left='0'
-                    w='full'
-                    h='full'
+                    inset='0'
                     opacity='0%'
                     zIndex={10}
                     whileHover={{ opacity: '100%' }}
