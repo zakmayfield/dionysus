@@ -2,6 +2,7 @@ import {
   Box,
   BoxProps,
   Button,
+  ButtonProps,
   Heading,
   Text,
   useTheme,
@@ -16,6 +17,7 @@ type HeroContentBoxProps = BoxProps & {
   buttonLabel: string;
   href: string;
   colorScheme?: string;
+  customButton?: JSX.Element;
   variant?: 'solid' | 'outline';
 };
 
@@ -23,6 +25,7 @@ export const HeroContentBox = ({
   title,
   description,
   buttonLabel,
+  customButton,
   href,
   colorScheme = 'blacks',
   variant = 'outline',
@@ -58,22 +61,28 @@ export const HeroContentBox = ({
           >
             {description}
           </Text>
-          <Button
-            as={NextLink}
-            href={href}
-            variant={variant === 'outline' ? 'outline' : 'solid'}
-            colorScheme={colorScheme === 'blacks' ? 'blackAlpha' : colorScheme}
-          >
-            <Text
-              color={
-                variant === 'outline'
-                  ? colors[colorScheme][800]
-                  : colors[colorScheme][900]
+          {customButton ? (
+            customButton
+          ) : (
+            <Button
+              as={NextLink}
+              href={href}
+              variant={variant === 'outline' ? 'outline' : 'solid'}
+              colorScheme={
+                colorScheme === 'blacks' ? 'blackAlpha' : colorScheme
               }
             >
-              {buttonLabel}
-            </Text>
-          </Button>
+              <Text
+                color={
+                  variant === 'outline'
+                    ? colors[colorScheme][800]
+                    : colors[colorScheme][900]
+                }
+              >
+                {buttonLabel}
+              </Text>
+            </Button>
+          )}
         </Box>
       </Box>
     </FadeInBox>
