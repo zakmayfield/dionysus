@@ -15,7 +15,7 @@ export const ProductsStatement = () => {
         </Heading>
         <Text my='6' fontWeight='light'>
           We proudly serve restaurants, bars, cafes & grocery stores all across
-          the country our wholesale products!
+          the country! We also offer bulk pricing for all of our products.
         </Text>
         <Button variant='outline' colorScheme='lightAccent'>
           Contact Us
