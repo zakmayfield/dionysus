@@ -2,7 +2,6 @@ import {
   Box,
   BoxProps,
   Button,
-  ButtonProps,
   Heading,
   Text,
   useTheme,
