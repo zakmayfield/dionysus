@@ -8,14 +8,14 @@ export const ProductsStatement = () => {
       <ContentContainer
         maxW='container.sm'
         letterSpacing='wide'
-        py={{ md: '20', base: '12' }}
+        pt={{ md: '20', base: '12' }}
       >
         <Heading as='h2' fontSize='4xl' w='full' fontWeight='semibold'>
           Wholesale
         </Heading>
         <Text my='6' fontWeight='light'>
-          Yes! We proudly serve restaurants, bars, cafes & grocery stores all
-          across the country! Our main service area is within Toronto.
+          We proudly serve restaurants, bars, cafes & grocery stores all across
+          the country our wholesale products!
         </Text>
         <Button variant='outline' colorScheme='lightAccent'>
           Contact Us
