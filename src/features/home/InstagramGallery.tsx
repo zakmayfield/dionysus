@@ -30,7 +30,7 @@ const NextIcon = ({
   slideCount,
   ...props
 }: SlickButtonFixProps) => (
-  <Button variant='unstyled' py='10' {...props}>
+  <Button variant='unstyled' py='10' aria-label='Next' {...props}>
     <Icon
       as={BsChevronRight}
       color='white'
@@ -46,7 +46,7 @@ const PrevIcon = ({
   slideCount,
   ...props
 }: SlickButtonFixProps) => (
-  <Button variant='unstyled' py='10' {...props}>
+  <Button variant='unstyled' py='10' aria-label='Next' {...props}>
     <Icon
       as={BsChevronLeft}
       color='white'
@@ -93,7 +93,11 @@ const InstagramCarousel = ({ data }: InstagramCarouselProps) => {
         {data.map((post) => {
           return (
             <Flex key={post.id}>
-              <NextLink href={post.permalink} target='_blank'>
+              <NextLink
+                href={post.permalink}
+                target='_blank'
+                aria-label='Open the full instagram post'
+              >
                 <Box position='relative' mb='-2'>
                   {/* Overlay that appears on hover: */}
                   <MotionBox
