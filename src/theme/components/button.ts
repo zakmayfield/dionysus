@@ -62,7 +62,7 @@ const variantOutline = defineStyle((props) => {
     '.chakra-button__group[data-attached][data-orientation=vertical] > &:not(:last-of-type)':
       { marginBottom: '-1px' },
     ...runIfFn(variantGhost, props),
-    color: `${c}.500`,
+    color: `${c}.600`,
   };
 });
 
@@ -108,10 +108,10 @@ const variantSolid = defineStyle((props) => {
   }
 
   const {
-    bg = `${c}.500`,
+    bg = `${c}.600`,
     color = 'white',
-    hoverBg = `${c}.600`,
-    activeBg = `${c}.700`,
+    hoverBg = `${c}.700`,
+    activeBg = `${c}.800`,
   } = accessibleColorMap[c] ?? {};
 
   const background = mode(bg, `${c}.200`)(props);
