@@ -23,6 +23,7 @@ const schema = yup.object().shape({
     .required('Phone number is required'),
   email: yup.string().email().required('Email address is required'),
   found: yup.string().required('Please select an option'),
+  foundOtherDesc: yup.string().required('Please select an option'),
   message: yup.string().required('Please let us know what you are looking for'),
 });
 
@@ -32,6 +33,7 @@ interface ContactFormValues {
   phone: string;
   email: string;
   found: string;
+  foundOtherDesc?: string;
   message: string;
 }
 
@@ -84,6 +86,14 @@ export const ContactForm = () => {
     [formData.company, formData.email, formData.name, formData.phone]
   );
 
+  const foundOptions = [
+    { label: 'Instagram', value: 'instagram' },
+    { label: 'Facebook', value: 'facebook' },
+    { label: 'Google', value: 'google' },
+    { label: 'Word of mouth', value: 'wordOfMouth' },
+    { label: 'other ', value: 'other' },
+  ];
+
   return (
     <form onSubmit={handleSubmit}>
       <VStack w='full' spacing='4' alignItems='flex-start'>
@@ -96,7 +106,7 @@ export const ContactForm = () => {
               value={input.value}
               onChange={handleChange}
             />
-            <CustomErrorMessage name='name' errors={errors} mt='1' />
+            <CustomErrorMessage name={input.name} errors={errors} mt='1' />
           </Box>
         ))}
         <Box w='full'>
@@ -104,10 +114,16 @@ export const ContactForm = () => {
           <Select
             name='found'
             placeholder='How did you find us?'
-            color='secondary.800'
+            color={formData.found.length > 0 ? 'black' : 'secondary.800'}
             value={formData.found}
             onChange={handleChange}
-          />
+          >
+            {foundOptions.map((op) => (
+              <option key={op.value} value={op.value}>
+                {op.label}
+              </option>
+            ))}
+          </Select>
           <CustomErrorMessage name='found' errors={errors} mt='1' />
         </Box>
         <Box w='full'>
