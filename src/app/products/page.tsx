@@ -1,3 +1,4 @@
+import { ProductsPage } from '@/features/products/ProductsPage';
 import { sharedMetadata } from '@/shared/metadata';
 
 export const metadata = {
@@ -6,5 +7,5 @@ export const metadata = {
 };
 
 export default function Products() {
-  return <div>Products</div>;
+  return <ProductsPage />;
 }

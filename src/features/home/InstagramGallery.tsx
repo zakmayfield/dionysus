@@ -13,7 +13,6 @@ import {
 } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import NextLink from 'next/link';
-import NextImage from 'next/image';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import { Post, useGalleryContext } from './context/GalleryContext';
 import { ContentContainer, MotionBox } from '@/shared/components';
@@ -31,7 +30,7 @@ const NextIcon = ({
   slideCount,
   ...props
 }: SlickButtonFixProps) => (
-  <Button variant='unstyled' py='10' {...props}>
+  <Button variant='unstyled' py='10' aria-label='Next' {...props}>
     <Icon
       as={BsChevronRight}
       color='white'
@@ -47,7 +46,7 @@ const PrevIcon = ({
   slideCount,
   ...props
 }: SlickButtonFixProps) => (
-  <Button variant='unstyled' py='10' {...props}>
+  <Button variant='unstyled' py='10' aria-label='Next' {...props}>
     <Icon
       as={BsChevronLeft}
       color='white'
@@ -94,15 +93,16 @@ const InstagramCarousel = ({ data }: InstagramCarouselProps) => {
         {data.map((post) => {
           return (
             <Flex key={post.id}>
-              <NextLink href={post.permalink} target='_blank'>
+              <NextLink
+                href={post.permalink}
+                target='_blank'
+                aria-label='Open the full instagram post'
+              >
                 <Box position='relative' mb='-2'>
                   {/* Overlay that appears on hover: */}
                   <MotionBox
                     position='absolute'
-                    top='0'
-                    left='0'
-                    w='full'
-                    h='full'
+                    inset='0'
                     opacity='0%'
                     zIndex={10}
                     whileHover={{ opacity: '100%' }}

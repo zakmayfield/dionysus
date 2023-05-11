@@ -139,12 +139,14 @@ export default function Nav() {
                   color={pathname === item.route ? 'chakra-body-text' : ''}
                   _hover={{ color: 'gray.600' }}
                 >
-                  <Link href={item.route}>{item.label}</Link>
+                  <Link href={item.route} onClick={onClose}>
+                    {item.label}
+                  </Link>
                 </ListItem>
               ))}
 
               <ListItem mt='8'>
-                <Button as={Link} href={routes.contact}>
+                <Button as={Link} href={routes.contact} onClick={onClose}>
                   Order
                 </Button>
               </ListItem>

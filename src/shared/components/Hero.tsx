@@ -1,4 +1,5 @@
 import { Heading, Box, Flex } from '@chakra-ui/react';
+import { FadeInBox } from './FadeInBox';
 
 type HeroProps = {
   title: string;
@@ -19,7 +20,7 @@ export const Hero = ({ title, imgSrc }: HeroProps) => {
       bgImage={imgSrc}
     >
       {/* consider changing hero bg images to Next Images, for optimzation purposes? ** sidenote, on first render of the images there is a flash when the image is being rendered */}
-      <Box textTransform='capitalize' color='white' zIndex='2'>
+      <FadeInBox textTransform='capitalize' color='white' zIndex='2' px='6'>
         <Heading
           as='h1'
           fontWeight='light'
@@ -28,7 +29,7 @@ export const Hero = ({ title, imgSrc }: HeroProps) => {
         >
           {title}
         </Heading>
-      </Box>
+      </FadeInBox>
 
       {/* Overylay */}
       <Box position='absolute' inset='0' bg='rgba(0, 0, 0, 0.3)' />
