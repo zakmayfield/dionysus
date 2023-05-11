@@ -36,6 +36,6 @@ export const textareaTheme = defineStyleConfig({
   defaultProps: {
     size: 'md',
     variant: 'outline',
-    colorScheme: 'tertiary',
+    colorScheme: 'secondary',
   },
 });

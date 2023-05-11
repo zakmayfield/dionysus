@@ -86,7 +86,7 @@ const variantOutline = definePartsStyle((props) => {
   return {
     field: {
       border: '1px solid',
-      borderColor: `${cs}.500`,
+      borderColor: `${cs}.600`,
       bg: 'inherit',
       _hover: {
         borderColor: mode(`${cs}.300`, 'whiteAlpha.400')(props),
@@ -209,6 +209,6 @@ export const inputTheme = defineMultiStyleConfig({
   defaultProps: {
     size: 'md',
     variant: 'outline',
-    colorScheme: 'tertiary',
+    colorScheme: 'secondary',
   },
 });
