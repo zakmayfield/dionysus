@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import { FaqAnswers } from './Answers';
-import { ContentContainer } from '@/shared/components';
+import { ContentContainer, FadeInBox } from '@/shared/components';
 
 type Faq = {
   question: string;
@@ -43,15 +43,17 @@ const FaqQuestionItem = ({ faq }: FaqQuestionItemProps) => {
       rounded='sm'
       bgColor='white'
     >
-      <AccordionButton display='flex' roundedTop='sm'>
-        <AccordionIcon w='7' h='7' />
-        <Text as='h4' textAlign='left' p='3'>
-          {question}
-        </Text>
-      </AccordionButton>
-      <AccordionPanel px='8' pt='6' pb='10' fontSize='sm'>
-        {FaqAnswers[answerKey]}
-      </AccordionPanel>
+      <FadeInBox>
+        <AccordionButton display='flex' roundedTop='sm'>
+          <AccordionIcon w='7' h='7' />
+          <Text as='h4' textAlign='left' p='3'>
+            {question}
+          </Text>
+        </AccordionButton>
+        <AccordionPanel px='8' pt='6' pb='10' fontSize='sm'>
+          {FaqAnswers[answerKey]}
+        </AccordionPanel>
+      </FadeInBox>
     </AccordionItem>
   );
 };
@@ -67,21 +69,23 @@ export const FaqSection = ({ section }: FaqSectionProps) => {
       <ContentContainer maxW='container.2xl' px='0'>
         <Flex flexDir={{ md: 'row', base: 'column' }} flex='1'>
           <VStack alignItems='flex-start' flex='1' pr='8' pb='8'>
-            <Text color='secondary.500' fontWeight='bold' fontSize='4xl'>
-              0{section.key}
-            </Text>
-            <Heading
-              as='h2'
-              size='sm'
-              textTransform='uppercase'
-              color='primary.500'
-              fontWeight='semibold'
-            >
-              {section.title}
-            </Heading>
-            <Heading as='h3' fontWeight='normal' size='lg'>
-              {section.subtitle}
-            </Heading>
+            <FadeInBox>
+              <Text color='secondary.500' fontWeight='bold' fontSize='4xl'>
+                0{section.key}
+              </Text>
+              <Heading
+                as='h2'
+                size='sm'
+                textTransform='uppercase'
+                color='primary.500'
+                fontWeight='semibold'
+              >
+                {section.title}
+              </Heading>
+              <Heading as='h3' fontWeight='normal' size='lg'>
+                {section.subtitle}
+              </Heading>
+            </FadeInBox>
           </VStack>
           <VStack
             as={Accordion}
