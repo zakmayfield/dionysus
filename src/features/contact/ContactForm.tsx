@@ -9,7 +9,8 @@ import {
 } from '@chakra-ui/react';
 import React, { FormEvent, useMemo, useState } from 'react';
 import * as yup from 'yup';
-import { CustomErrorMessage, Errors } from '@/shared/components';
+import { CustomErrorMessage, Errors, MotionBox } from '@/shared/components';
+import { AnimatePresence } from 'framer-motion';
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -23,7 +24,7 @@ const schema = yup.object().shape({
     .required('Phone number is required'),
   email: yup.string().email().required('Email address is required'),
   found: yup.string().required('Please select an option'),
-  foundOtherDesc: yup.string().required('Please select an option'),
+  foundOtherDesc: yup.string(),
   message: yup.string().required('Please let us know what you are looking for'),
 });
 
@@ -38,15 +39,23 @@ interface ContactFormValues {
 }
 
 export const ContactForm = () => {
-  const [formData, setFormData] = useState<ContactFormValues>({
+  const defaultFormValues = {
     name: '',
     company: '',
     phone: '',
     email: '',
     found: '',
+    foundOtherDesc: undefined,
     message: '',
-  });
+  };
+
+  const [formData, setFormData] =
+    useState<ContactFormValues>(defaultFormValues);
   const [errors, setErrors] = useState<Errors>();
+
+  const resetData = () => {
+    setFormData(defaultFormValues);
+  };
 
   const handleChange = (
     event: React.ChangeEvent<
@@ -63,7 +72,9 @@ export const ContactForm = () => {
     schema
       .validate(formData, { abortEarly: false })
       .then((data) => {
-        // Open success modal & reset form
+        console.log(data);
+        resetData();
+        // TODO: Open success modal
       })
       .catch((validationErrors: yup.ValidationError) => {
         const newErrors: Errors = {};
@@ -91,8 +102,10 @@ export const ContactForm = () => {
     { label: 'Facebook', value: 'facebook' },
     { label: 'Google', value: 'google' },
     { label: 'Word of mouth', value: 'wordOfMouth' },
-    { label: 'other ', value: 'other' },
+    { label: 'Other ', value: 'other' },
   ];
+
+  const isFoundOther = formData.found === 'other';
 
   return (
     <form onSubmit={handleSubmit}>
@@ -126,6 +139,29 @@ export const ContactForm = () => {
           </Select>
           <CustomErrorMessage name='found' errors={errors} mt='1' />
         </Box>
+        <AnimatePresence>
+          {isFoundOther && (
+            <MotionBox
+              w='full'
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+            >
+              <FormLabel hidden>Please describe</FormLabel>
+              <Input
+                name='foundOtherDesc'
+                placeholder='Please describe'
+                value={formData.foundOtherDesc}
+                onChange={handleChange}
+              />
+              <CustomErrorMessage
+                name='foundOtherDesc'
+                errors={errors}
+                mt='1'
+              />
+            </MotionBox>
+          )}
+        </AnimatePresence>
         <Box w='full'>
           <FormLabel hidden>Message</FormLabel>
           <Textarea
