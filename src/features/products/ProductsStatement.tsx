@@ -1,10 +1,10 @@
-import { Box, Heading, Text, Button } from '@chakra-ui/react';
+import { Heading, Text, Button } from '@chakra-ui/react';
 import React from 'react';
-import { ContentContainer } from '@/shared/components';
+import { ContentContainer, FadeInBox } from '@/shared/components';
 
 export const ProductsStatement = () => {
   return (
-    <Box textAlign='center'>
+    <FadeInBox textAlign='center'>
       <ContentContainer
         maxW='container.sm'
         letterSpacing='wide'
@@ -17,10 +17,8 @@ export const ProductsStatement = () => {
           We proudly serve restaurants, bars, cafes & grocery stores all across
           the country! We also offer bulk pricing for all of our products.
         </Text>
-        <Button variant='outline' colorScheme='lightAccent'>
-          Contact Us
-        </Button>
+        <Button colorScheme='lightAccent'>Place An Order</Button>
       </ContentContainer>
-    </Box>
+    </FadeInBox>
   );
 };
