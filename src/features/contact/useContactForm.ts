@@ -88,6 +88,7 @@ export const useContactForm = (
           });
       })
       .catch((validationErrors: yup.ValidationError) => {
+        setIsLoading(false);
         const newErrors: Errors = {};
         validationErrors.inner.forEach((error) => {
           if (error.path && !newErrors[error.path]) {
