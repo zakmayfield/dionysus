@@ -4,93 +4,23 @@ import {
   FormLabel,
   Input,
   Select,
+  Text,
   Textarea,
   VStack,
   useDisclosure,
 } from '@chakra-ui/react';
-import React, { FormEvent, useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import * as yup from 'yup';
+import { useContactForm } from './useContactForm';
 import { ContactFormSuccessModal } from './ContactFormSuccessModal';
-import { CustomErrorMessage, Errors, MotionBox } from '@/shared/components';
-
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-
-const schema = yup.object().shape({
-  name: yup.string().required('Name is required'),
-  company: yup.string().required('Company is required'),
-  phone: yup
-    .string()
-    .matches(phoneRegExp, 'Phone number is not valid')
-    .required('Phone number is required'),
-  email: yup.string().email().required('Email address is required'),
-  found: yup.string().required('Please select an option'),
-  foundOtherDesc: yup.string(),
-  message: yup.string().required('Please let us know what you are looking for'),
-});
-
-interface ContactFormValues {
-  name: string;
-  company: string;
-  phone: string;
-  email: string;
-  found: string;
-  foundOtherDesc?: string;
-  message: string;
-}
+import { CustomErrorMessage, MotionBox } from '@/shared/components';
 
 export const ContactForm = () => {
-  const defaultFormValues = {
-    name: '',
-    company: '',
-    phone: '',
-    email: '',
-    found: '',
-    foundOtherDesc: undefined,
-    message: '',
-  };
-
-  const [formData, setFormData] =
-    useState<ContactFormValues>(defaultFormValues);
-  const [errors, setErrors] = useState<Errors>();
   const { isOpen, onClose, onOpen } = useDisclosure();
 
-  const resetData = () => {
-    setFormData(defaultFormValues);
-  };
-
-  const handleChange = (
-    event: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
-  ) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    schema
-      .validate(formData, { abortEarly: false })
-      .then((data) => {
-        // TODO: Send data to email
-
-        // Open success modal & reset data
-        onOpen();
-        resetData();
-      })
-      .catch((validationErrors: yup.ValidationError) => {
-        const newErrors: Errors = {};
-        validationErrors.inner.forEach((error) => {
-          if (error.path && !newErrors[error.path]) {
-            newErrors[error.path] = error.message;
-          }
-        });
-        setErrors(newErrors);
-      });
-  };
+  const { onSubmit, onChange, errors, formError, formData } = useContactForm(
+    () => onOpen()
+  );
 
   const contactFormInputs = useMemo(
     () => [
@@ -114,7 +44,7 @@ export const ContactForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onSubmit}>
         <VStack w='full' spacing='4' alignItems='flex-start'>
           {contactFormInputs.map((input) => (
             <Box w='full' key={input.name}>
@@ -123,7 +53,7 @@ export const ContactForm = () => {
                 name={input.name}
                 placeholder={input.label}
                 value={input.value}
-                onChange={handleChange}
+                onChange={onChange}
                 colorScheme='blacks'
               />
               <CustomErrorMessage name={input.name} errors={errors} mt='1' />
@@ -135,7 +65,7 @@ export const ContactForm = () => {
               name='found'
               placeholder='How did you find us?'
               value={formData.found}
-              onChange={handleChange}
+              onChange={onChange}
               colorScheme='blacks'
             >
               {foundOptions.map((op) => (
@@ -159,7 +89,7 @@ export const ContactForm = () => {
                   name='foundOtherDesc'
                   placeholder='Please describe'
                   value={formData.foundOtherDesc}
-                  onChange={handleChange}
+                  onChange={onChange}
                   colorScheme='blacks'
                 />
                 <CustomErrorMessage
@@ -177,11 +107,16 @@ export const ContactForm = () => {
               placeholder='Your Message'
               minH='32'
               value={formData.message}
-              onChange={handleChange}
+              onChange={onChange}
               colorScheme='blacks'
             />
             <CustomErrorMessage name='message' errors={errors} mt='1' />
           </Box>
+          {formError && (
+            <Text fontSize='sm' color='red.500'>
+              {formError}
+            </Text>
+          )}
           <Button type='submit' colorScheme='blacks'>
             Submit
           </Button>
