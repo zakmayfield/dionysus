@@ -124,6 +124,7 @@ export const ContactForm = () => {
                 placeholder={input.label}
                 value={input.value}
                 onChange={handleChange}
+                colorScheme='blacks'
               />
               <CustomErrorMessage name={input.name} errors={errors} mt='1' />
             </Box>
@@ -133,9 +134,9 @@ export const ContactForm = () => {
             <Select
               name='found'
               placeholder='How did you find us?'
-              color={formData.found.length > 0 ? 'black' : 'secondary.800'}
               value={formData.found}
               onChange={handleChange}
+              colorScheme='blacks'
             >
               {foundOptions.map((op) => (
                 <option key={op.value} value={op.value}>
@@ -159,6 +160,7 @@ export const ContactForm = () => {
                   placeholder='Please describe'
                   value={formData.foundOtherDesc}
                   onChange={handleChange}
+                  colorScheme='blacks'
                 />
                 <CustomErrorMessage
                   name='foundOtherDesc'
@@ -176,10 +178,11 @@ export const ContactForm = () => {
               minH='32'
               value={formData.message}
               onChange={handleChange}
+              colorScheme='blacks'
             />
             <CustomErrorMessage name='message' errors={errors} mt='1' />
           </Box>
-          <Button type='submit' colorScheme='secondary'>
+          <Button type='submit' colorScheme='blacks'>
             Submit
           </Button>
         </VStack>
