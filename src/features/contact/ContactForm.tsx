@@ -18,8 +18,10 @@ import { CustomErrorMessage, MotionBox } from '@/shared/components';
 export const ContactForm = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
+  const handleSuccess = () => onOpen();
+
   const { onSubmit, onChange, errors, formError, formValues, isLoading } =
-    useContactForm(() => onOpen());
+    useContactForm(handleSuccess);
 
   const contactFormInputs = useMemo(
     () => [
