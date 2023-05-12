@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from 'react';
 import * as yup from 'yup';
+import axios from 'axios';
 import { Errors } from '@/shared/components';
 
 const phoneRegExp =
@@ -69,16 +70,11 @@ export const useContactForm = (
     schema
       .validate(formValues, { abortEarly: false })
       .then((data) => {
-        fetch('https://chasers-juice-webook.fly.dev/email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
+        axios
+          .post('https://chasers-juice-webook.fly.dev/email', data)
           .then((response) => {
             setIsLoading(false);
-            if (response.ok) {
+            if (response.status === 200) {
               resetData();
               onSuccess(data);
             } else {
