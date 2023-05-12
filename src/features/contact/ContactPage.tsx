@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 import { ContactForm } from './ContactForm';
 import { ContactInfo } from './ContactInfo';
-import { ContentContainer, Hero } from '@/shared/components';
+import { ContentContainer, FadeInBox, Hero } from '@/shared/components';
 import HeroImg from '@/shared/assets/contact/citrus-hero.jpg';
 import BgImg from '@/shared/assets/contact/fruit-bg.jpg';
 
@@ -27,7 +27,9 @@ export const ContactPage = () => {
             pb='32'
           >
             <GridItem display='flex' justifyContent={{ lg: 'center' }}>
-              <ContactInfo />
+              <FadeInBox>
+                <ContactInfo />
+              </FadeInBox>
             </GridItem>
             <GridItem>
               <Box
@@ -37,13 +39,15 @@ export const ContactPage = () => {
                 bg={{ lg: 'transparent', base: 'whiteAlpha.900' }}
                 p='12'
               >
-                <Heading as='h3' size='lg' fontWeight='semibold' mb='3'>
-                  Get In Touch
-                </Heading>
-                <Text mb='6'>
-                  Set up an account with us prior to your first order!
-                </Text>
-                <ContactForm />
+                <FadeInBox>
+                  <Heading as='h3' size='lg' fontWeight='semibold' mb='3'>
+                    Get In Touch
+                  </Heading>
+                  <Text mb='6'>
+                    Set up an account with us prior to your first order!
+                  </Text>
+                  <ContactForm />
+                </FadeInBox>
               </Box>
             </GridItem>
           </Grid>
