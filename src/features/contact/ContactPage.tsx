@@ -4,7 +4,7 @@ import { Box, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 import { ContactForm } from './ContactForm';
 import { ContactInfo } from './ContactInfo';
 import { ContentContainer, Hero } from '@/shared/components';
-import HeroImg from '@/shared/assets/contact/hero.jpg';
+import HeroImg from '@/shared/assets/contact/citrus-hero.jpg';
 import BgImg from '@/shared/assets/contact/fruit-bg.jpg';
 
 export const ContactPage = () => {
