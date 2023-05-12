@@ -6,11 +6,13 @@ import {
   Select,
   Textarea,
   VStack,
+  useDisclosure,
 } from '@chakra-ui/react';
 import React, { FormEvent, useMemo, useState } from 'react';
-import * as yup from 'yup';
-import { CustomErrorMessage, Errors, MotionBox } from '@/shared/components';
 import { AnimatePresence } from 'framer-motion';
+import * as yup from 'yup';
+import { ContactFormSuccessModal } from './ContactFormSuccessModal';
+import { CustomErrorMessage, Errors, MotionBox } from '@/shared/components';
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -52,6 +54,7 @@ export const ContactForm = () => {
   const [formData, setFormData] =
     useState<ContactFormValues>(defaultFormValues);
   const [errors, setErrors] = useState<Errors>();
+  const { isOpen, onClose, onOpen } = useDisclosure();
 
   const resetData = () => {
     setFormData(defaultFormValues);
@@ -72,9 +75,11 @@ export const ContactForm = () => {
     schema
       .validate(formData, { abortEarly: false })
       .then((data) => {
-        console.log(data);
+        // TODO: Send data to email
+
+        // Open success modal & reset data
+        onOpen();
         resetData();
-        // TODO: Open success modal
       })
       .catch((validationErrors: yup.ValidationError) => {
         const newErrors: Errors = {};
@@ -108,75 +113,78 @@ export const ContactForm = () => {
   const isFoundOther = formData.found === 'other';
 
   return (
-    <form onSubmit={handleSubmit}>
-      <VStack w='full' spacing='4' alignItems='flex-start'>
-        {contactFormInputs.map((input) => (
-          <Box w='full' key={input.name}>
-            <FormLabel hidden>{input.label}</FormLabel>
-            <Input
-              name={input.name}
-              placeholder={input.label}
-              value={input.value}
-              onChange={handleChange}
-            />
-            <CustomErrorMessage name={input.name} errors={errors} mt='1' />
-          </Box>
-        ))}
-        <Box w='full'>
-          <FormLabel hidden>How did you find us?</FormLabel>
-          <Select
-            name='found'
-            placeholder='How did you find us?'
-            color={formData.found.length > 0 ? 'black' : 'secondary.800'}
-            value={formData.found}
-            onChange={handleChange}
-          >
-            {foundOptions.map((op) => (
-              <option key={op.value} value={op.value}>
-                {op.label}
-              </option>
-            ))}
-          </Select>
-          <CustomErrorMessage name='found' errors={errors} mt='1' />
-        </Box>
-        <AnimatePresence>
-          {isFoundOther && (
-            <MotionBox
-              w='full'
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-            >
-              <FormLabel hidden>Please describe</FormLabel>
+    <>
+      <form onSubmit={handleSubmit}>
+        <VStack w='full' spacing='4' alignItems='flex-start'>
+          {contactFormInputs.map((input) => (
+            <Box w='full' key={input.name}>
+              <FormLabel hidden>{input.label}</FormLabel>
               <Input
-                name='foundOtherDesc'
-                placeholder='Please describe'
-                value={formData.foundOtherDesc}
+                name={input.name}
+                placeholder={input.label}
+                value={input.value}
                 onChange={handleChange}
               />
-              <CustomErrorMessage
-                name='foundOtherDesc'
-                errors={errors}
-                mt='1'
-              />
-            </MotionBox>
-          )}
-        </AnimatePresence>
-        <Box w='full'>
-          <FormLabel hidden>Message</FormLabel>
-          <Textarea
-            name='message'
-            placeholder='Your Message'
-            minH='32'
-            value={formData.message}
-            onChange={handleChange}
-          />
-          <CustomErrorMessage name='message' errors={errors} mt='1' />
-        </Box>
-        <Button type='submit' colorScheme='secondary'>
-          Submit
-        </Button>
-      </VStack>
-    </form>
+              <CustomErrorMessage name={input.name} errors={errors} mt='1' />
+            </Box>
+          ))}
+          <Box w='full'>
+            <FormLabel hidden>How did you find us?</FormLabel>
+            <Select
+              name='found'
+              placeholder='How did you find us?'
+              color={formData.found.length > 0 ? 'black' : 'secondary.800'}
+              value={formData.found}
+              onChange={handleChange}
+            >
+              {foundOptions.map((op) => (
+                <option key={op.value} value={op.value}>
+                  {op.label}
+                </option>
+              ))}
+            </Select>
+            <CustomErrorMessage name='found' errors={errors} mt='1' />
+          </Box>
+          <AnimatePresence>
+            {isFoundOther && (
+              <MotionBox
+                w='full'
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+              >
+                <FormLabel hidden>Please describe</FormLabel>
+                <Input
+                  name='foundOtherDesc'
+                  placeholder='Please describe'
+                  value={formData.foundOtherDesc}
+                  onChange={handleChange}
+                />
+                <CustomErrorMessage
+                  name='foundOtherDesc'
+                  errors={errors}
+                  mt='1'
+                />
+              </MotionBox>
+            )}
+          </AnimatePresence>
+          <Box w='full'>
+            <FormLabel hidden>Message</FormLabel>
+            <Textarea
+              name='message'
+              placeholder='Your Message'
+              minH='32'
+              value={formData.message}
+              onChange={handleChange}
+            />
+            <CustomErrorMessage name='message' errors={errors} mt='1' />
+          </Box>
+          <Button type='submit' colorScheme='secondary'>
+            Submit
+          </Button>
+        </VStack>
+      </form>
+      <ContactFormSuccessModal isOpen={isOpen} onClose={onClose} />
+    </>
   );
 };
