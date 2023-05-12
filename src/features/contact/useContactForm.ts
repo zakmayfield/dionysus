@@ -41,13 +41,16 @@ export const useContactForm = (
     message: '',
   };
 
-  const [formData, setFormData] =
+  const [formValues, setFormValues] =
     useState<ContactFormValues>(defaultFormValues);
-  const [errors, setErrors] = useState<Errors>();
+  const [errors, setErrors] = useState<Errors>({});
   const [formError, setFormError] = useState<string | undefined>(undefined);
+  const [isLoading, setIsLoading] = useState(false);
 
   const resetData = () => {
-    setFormData(defaultFormValues);
+    setFormValues(defaultFormValues);
+    setErrors({});
+    setFormError(undefined);
   };
 
   const onChange = (
@@ -56,14 +59,15 @@ export const useContactForm = (
     >
   ) => {
     const { name, value } = event.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setFormValues((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsLoading(true);
 
     schema
-      .validate(formData, { abortEarly: false })
+      .validate(formValues, { abortEarly: false })
       .then((data) => {
         fetch('https://chasers-juice-webook.fly.dev/email', {
           method: 'POST',
@@ -73,6 +77,7 @@ export const useContactForm = (
           body: JSON.stringify(data),
         })
           .then((response) => {
+            setIsLoading(false);
             if (response.ok) {
               resetData();
               onSuccess(data);
@@ -97,5 +102,5 @@ export const useContactForm = (
       });
   };
 
-  return { onSubmit, onChange, errors, formError, formData };
+  return { onSubmit, onChange, errors, formError, formValues, isLoading };
 };

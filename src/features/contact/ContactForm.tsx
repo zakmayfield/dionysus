@@ -18,18 +18,17 @@ import { CustomErrorMessage, MotionBox } from '@/shared/components';
 export const ContactForm = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
-  const { onSubmit, onChange, errors, formError, formData } = useContactForm(
-    () => onOpen()
-  );
+  const { onSubmit, onChange, errors, formError, formValues, isLoading } =
+    useContactForm(() => onOpen());
 
   const contactFormInputs = useMemo(
     () => [
-      { label: 'Name', name: 'name', value: formData.name },
-      { label: 'Company', name: 'company', value: formData.company },
-      { label: 'Phone Number', name: 'phone', value: formData.phone },
-      { label: 'Email Address', name: 'email', value: formData.email },
+      { label: 'Name', name: 'name', value: formValues.name },
+      { label: 'Company', name: 'company', value: formValues.company },
+      { label: 'Phone Number', name: 'phone', value: formValues.phone },
+      { label: 'Email Address', name: 'email', value: formValues.email },
     ],
-    [formData.company, formData.email, formData.name, formData.phone]
+    [formValues.company, formValues.email, formValues.name, formValues.phone]
   );
 
   const foundOptions = [
@@ -40,7 +39,7 @@ export const ContactForm = () => {
     { label: 'Other ', value: 'other' },
   ];
 
-  const isFoundOther = formData.found === 'other';
+  const isFoundOther = formValues.found === 'other';
 
   return (
     <>
@@ -64,7 +63,7 @@ export const ContactForm = () => {
             <Select
               name='found'
               placeholder='How did you find us?'
-              value={formData.found}
+              value={formValues.found}
               onChange={onChange}
               colorScheme='blacks'
             >
@@ -88,7 +87,7 @@ export const ContactForm = () => {
                 <Input
                   name='foundOtherDesc'
                   placeholder='Please describe'
-                  value={formData.foundOtherDesc}
+                  value={formValues.foundOtherDesc}
                   onChange={onChange}
                   colorScheme='blacks'
                 />
@@ -106,7 +105,7 @@ export const ContactForm = () => {
               name='message'
               placeholder='Your Message'
               minH='32'
-              value={formData.message}
+              value={formValues.message}
               onChange={onChange}
               colorScheme='blacks'
             />
@@ -117,7 +116,12 @@ export const ContactForm = () => {
               {formError}
             </Text>
           )}
-          <Button type='submit' colorScheme='blacks'>
+          <Button
+            type='submit'
+            colorScheme='blacks'
+            isLoading={isLoading}
+            isDisabled={isLoading}
+          >
             Submit
           </Button>
         </VStack>
