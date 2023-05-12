@@ -26,13 +26,13 @@ export const ProductModal = ({
   return (
     <Modal isOpen={isOpen} onClose={onClose} size='2xl'>
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent p={{ md: '6' }}>
         <ModalHeader fontWeight='semibold' fontSize='3xl'>
           {title}
         </ModalHeader>
         <ModalCloseButton />
-        <ModalBody maxH='50vh' overflow='auto'>
-          <VStack spacing='6' pb='8'>
+        <ModalBody maxH='60vh' overflow='auto'>
+          <VStack spacing='6' pb='6'>
             {content.map((c, i) => (
               <Text key={i} w='full'>
                 {c}

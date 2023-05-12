@@ -11,6 +11,7 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import { SocialMediaLinks } from './SocialMediaLinks';
 import logo from '~shared/assets/chasers-juice-logo.png';
+import { FadeInBox } from '@/shared/components';
 
 export default function Footer() {
   return (
@@ -27,7 +28,7 @@ export default function Footer() {
           px='16'
           py={{ md: '16', base: '6' }}
         >
-          <Box h='100'>
+          <FadeInBox h='100'>
             <Heading
               as='h3'
               pb='5'
@@ -62,7 +63,7 @@ export default function Footer() {
             >
               orders@chasersjuice.com
             </Link>
-          </Box>
+          </FadeInBox>
         </GridItem>
 
         <GridItem
@@ -71,13 +72,13 @@ export default function Footer() {
           px='16'
           py={{ md: '16', base: '6' }}
         >
-          <Box h='100'>
+          <FadeInBox h='100'>
             <Heading as='h3' fontSize='medium' textTransform='uppercase' pb='5'>
               Follow Us
             </Heading>
 
             <SocialMediaLinks />
-          </Box>
+          </FadeInBox>
         </GridItem>
       </Grid>
 

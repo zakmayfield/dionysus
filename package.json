@@ -22,6 +22,7 @@
     "@types/react": "18.0.36",
     "@types/react-dom": "18.0.11",
     "@types/react-slick": "^0.23.10",
+    "axios": "^1.4.0",
     "eslint": "8.38.0",
     "eslint-config-next": "^13.4.0",
     "framer-motion": "^10.12.2",
@@ -32,7 +33,8 @@
     "react-slick": "^0.29.0",
     "server-only": "^0.0.1",
     "slick-carousel": "^1.8.1",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@types/react-slick": "^0.23.10",

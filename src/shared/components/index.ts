@@ -4,3 +4,4 @@ export * from './ParallaxHero';
 export * from './Hero';
 export * from './FadeInBox';
 export * from './HeroContentBox';
+export * from './CustomErrorMessage';
