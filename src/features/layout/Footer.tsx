@@ -82,7 +82,7 @@ export default function Footer() {
         </GridItem>
       </Grid>
 
-      <FadeInBox>
+      <Box>
         <Flex
           pt='7'
           position='relative'
@@ -109,7 +109,7 @@ export default function Footer() {
             CHASERS FRESH JUICE INC. 218 North Queen St. Etobicoke, ON M9C 4Y1
           </Text>
         </Flex>
-      </FadeInBox>
+      </Box>
     </Box>
   );
 }
