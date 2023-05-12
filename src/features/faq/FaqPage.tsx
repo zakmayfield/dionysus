@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Box } from '@chakra-ui/react';
-import { faq as faqsData } from './faqData.json';
+import faqsData from './faqData.json';
 import { FaqSection } from './FaqSection';
 import { Hero } from '@/shared/components';
 import HeroImg from '@/shared/assets/faq/kiwi-bg.jpeg';

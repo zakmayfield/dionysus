@@ -2,7 +2,7 @@
 import React from 'react';
 import { Box, Grid } from '@chakra-ui/react';
 import { ProductsStatement } from './ProductsStatement';
-import { products as productsData } from './productsData.json';
+import productsData from './productsData.json';
 import { ProductSquare } from './ProductSquare';
 import { ProductsOfferingHero } from './ProductsOfferingHero';
 import { ContentContainer, Hero } from '@/shared/components';
