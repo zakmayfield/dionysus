@@ -14,12 +14,8 @@ export const About = () => {
         spacing='0'
         w='100%'
       >
-        <FullHeightImage flex='1' />
-        <AboutContent
-          flex='1'
-          maxW={{ base: '100%', md: '50%' }}
-          overflowY='auto'
-        />
+        <FullHeightImage />
+        <AboutContent maxW={{ base: '100%', md: '50%' }} overflowY='auto' />
       </Stack>
 
       <Stack
@@ -29,8 +25,8 @@ export const About = () => {
         spacing='0'
         w='100%'
       >
-        <FullHeightImage2 flex='1' />
-        <AboutContent2 flex='1' maxW={{ base: '100%', md: '50%' }} />
+        <FullHeightImage2 />
+        <AboutContent2 maxW={{ base: '100%', md: '50%' }} />
       </Stack>
     </Stack>
   );
