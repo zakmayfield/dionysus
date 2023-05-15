@@ -12,6 +12,7 @@ export const DeliveryArea = () => {
 
       {/* map & legend container */}
       <ContentContainer maxW='container.lg' px={{ base: '2', md: '0' }}>
+        {/* consider changing the map background img to a Next image for optimization */}
         <MapContainer />
       </ContentContainer>
     </Box>

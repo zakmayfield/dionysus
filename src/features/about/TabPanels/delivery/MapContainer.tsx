@@ -11,6 +11,7 @@ export const MapContainer = () => {
       flexFlow='column'
     >
       {/* map bg image */}
+      {/* consider changing to a Next image for optimization */}
       <Box
         bgImage={map.src}
         pb='50vh'
