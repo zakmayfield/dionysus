@@ -36,6 +36,7 @@ export const About = () => {
   );
 };
 
+// TODO: Refactor all of this into proper components
 type FullHeightImageProps = BoxProps;
 
 function FullHeightImage({ ...props }: FullHeightImageProps) {
@@ -138,7 +139,7 @@ function AboutContent2({ ...props }: AboutContentProps2) {
       {...props}
       textAlign='left'
       p={{ base: '2', md: '8' }}
-      pt={{ base: '10' }}
+      pt={{ base: '10', md: '14' }}
     >
       <Stack spacing='8'>
         <Text
