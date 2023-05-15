@@ -5,34 +5,38 @@ import spinach from '@/shared/assets/about/spinach.jpeg';
 
 export const About = () => {
   return (
-    <Stack spacing={{ base: '8', md: 0 }} my='20'>
+    <Stack spacing={{ base: '8', md: 0 }} my={{ base: '10', md: '24' }}>
       <Stack
         as='section'
-        direction={{ base: 'column', md: 'row' }}
+        direction={{ base: 'column', md: 'row-reverse' }}
         // TODO: add maxH for mobile, scrollable text with proper indicators "scroll", or arrows for example
         maxH={{ md: '80vh' }}
         spacing='0'
         w='100%'
       >
+        <AboutContent
+          maxW={{ base: '100%', md: '50%' }}
+          mb={{ base: '8' }}
+          overflowY='auto'
+        />
         <FullHeightImage />
-        <AboutContent maxW={{ base: '100%', md: '50%' }} overflowY='auto' />
       </Stack>
 
       <Stack
         as='section'
-        direction={{ base: 'column', md: 'row-reverse' }}
+        direction={{ base: 'column', md: 'row' }}
         minH={{ md: '80vh' }}
         spacing='0'
         w='100%'
       >
+        <AboutContent2 maxW={{ base: '100%', md: '50%' }} mb={{ base: '8' }} />
         <FullHeightImage2 />
-        <AboutContent2 maxW={{ base: '100%', md: '50%' }} />
       </Stack>
     </Stack>
   );
 };
 
-// TODO: Refactor all of this into proper components
+// TODO: Refactor all of this into proper components (about/philosophy)
 type FullHeightImageProps = BoxProps;
 
 function FullHeightImage({ ...props }: FullHeightImageProps) {
@@ -56,12 +60,7 @@ type AboutContentProps = BoxProps;
 
 function AboutContent({ ...props }: AboutContentProps) {
   return (
-    <Box
-      {...props}
-      textAlign='left'
-      p={{ base: '2', md: '8' }}
-      pt={{ base: '8' }}
-    >
+    <Box {...props} textAlign='left' p={{ base: '2', md: '8' }}>
       <Heading as='h2' fontWeight='light'>
         Our Story
       </Heading>
