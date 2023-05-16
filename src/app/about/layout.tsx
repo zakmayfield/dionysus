@@ -1,4 +1,4 @@
-import { ContentContainer, Hero } from '@/shared/components';
+import { ContentContainer, Hero2 } from '@/shared/components';
 import { Links } from '@/features/about';
 
 export const metadata = {
@@ -13,7 +13,7 @@ export default function AboutLayout({
 }) {
   return (
     <section>
-      <Hero />
+      <Hero2 />
       <Links />
 
       <ContentContainer

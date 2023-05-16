@@ -1,9 +1,9 @@
-import { About } from '@/features/about/TabPanels';
+import { OurStory } from '@/features/about/TabPanels';
 
-export default function OurStory() {
+export default function OurStoryPage() {
   return (
     <section>
-      <About />
+      <OurStory />
     </section>
   );
 }

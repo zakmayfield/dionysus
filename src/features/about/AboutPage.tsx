@@ -3,15 +3,15 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel, Box } from '@chakra-ui/react';
 import { useActiveTab } from '../../shared/hooks/useActiveTab';
 import { OrderHero } from './OrderHero';
 import { tabData } from './constants';
-import { About, Philosophy, Wholesale, DeliveryArea } from './TabPanels';
-import { ContentContainer, Hero } from '@/shared/components';
+import { OurStory, Philosophy, Wholesale, DeliveryArea } from './TabPanels';
+import { ContentContainer, Hero2 } from '@/shared/components';
 
 export const AboutPage = () => {
   const { tabName, imgSrc, activeTab, handleOnChange } = useActiveTab();
 
   return (
     <Box m='0' p='0' w='full'>
-      <Hero title={tabName} imgSrc={imgSrc} />
+      <Hero2 />
 
       {/* Tab Container */}
       <ContentContainer
@@ -39,7 +39,7 @@ export const AboutPage = () => {
 
             <TabPanels>
               <TabPanel p='0'>
-                <About />
+                <OurStory />
               </TabPanel>
               <TabPanel p='0'>
                 <Philosophy />

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import pom from '@/shared/assets/about/pom.jpeg';
 import spinach from '@/shared/assets/about/spinach.jpeg';
 
-export const About = () => {
+export const OurStory = () => {
   return (
     <Stack spacing={{ base: '8', md: 0 }} my={{ base: '10', md: '24' }}>
       <Stack
