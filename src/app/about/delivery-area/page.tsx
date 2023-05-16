@@ -1,4 +1,4 @@
-import { DeliveryArea } from '@/features/about/TabPanels';
+import { DeliveryArea } from '@/features/about/children';
 
 export default function Delivery() {
   return (

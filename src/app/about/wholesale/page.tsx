@@ -1,4 +1,4 @@
-import { Wholesale } from '@/features/about/TabPanels';
+import { Wholesale } from '@/features/about/children';
 
 export default function WholesalePage() {
   return (
