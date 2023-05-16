@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section>
-      <div>redirecting to /about-us</div>
+      <div>redirecting to /our-story</div>
     </section>
   );
 }
