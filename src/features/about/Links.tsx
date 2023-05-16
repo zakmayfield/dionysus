@@ -4,7 +4,14 @@ import Link from 'next/link';
 
 export const Links = () => {
   return (
-    <Flex py='5' w='full' justify='center' gap='5'>
+    <Flex
+      direction={{ base: 'column', md: 'row' }}
+      py='5'
+      pl={{ base: '5', md: '0' }}
+      w='full'
+      justify='center'
+      gap='5'
+    >
       <Text>
         <Link href='/about/our-story'>Our Story</Link>
       </Text>
