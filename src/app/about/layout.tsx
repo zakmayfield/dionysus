@@ -1,5 +1,6 @@
 import { ContentContainer, Hero2 } from '@/shared/components';
 import { Links } from '@/features/about';
+import { OrderHero } from '@/features/about/OrderHero';
 
 export const metadata = {
   title: 'About',
@@ -23,6 +24,8 @@ export default function AboutLayout({
       >
         {children}
       </ContentContainer>
+
+      <OrderHero />
     </section>
   );
 }
