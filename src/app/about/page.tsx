@@ -1,11 +1,9 @@
-import { sharedMetadata } from '@/shared/metadata';
-import { AboutPage } from '@/features/about';
-
-export const metadata = {
-  ...sharedMetadata,
-  title: 'Chasers Fresh Juice | About',
-};
-
+// import { Hero } from '@/shared/components';
 export default function About() {
-  return <AboutPage />;
+  return (
+    <section>
+      {/* <Hero title='test' imgSrc='test' /> */}
+      <div>redirecting to /about-us</div>
+    </section>
+  );
 }

@@ -1,3 +1,5 @@
+'use client';
+
 import { Box } from '@chakra-ui/react';
 import { DeliveryInfo, MapContainer } from './delivery';
 import { ContentContainer } from '@/shared/components';

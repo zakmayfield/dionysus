@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Heading, Stack, Text, BoxProps } from '@chakra-ui/react';
 import Image from 'next/image';
 import lcp from '@/shared/assets/about/lcp.jpeg';

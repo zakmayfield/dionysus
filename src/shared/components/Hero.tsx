@@ -1,12 +1,10 @@
+'use client';
 import { Heading, Box, Flex } from '@chakra-ui/react';
+import { useActivePathHero } from '../hooks/useActivePathHero';
 import { FadeInBox } from './FadeInBox';
 
-type HeroProps = {
-  title: string;
-  imgSrc: string;
-};
-
-export const Hero = ({ title, imgSrc }: HeroProps) => {
+export const Hero = () => {
+  const { heroImg } = useActivePathHero();
   return (
     <Flex
       w='full'
@@ -17,7 +15,7 @@ export const Hero = ({ title, imgSrc }: HeroProps) => {
       bgPosition='center'
       bgRepeat='no-repeat'
       bgSize='cover'
-      bgImage={imgSrc}
+      bgImage={heroImg.src}
     >
       {/* consider changing hero bg images to Next Images, for optimzation purposes? ** sidenote, on first render of the images there is a flash when the image is being rendered */}
       <FadeInBox textTransform='capitalize' color='white' zIndex='2' px='6'>
@@ -27,7 +25,7 @@ export const Hero = ({ title, imgSrc }: HeroProps) => {
           letterSpacing='widest'
           fontSize='5xl'
         >
-          {title}
+          {/* {title} */} Test
         </Heading>
       </FadeInBox>
 

@@ -1,3 +1,4 @@
+'use client';
 import { Box, Stack, Text, Heading, BoxProps } from '@chakra-ui/react';
 import Image from 'next/image';
 import pom from '@/shared/assets/about/pom.jpeg';
