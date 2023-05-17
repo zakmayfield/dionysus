@@ -7,19 +7,15 @@ import spinach from '@/shared/assets/about/spinach.jpeg';
 export const OurStory = () => {
   // need to fix the horizontal scroll
   return (
-    <Stack spacing={{ base: '8', md: 0 }} my={{ base: '10', md: '24' }}>
+    <Stack my='6'>
       <Stack
         as='section'
         direction={{ base: 'column', md: 'row-reverse' }}
         minH={{ md: '100vh' }}
-        spacing='0'
         w='100%'
+        spacing={{ base: '6', md: '0' }}
       >
-        <AboutContent
-          maxW={{ base: '100%', md: '50%' }}
-          mb={{ base: '8' }}
-          overflowY='auto'
-        />
+        <AboutContent maxW={{ base: '100%', md: '50%' }} />
         <FullHeightImage />
       </Stack>
 
@@ -27,10 +23,10 @@ export const OurStory = () => {
         as='section'
         direction={{ base: 'column', md: 'row' }}
         minH={{ md: '100vh' }}
-        spacing='0'
         w='100%'
+        spacing={{ base: '6', md: '0' }}
       >
-        <AboutContent2 maxW={{ base: '100%', md: '50%' }} mb={{ base: '8' }} />
+        <AboutContent2 maxW={{ base: '100%', md: '50%' }} />
         <FullHeightImage2 />
       </Stack>
     </Stack>
@@ -61,7 +57,12 @@ type AboutContentProps = BoxProps;
 
 function AboutContent({ ...props }: AboutContentProps) {
   return (
-    <Box {...props} textAlign='left' p={{ base: '2', md: '8' }}>
+    <Box
+      {...props}
+      textAlign='left'
+      py={{ base: '0', md: '8' }}
+      px={{ base: '6' }}
+    >
       <Heading as='h2' fontWeight='light'>
         Our Story
       </Heading>
@@ -131,12 +132,7 @@ type AboutContentProps2 = BoxProps;
 
 function AboutContent2({ ...props }: AboutContentProps2) {
   return (
-    <Box
-      {...props}
-      textAlign='left'
-      p={{ base: '2', md: '8' }}
-      pt={{ base: '10', md: '14' }}
-    >
+    <Box {...props} textAlign='left' p={{ base: '2', md: '8' }} pt='6' px='6'>
       <Stack spacing='8'>
         <Text
           fontSize={{ base: 'md', md: 'lg' }}

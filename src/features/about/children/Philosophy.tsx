@@ -14,7 +14,7 @@ export const Philosophy = () => {
       w='100%'
       my={{ base: '10', md: '24' }}
     >
-      <PhilosophyContent maxW={{ base: '100%', md: '50%' }} overflowY='auto' />
+      <PhilosophyContent maxW={{ base: '100%', md: '50%' }} />
       <FullHeightImage />
     </Stack>
   );

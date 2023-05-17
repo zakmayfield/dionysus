@@ -7,8 +7,8 @@ export const Links = () => {
   return (
     <Flex
       direction={{ base: 'column', md: 'row' }}
-      py='5'
-      pl={{ base: '5', md: '0' }}
+      py='6'
+      pl={{ base: '6', md: '0' }}
       w='full'
       justify='center'
       gap='5'
