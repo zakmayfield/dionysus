@@ -17,7 +17,6 @@ export const Hero2 = () => {
       bgSize='cover'
       bgImage={pathHero?.img.src}
     >
-      {/* consider changing hero bg images to Next Images, for optimzation purposes? ** sidenote, on first render of the images there is a flash when the image is being rendered */}
       <FadeInBox textTransform='capitalize' color='white' zIndex='2' px='6'>
         <Heading
           as='h1'

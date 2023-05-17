@@ -12,7 +12,6 @@ export const useActivePathHero = () => {
 
     const pathObject = pathData.find((item) => item.slug === path);
 
-    console.log('pathObject', pathObject);
     handlePathChange(pathObject);
   }, [pathname]);
 
