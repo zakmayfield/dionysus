@@ -1,38 +1,31 @@
 import blueberries from '@/shared/assets/about/blueberries.jpeg';
 import mixedberries from '@/shared/assets/about/mixedberries.jpeg';
 import redberries from '@/shared/assets/about/redberries.jpeg';
-import moreberries from '@/shared/assets/about/moreberries.jpeg';
 
-export enum AboutRouteParams {
-  ABOUT = 'ABOUT',
-  PHILOSOPHY = 'PHILOSOPHY',
-  WHOLESALE = 'WHOLESALE',
-  DELIVERY_AREA = 'DELIVERY_AREA',
-}
+export type pathItem = {
+  id: number;
+  title: string;
+  slug: string;
+  img: any;
+};
 
-export const tabData = [
+export const pathData: pathItem[] = [
   {
     id: 0,
-    tabName: 'about',
-    param: AboutRouteParams.ABOUT,
-    imgSrc: blueberries.src,
+    title: 'Our Story',
+    slug: 'our-story',
+    img: blueberries,
   },
   {
     id: 1,
-    tabName: 'philosophy',
-    param: AboutRouteParams.PHILOSOPHY,
-    imgSrc: moreberries.src,
+    title: 'Philosophy',
+    slug: 'philosophy',
+    img: mixedberries,
   },
   {
     id: 2,
-    tabName: 'wholesale',
-    param: AboutRouteParams.WHOLESALE,
-    imgSrc: mixedberries.src,
-  },
-  {
-    id: 3,
-    tabName: 'delivery Area',
-    param: AboutRouteParams.DELIVERY_AREA,
-    imgSrc: redberries.src,
+    title: 'Delivery Area',
+    slug: 'delivery-area',
+    img: redberries,
   },
 ];

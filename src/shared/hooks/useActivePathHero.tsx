@@ -1,33 +1,24 @@
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-
-import blueberries from '@/shared/assets/about/blueberries.jpeg';
-import mixedberries from '@/shared/assets/about/mixedberries.jpeg';
-import redberries from '@/shared/assets/about/redberries.jpeg';
-
-const paths = ['our-story', 'philosophy', 'delivery-area'];
-const images = [blueberries, redberries, mixedberries];
+import { pathData, pathItem } from '@/features/about';
 
 export const useActivePathHero = () => {
   const pathname = usePathname();
-  const [heroImg, setHeroImg] = useState<any>('');
+  const [pathHero, setPathHero] = useState<pathItem | undefined>(undefined);
 
   useEffect(() => {
-    // split pathname at /
     const pathParts = pathname.split('/');
-    // selecting the pathIndex // TODO this is currently limiting - if there are additional url items this will throw -1
-    const pathIndex = paths.indexOf(pathParts[pathParts.length - 1]);
+    const path = pathParts[pathParts.length - 1];
 
-    handlePathChange(pathIndex);
+    const pathObject = pathData.find((item) => item.slug === path);
+
+    console.log('pathObject', pathObject);
+    handlePathChange(pathObject);
   }, [pathname]);
 
-  function handlePathChange(pathIndex: number) {
-    if (pathIndex !== -1) {
-      setHeroImg(images[pathIndex]);
-    } else {
-      setHeroImg('HERO_1_FAILSAFE');
-    }
+  function handlePathChange(pathObject: pathItem | undefined) {
+    setPathHero(pathObject);
   }
 
-  return { heroImg };
+  return { pathHero };
 };

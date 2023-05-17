@@ -4,7 +4,7 @@ import { useActivePathHero } from '../hooks/useActivePathHero';
 import { FadeInBox } from './FadeInBox';
 
 export const Hero2 = () => {
-  const { heroImg } = useActivePathHero();
+  const { pathHero } = useActivePathHero();
   return (
     <Flex
       w='full'
@@ -15,7 +15,7 @@ export const Hero2 = () => {
       bgPosition='center'
       bgRepeat='no-repeat'
       bgSize='cover'
-      bgImage={heroImg.src}
+      bgImage={pathHero?.img.src}
     >
       {/* consider changing hero bg images to Next Images, for optimzation purposes? ** sidenote, on first render of the images there is a flash when the image is being rendered */}
       <FadeInBox textTransform='capitalize' color='white' zIndex='2' px='6'>
@@ -25,7 +25,7 @@ export const Hero2 = () => {
           letterSpacing='widest'
           fontSize='5xl'
         >
-          {/* {title} */} Test
+          {pathHero?.title}
         </Heading>
       </FadeInBox>
 
