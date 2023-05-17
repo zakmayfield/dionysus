@@ -4,10 +4,9 @@ import { useEffect, useState } from 'react';
 import blueberries from '@/shared/assets/about/blueberries.jpeg';
 import mixedberries from '@/shared/assets/about/mixedberries.jpeg';
 import redberries from '@/shared/assets/about/redberries.jpeg';
-import moreberries from '@/shared/assets/about/moreberries.jpeg';
 
-const paths = ['our-story', 'philosophy', 'wholesale', 'delivery-area'];
-const images = [blueberries, moreberries, mixedberries, redberries];
+const paths = ['our-story', 'philosophy', 'delivery-area'];
+const images = [blueberries, redberries, mixedberries];
 
 export const useActivePathHero = () => {
   const pathname = usePathname();
