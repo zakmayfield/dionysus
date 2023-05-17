@@ -10,9 +10,9 @@ export const Philosophy = () => {
       as='section'
       direction={{ base: 'column', md: 'row-reverse' }}
       minH={{ md: '100vh' }}
-      spacing='0'
       w='100%'
-      my={{ base: '10', md: '24' }}
+      spacing={{ base: '6', md: '0' }}
+      my='6'
     >
       <PhilosophyContent maxW={{ base: '100%', md: '50%' }} />
       <FullHeightImage />
@@ -46,8 +46,8 @@ function PhilosophyContent({ ...props }: PhilosophyContentProps) {
     <Box
       {...props}
       textAlign='left'
-      p={{ base: '2', md: '8' }}
-      // pt={{ base: '12' }}
+      py={{ base: '0', md: '8' }}
+      px={{ base: '6' }}
     >
       <Heading as='h2' fontWeight='light'>
         Our Philosophy
