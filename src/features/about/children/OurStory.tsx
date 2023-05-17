@@ -5,13 +5,13 @@ import pom from '@/shared/assets/about/pom.jpeg';
 import spinach from '@/shared/assets/about/spinach.jpeg';
 
 export const OurStory = () => {
+  // need to fix the horizontal scroll
   return (
     <Stack spacing={{ base: '8', md: 0 }} my={{ base: '10', md: '24' }}>
       <Stack
         as='section'
         direction={{ base: 'column', md: 'row-reverse' }}
-        // TODO: add maxH for mobile, scrollable text with proper indicators "scroll", or arrows for example
-        maxH={{ md: '80vh' }}
+        minH={{ md: '100vh' }}
         spacing='0'
         w='100%'
       >
@@ -26,7 +26,7 @@ export const OurStory = () => {
       <Stack
         as='section'
         direction={{ base: 'column', md: 'row' }}
-        minH={{ md: '80vh' }}
+        minH={{ md: '100vh' }}
         spacing='0'
         w='100%'
       >

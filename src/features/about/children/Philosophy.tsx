@@ -9,7 +9,7 @@ export const Philosophy = () => {
     <Stack
       as='section'
       direction={{ base: 'column', md: 'row-reverse' }}
-      maxH={{ md: '80vh' }}
+      minH={{ md: '100vh' }}
       spacing='0'
       w='100%'
       my={{ base: '10', md: '24' }}

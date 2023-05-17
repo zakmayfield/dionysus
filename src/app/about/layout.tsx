@@ -17,11 +17,7 @@ export default function AboutLayout({
       <Hero2 />
       <Links />
 
-      <ContentContainer
-        maxW='container.2xl'
-        px={{ base: '0', md: '8' }}
-        minH='90vh'
-      >
+      <ContentContainer maxW='container.2xl' px={{ base: '0', md: '8' }}>
         {children}
       </ContentContainer>
 

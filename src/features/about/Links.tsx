@@ -1,6 +1,7 @@
 'use client';
 import { Flex, Text } from '@chakra-ui/react';
 import Link from 'next/link';
+import routes from '@/shared/routes';
 
 export const Links = () => {
   return (
@@ -13,16 +14,13 @@ export const Links = () => {
       gap='5'
     >
       <Text>
-        <Link href='/about/our-story'>Our Story</Link>
+        <Link href={routes.about}>Our Story</Link>
       </Text>
       <Text>
-        <Link href='/about/philosophy'>Philosophy</Link>
+        <Link href={routes.philosophy}>Philosophy</Link>
       </Text>
       <Text>
-        <Link href='/about/wholesale'>Wholesale</Link>
-      </Text>
-      <Text>
-        <Link href='/about/delivery-area'>Delivery Area</Link>
+        <Link href={routes.deliveryArea}>Delivery Area</Link>
       </Text>
     </Flex>
   );
