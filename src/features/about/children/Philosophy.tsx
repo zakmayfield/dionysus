@@ -20,9 +20,7 @@ export const Philosophy = () => {
   );
 };
 
-type FullHeightImageProps = BoxProps;
-
-function FullHeightImage({ ...props }: FullHeightImageProps) {
+function FullHeightImage({ ...props }: BoxProps) {
   // parent needs a minH set
   return (
     <Box {...props}>
@@ -39,9 +37,7 @@ function FullHeightImage({ ...props }: FullHeightImageProps) {
   );
 }
 
-type PhilosophyContentProps = BoxProps;
-
-function PhilosophyContent({ ...props }: PhilosophyContentProps) {
+function PhilosophyContent({ ...props }: BoxProps) {
   return (
     <Box
       {...props}

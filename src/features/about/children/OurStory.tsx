@@ -34,9 +34,8 @@ export const OurStory = () => {
 };
 
 // TODO: Refactor all of this into proper components (about/philosophy)
-type FullHeightImageProps = BoxProps;
 
-function FullHeightImage({ ...props }: FullHeightImageProps) {
+function FullHeightImage({ ...props }: BoxProps) {
   // parent needs a minH set
   return (
     <Box {...props}>
@@ -53,9 +52,7 @@ function FullHeightImage({ ...props }: FullHeightImageProps) {
   );
 }
 
-type AboutContentProps = BoxProps;
-
-function AboutContent({ ...props }: AboutContentProps) {
+function AboutContent({ ...props }: BoxProps) {
   return (
     <Box
       {...props}
@@ -109,9 +106,8 @@ function AboutContent({ ...props }: AboutContentProps) {
     </Box>
   );
 }
-type FullHeightImageProps2 = BoxProps;
 
-function FullHeightImage2({ ...props }: FullHeightImageProps2) {
+function FullHeightImage2({ ...props }: BoxProps) {
   // parent needs a minH set
   return (
     <Box {...props}>
@@ -128,9 +124,7 @@ function FullHeightImage2({ ...props }: FullHeightImageProps2) {
   );
 }
 
-type AboutContentProps2 = BoxProps;
-
-function AboutContent2({ ...props }: AboutContentProps2) {
+function AboutContent2({ ...props }: BoxProps) {
   return (
     <Box {...props} textAlign='left' p={{ base: '2', md: '8' }} pt='6' px='6'>
       <Stack spacing='8'>
