@@ -19,7 +19,7 @@ export const Philosophy = () => {
       w='100%'
       spacing={{ base: '12', lg: '0' }}
       mt='6'
-      mb='6'
+      mb='12'
       px={{ base: '6', md: '0' }}
     >
       <AboutTextContent

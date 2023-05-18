@@ -13,7 +13,12 @@ import OrangeJuice from '@/shared/assets/about/orange-juice.jpg';
 
 export const OurStory = () => {
   return (
-    <Stack my='6' spacing={{ base: '12', lg: '0' }} px={{ base: '6', md: '0' }}>
+    <Stack
+      mt='6'
+      mb='12'
+      spacing={{ base: '12', lg: '0' }}
+      px={{ base: '6', md: '0' }}
+    >
       <Stack
         as='section'
         direction={{ base: 'column', lg: 'row-reverse' }}
