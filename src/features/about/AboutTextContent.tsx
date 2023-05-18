@@ -16,7 +16,7 @@ export const AboutTextContent = ({
   ...props
 }: AboutTextContentProps) => {
   return (
-    <Box {...props} textAlign='left' pl={{ lg: '6' }}>
+    <Box textAlign='left' pl={{ lg: '6' }} pb={{ lg: '6' }} {...props}>
       {hasHeading && (
         <>
           <Heading as='h2' fontWeight='light'>

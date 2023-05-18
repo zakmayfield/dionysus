@@ -3,7 +3,7 @@
 import { Stack } from '@chakra-ui/react';
 import {
   philosophyTitle,
-  philosophySubTitle,
+  philosophySubtitle,
   philosophyContent,
 } from '../constants';
 import { AboutTextContent } from '../AboutTextContent';
@@ -25,7 +25,7 @@ export const Philosophy = () => {
       <AboutTextContent
         maxW={{ base: '100%', lg: '50%' }}
         title={philosophyTitle}
-        subtitle={philosophySubTitle}
+        subtitle={philosophySubtitle}
         textContent={philosophyContent}
       />
       <FullHeightImage img={lcp} altText='lycee cactus pear juice' />
