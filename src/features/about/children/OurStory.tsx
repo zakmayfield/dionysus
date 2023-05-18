@@ -19,10 +19,10 @@ export const OurStory = () => {
         direction={{ base: 'column', lg: 'row-reverse' }}
         minH={{ md: '100vh' }}
         w='100%'
-        spacing={{ base: '12', md: '0' }}
+        spacing={{ base: '12' }}
       >
         <AboutTextContent
-          maxW={{ base: '100%', md: '50%' }}
+          maxW={{ base: '100%', lg: '50%' }}
           title={storyTitle}
           subtitle={storySubtitle}
           textContent={storyContent}
@@ -32,14 +32,14 @@ export const OurStory = () => {
 
       <Stack
         as='section'
-        direction={{ base: 'column', md: 'row' }}
-        minH={{ md: '100vh' }}
+        direction={{ base: 'column', lg: 'row' }}
+        minH={{ lg: '100vh' }}
         w='100%'
-        spacing={{ base: '6', md: '0' }}
+        spacing={{ base: '12' }}
       >
         <AboutTextContent
-          maxW={{ base: '100%', md: '50%' }}
-          pl={{ lg: '0' }}
+          maxW={{ base: '100%', lg: '50%' }}
+          pr={{ lg: '6' }}
           pt={{ lg: '6' }}
           hasHeading={false}
           textContent={storyContent2}
