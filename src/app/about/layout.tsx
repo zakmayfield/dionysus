@@ -1,10 +1,10 @@
-import { ContentContainer, Hero2 } from '@/shared/components';
-import { Links } from '@/features/about';
-import { OrderHero } from '@/features/about/OrderHero';
+import { ContentContainer, DynamicAboutHero } from '@/shared/components';
+import { Links, OrderHero } from '@/features/about';
+import { sharedMetadata } from '@/shared/metadata';
 
 export const metadata = {
-  title: 'About',
-  description: 'About page',
+  ...sharedMetadata,
+  title: 'Chasers Fresh Juice | About',
 };
 
 export default function AboutLayout({
@@ -14,7 +14,7 @@ export default function AboutLayout({
 }) {
   return (
     <section>
-      <Hero2 />
+      <DynamicAboutHero />
       <Links />
 
       <ContentContainer maxW='container.2xl' px={{ base: '0', md: '8' }}>

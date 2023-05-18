@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image';
 import blueberries from '@/shared/assets/about/blueberries.jpeg';
 import mixedberries from '@/shared/assets/about/mixedberries.jpeg';
 import redberries from '@/shared/assets/about/redberries.jpeg';
@@ -6,7 +7,7 @@ export type pathItem = {
   id: number;
   title: string;
   slug: string;
-  img: any;
+  img: StaticImageData;
 };
 
 export const pathData: pathItem[] = [

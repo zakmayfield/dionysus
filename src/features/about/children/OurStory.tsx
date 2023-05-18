@@ -8,8 +8,8 @@ import {
   storyContent2,
 } from '../constants';
 import { FullHeightImage } from '@/shared/components';
-import pom from '@/shared/assets/about/pom.jpeg';
-import spinach from '@/shared/assets/about/spinach.jpeg';
+import PomJuice from '@/shared/assets/about/pom.jpeg';
+import OrangeJuice from '@/shared/assets/about/orange-juice.jpg';
 
 export const OurStory = () => {
   return (
@@ -27,13 +27,13 @@ export const OurStory = () => {
           subtitle={storySubtitle}
           textContent={storyContent}
         />
-        <FullHeightImage img={pom} altText='pomegranate juice' />
+        <FullHeightImage img={PomJuice} altText='Pomegranate juice on beach' />
       </Stack>
 
       <Stack
         as='section'
         direction={{ base: 'column', lg: 'row' }}
-        minH={{ lg: '100vh' }}
+        h={{ lg: '100vh' }}
         w='100%'
         spacing={{ base: '12', lg: '0' }}
       >
@@ -44,7 +44,10 @@ export const OurStory = () => {
           hasHeading={false}
           textContent={storyContent2}
         />
-        <FullHeightImage img={spinach} altText='spinach juice' />
+        <FullHeightImage
+          img={OrangeJuice}
+          altText='Hand holding bottle of orange juice'
+        />
       </Stack>
     </Stack>
   );

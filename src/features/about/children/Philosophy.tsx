@@ -8,7 +8,7 @@ import {
 } from '../constants';
 import { AboutTextContent } from '../AboutTextContent';
 import { FullHeightImage } from '@/shared/components';
-import lcp from '@/shared/assets/about/lcp.jpeg';
+import FeaturedImg from '@/shared/assets/about/juice-cluster-beach.jpg';
 
 export const Philosophy = () => {
   return (
@@ -28,7 +28,10 @@ export const Philosophy = () => {
         subtitle={philosophySubtitle}
         textContent={philosophyContent}
       />
-      <FullHeightImage img={lcp} altText='lycee cactus pear juice' />
+      <FullHeightImage
+        img={FeaturedImg}
+        altText='Three bottles of different juices on a beach'
+      />
     </Stack>
   );
 };

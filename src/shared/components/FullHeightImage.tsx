@@ -1,9 +1,9 @@
 'use client';
-import { Box, BoxProps } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Box, BoxProps, useMediaQuery } from '@chakra-ui/react';
+import Image, { StaticImageData } from 'next/image';
 
 type FullHeightImageProps = BoxProps & {
-  img: any;
+  img: StaticImageData;
   altText: string;
 };
 
@@ -12,6 +12,7 @@ export const FullHeightImage = ({
   altText = 'placeholder',
   ...props
 }: FullHeightImageProps) => {
+  const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
   // parent needs a minH set
   return (
     <Box {...props}>
@@ -19,7 +20,7 @@ export const FullHeightImage = ({
         src={img}
         alt={altText}
         style={{
-          height: '100%',
+          height: isLargerThanTablet ? '100%' : '70vh',
           objectFit: 'cover',
           objectPosition: 'center',
         }}
