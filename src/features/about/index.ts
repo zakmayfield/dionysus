@@ -1,2 +1,5 @@
+'use client';
+export * from './AboutTextContent';
 export * from './constants';
-export * from './AboutPage';
+export * from './AboutSubNav';
+export * from './OrderHero';

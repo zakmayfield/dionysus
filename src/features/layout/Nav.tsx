@@ -21,7 +21,7 @@ import { motion } from 'framer-motion';
 import logo from '~shared/assets/chasers-juice-logo.png';
 import { ContentContainer } from '~shared/components';
 import routes from '@/shared/routes';
-import { getPathname } from '@/shared/utils';
+import { getBasePathname } from '@/shared/utils';
 
 const navigationItems = [
   { label: 'Home', route: routes.home },
@@ -73,7 +73,9 @@ export default function Nav() {
                   transition='0.1s linear'
                   key={i}
                   color={
-                    pathname === getPathname(item.route) ? 'primary.700' : ''
+                    getBasePathname(pathname) === getBasePathname(item.route)
+                      ? 'primary.700'
+                      : ''
                   }
                   _hover={{ color: 'primary.700' }}
                 >
@@ -136,7 +138,11 @@ export default function Nav() {
               {navigationItems.map((item) => (
                 <ListItem
                   key={item.label}
-                  color={pathname === item.route ? 'chakra-body-text' : ''}
+                  color={
+                    getBasePathname(pathname) === getBasePathname(item.route)
+                      ? 'chakra-body-text'
+                      : ''
+                  }
                   _hover={{ color: 'gray.600' }}
                 >
                   <Link href={item.route} onClick={onClose}>
