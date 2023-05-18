@@ -19,7 +19,7 @@ export const OurStory = () => {
         direction={{ base: 'column', lg: 'row-reverse' }}
         minH={{ md: '100vh' }}
         w='100%'
-        spacing={{ base: '12' }}
+        spacing={{ base: '12', lg: '0' }}
       >
         <AboutTextContent
           maxW={{ base: '100%', lg: '50%' }}
@@ -35,7 +35,7 @@ export const OurStory = () => {
         direction={{ base: 'column', lg: 'row' }}
         minH={{ lg: '100vh' }}
         w='100%'
-        spacing={{ base: '12' }}
+        spacing={{ base: '12', lg: '0' }}
       >
         <AboutTextContent
           maxW={{ base: '100%', lg: '50%' }}
