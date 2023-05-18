@@ -1,6 +1,7 @@
 export * from './ContentContainer';
 export * from './CustomErrorMessage';
 export * from './FadeInBox';
+export * from './FullHeightImage';
 export * from './Hero';
 export * from './Hero2';
 export * from './HeroContentBox';

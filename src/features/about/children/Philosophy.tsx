@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Heading, Stack, Text, BoxProps } from '@chakra-ui/react';
-import Image from 'next/image';
+import { FullHeightImage } from '@/shared/components';
 import lcp from '@/shared/assets/about/lcp.jpeg';
 
 export const Philosophy = () => {
@@ -16,27 +16,10 @@ export const Philosophy = () => {
       mb='12'
     >
       <PhilosophyContent maxW={{ base: '100%', lg: '50%' }} />
-      <FullHeightImage />
+      <FullHeightImage img={lcp} altText='lycee cactus pear juice' />
     </Stack>
   );
 };
-
-function FullHeightImage({ ...props }: BoxProps) {
-  // parent needs a minH set
-  return (
-    <Box {...props}>
-      <Image
-        src={lcp}
-        alt='Chasers Juice pomegranate juice bottle on the beach'
-        style={{
-          height: '100%',
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
-      />
-    </Box>
-  );
-}
 
 function PhilosophyContent({ ...props }: BoxProps) {
   return (
