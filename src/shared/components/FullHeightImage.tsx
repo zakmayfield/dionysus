@@ -1,6 +1,7 @@
 'use client';
-import { Box, BoxProps, useMediaQuery } from '@chakra-ui/react';
-import Image, { StaticImageData } from 'next/image';
+import { Box, BoxProps, Image } from '@chakra-ui/react';
+import { StaticImageData } from 'next/image';
+import { FadeInBox } from './FadeInBox';
 
 type FullHeightImageProps = BoxProps & {
   img: StaticImageData;
@@ -12,19 +13,18 @@ export const FullHeightImage = ({
   altText = 'placeholder',
   ...props
 }: FullHeightImageProps) => {
-  const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
   // parent needs a minH set
   return (
     <Box {...props}>
-      <Image
-        src={img}
-        alt={altText}
-        style={{
-          height: isLargerThanTablet ? '100%' : '70vh',
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
-      />
+      <FadeInBox h='full'>
+        <Image
+          src={img.src}
+          alt={altText}
+          height={{ md: '100%', base: '70vh' }}
+          objectFit='cover'
+          objectPosition='center'
+        />
+      </FadeInBox>
     </Box>
   );
 };
