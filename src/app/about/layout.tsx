@@ -1,5 +1,5 @@
 import { ContentContainer, DynamicAboutHero } from '@/shared/components';
-import { Links, OrderHero } from '@/features/about';
+import { AboutSubNav, OrderHero } from '@/features/about';
 import { sharedMetadata } from '@/shared/metadata';
 
 export const metadata = {
@@ -15,7 +15,7 @@ export default function AboutLayout({
   return (
     <section>
       <DynamicAboutHero />
-      <Links />
+      <AboutSubNav />
 
       <ContentContainer maxW='container.2xl' px={{ base: '0', md: '8' }}>
         {children}

@@ -3,7 +3,7 @@ import { Flex, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import routes from '@/shared/routes';
 
-export const Links = () => {
+export const AboutSubNav = () => {
   return (
     <Flex
       direction={{ base: 'column', md: 'row' }}
