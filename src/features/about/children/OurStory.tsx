@@ -10,10 +10,10 @@ export const OurStory = () => {
     <Stack my='6'>
       <Stack
         as='section'
-        direction={{ base: 'column', md: 'row-reverse' }}
+        direction={{ base: 'column', lg: 'row-reverse' }}
         minH={{ md: '100vh' }}
         w='100%'
-        spacing={{ base: '6', md: '0' }}
+        spacing={{ base: '12', md: '0' }}
       >
         <AboutContent maxW={{ base: '100%', md: '50%' }} />
         <FullHeightImage />
@@ -32,8 +32,6 @@ export const OurStory = () => {
     </Stack>
   );
 };
-
-// TODO: Refactor all of this into proper components (about/philosophy)
 
 function FullHeightImage({ ...props }: BoxProps) {
   // parent needs a minH set
@@ -54,7 +52,7 @@ function FullHeightImage({ ...props }: BoxProps) {
 
 function AboutContent({ ...props }: BoxProps) {
   return (
-    <Box {...props} textAlign='left' py={{ md: '6' }} px={{ base: '6' }}>
+    <Box {...props} textAlign='left' pl={{ lg: '6' }}>
       <Heading as='h2' fontWeight='light'>
         Our Story
       </Heading>
