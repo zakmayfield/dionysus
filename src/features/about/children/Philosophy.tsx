@@ -14,6 +14,7 @@ export const Philosophy = () => {
       spacing={{ base: '12', lg: '0' }}
       mt='6'
       mb='12'
+      px={{ base: '6', md: '0' }}
     >
       <PhilosophyContent maxW={{ base: '100%', lg: '50%' }} />
       <FullHeightImage img={lcp} altText='lycee cactus pear juice' />
@@ -23,7 +24,7 @@ export const Philosophy = () => {
 
 function PhilosophyContent({ ...props }: BoxProps) {
   return (
-    <Box {...props} textAlign='left' px='6' py={{ md: '6' }}>
+    <Box {...props} textAlign='left' pl={{ lg: '6' }} pt={{ lg: '6' }}>
       <Heading as='h2' fontWeight='light'>
         Our Philosophy
       </Heading>
