@@ -54,12 +54,7 @@ function FullHeightImage({ ...props }: BoxProps) {
 
 function AboutContent({ ...props }: BoxProps) {
   return (
-    <Box
-      {...props}
-      textAlign='left'
-      py={{ base: '0', md: '8' }}
-      px={{ base: '6' }}
-    >
+    <Box {...props} textAlign='left' py={{ md: '6' }} px={{ base: '6' }}>
       <Heading as='h2' fontWeight='light'>
         Our Story
       </Heading>

@@ -8,13 +8,14 @@ export const Philosophy = () => {
   return (
     <Stack
       as='section'
-      direction={{ base: 'column', md: 'row-reverse' }}
+      direction={{ base: 'column', lg: 'row-reverse' }}
       minH={{ md: '100vh' }}
       w='100%'
-      spacing={{ base: '6', md: '0' }}
-      my='6'
+      spacing={{ base: '12', lg: '0' }}
+      mt='6'
+      mb='12'
     >
-      <PhilosophyContent maxW={{ base: '100%', md: '50%' }} />
+      <PhilosophyContent maxW={{ base: '100%', lg: '50%' }} />
       <FullHeightImage />
     </Stack>
   );
@@ -39,12 +40,7 @@ function FullHeightImage({ ...props }: BoxProps) {
 
 function PhilosophyContent({ ...props }: BoxProps) {
   return (
-    <Box
-      {...props}
-      textAlign='left'
-      py={{ base: '0', md: '8' }}
-      px={{ base: '6' }}
-    >
+    <Box {...props} textAlign='left' px='6' py={{ md: '6' }}>
       <Heading as='h2' fontWeight='light'>
         Our Philosophy
       </Heading>
@@ -53,10 +49,7 @@ function PhilosophyContent({ ...props }: BoxProps) {
       </Heading>
 
       <Stack spacing='8'>
-        <Text
-          fontSize={{ base: 'md', md: 'lg' }}
-          lineHeight={{ base: 'taller', md: 'tall' }}
-        >
+        <Text lineHeight='taller'>
           Our juices are made from all-natural, fresh ingredients with no sugars
           or preservatives added. Because fresh is best, we begin each day at
           7am creating all of our juice orders so we can deliver them to you
@@ -68,10 +61,7 @@ function PhilosophyContent({ ...props }: BoxProps) {
           the natural flavour of our juices speak for itself, they don’t need
           anything extra. Chasers Juice is a fresh juice experience!
         </Text>
-        <Text
-          fontSize={{ base: 'md', md: 'lg' }}
-          lineHeight={{ base: 'taller', md: 'tall' }}
-        >
+        <Text lineHeight='taller'>
           Chasers Fresh Juice is also committed to finding new and innovative
           ways to limit the amount of waste produced every day. All of our
           biological waste from the fruits and vegetables we juice is not
