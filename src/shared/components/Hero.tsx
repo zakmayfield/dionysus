@@ -5,9 +5,12 @@ import { FadeInBox } from './FadeInBox';
 type HeroProps = {
   title: string;
   imgSrc: string;
+  /** This key is set as the motion key which will run the animation when the
+   * key changes */
+  key?: string;
 };
 
-export const Hero = ({ title, imgSrc }: HeroProps) => {
+export const Hero = ({ title, imgSrc, key }: HeroProps) => {
   return (
     <Flex
       w='full'
@@ -21,7 +24,13 @@ export const Hero = ({ title, imgSrc }: HeroProps) => {
       bgImage={imgSrc}
     >
       {/* consider changing hero bg images to Next Images, for optimzation purposes? ** sidenote, on first render of the images there is a flash when the image is being rendered */}
-      <FadeInBox textTransform='capitalize' color='white' zIndex='2' px='6'>
+      <FadeInBox
+        textTransform='capitalize'
+        color='white'
+        zIndex='2'
+        px='6'
+        key={key}
+      >
         <Heading
           as='h1'
           fontWeight='light'
