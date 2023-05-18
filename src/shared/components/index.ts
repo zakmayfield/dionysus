@@ -1,7 +1,10 @@
+'use client';
 export * from './ContentContainer';
+export * from './CustomErrorMessage';
+export * from './FadeInBox';
+export * from './FullHeightImage';
+export * from './Hero';
+export * from './DynamicAboutHero';
+export * from './HeroContentBox';
 export * from './motion-chakra';
 export * from './ParallaxHero';
-export * from './Hero';
-export * from './FadeInBox';
-export * from './HeroContentBox';
-export * from './CustomErrorMessage';

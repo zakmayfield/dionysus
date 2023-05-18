@@ -1,3 +1,5 @@
+'use client';
+
 import { useScroll, useSpring, useTransform } from 'framer-motion';
 import { Box, BoxProps } from '@chakra-ui/react';
 import React, { useLayoutEffect, useRef, useState } from 'react';

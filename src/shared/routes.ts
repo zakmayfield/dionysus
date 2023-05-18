@@ -1,7 +1,5 @@
-import { AboutRouteParams } from '@/features/about/constants';
-
 const aboutRoute = (route: string) => {
-  return `/about?tab=${route}`;
+  return `/about/${route}`;
 };
 
 export default {
@@ -10,8 +8,7 @@ export default {
   products: '/products',
   faq: '/faq',
   contact: '/contact',
-  about: aboutRoute(AboutRouteParams.ABOUT),
-  philosophy: aboutRoute(AboutRouteParams.PHILOSOPHY),
-  wholesale: aboutRoute(AboutRouteParams.WHOLESALE),
-  deliveryArea: aboutRoute(AboutRouteParams.DELIVERY_AREA),
+  about: '/about',
+  philosophy: aboutRoute('philosophy'),
+  deliveryArea: aboutRoute('delivery-area'),
 } as const;

@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import OrderHeroBg from '@/shared/assets/juice/oranges-bg.jpg';
 import { ParallaxHero, HeroContentBox } from '@/shared/components';

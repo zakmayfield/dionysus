@@ -1,3 +1,4 @@
+'use client';
 /**
  * Chakra UI components that have been enhanced with Framer Motion.
  */

@@ -3,15 +3,7 @@ import { LegendItemProps, legendData } from '../constants';
 
 export const Legend = ({ ...props }: StackProps) => {
   return (
-    <Stack
-      w='full'
-      textAlign='left'
-      justify='center'
-      mt='12'
-      mb='20'
-      px='5'
-      {...props}
-    >
+    <Stack w='full' textAlign='left' justify='center' mt='6' {...props}>
       <Heading
         as='h2'
         fontWeight='light'

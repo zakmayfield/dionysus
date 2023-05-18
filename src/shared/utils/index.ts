@@ -1,1 +1,1 @@
-export * from './getPathname';
+export * from './getBasePathname';

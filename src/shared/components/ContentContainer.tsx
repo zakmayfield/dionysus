@@ -1,3 +1,4 @@
+'use client';
 import { Container, ContainerProps } from '@chakra-ui/react';
 import { PropsWithChildren } from 'react';
 
