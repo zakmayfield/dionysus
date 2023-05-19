@@ -17,7 +17,7 @@ export default function AboutLayout({
       <DynamicAboutHero />
       <AboutSubNav />
 
-      <ContentContainer maxW='container.2xl' px={{ base: '0', md: '8' }}>
+      <ContentContainer maxW='container.2xl' px={{ base: '0', md: '6' }}>
         {children}
       </ContentContainer>
 

@@ -11,7 +11,11 @@ import HeroImg from '@/shared/assets/juice/product-hero-beach.jpeg';
 export const ProductsPage = () => {
   return (
     <Box>
-      <Hero title='Products' imgSrc={HeroImg.src} />
+      <Hero
+        title='Products'
+        img={HeroImg}
+        altText='juices lined up on the beach'
+      />
       <ProductsStatement />
       <ContentContainer maxW='container.lg' py={{ md: '20', base: '12' }}>
         <Grid
