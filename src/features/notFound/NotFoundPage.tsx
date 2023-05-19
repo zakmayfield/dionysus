@@ -39,7 +39,7 @@ export const NotFoundPage = () => {
           textTransform='uppercase'
           fontFamily='Londrina Outline'
           letterSpacing='widest'
-          fontSize={{ lg: '250px', sm: '200px', base: '150px' }}
+          fontSize={{ lg: '280px', sm: '200px', base: '150px' }}
           lineHeight='none'
           fontWeight='light'
           textAlign='center'
