@@ -1,7 +1,7 @@
 'use client';
 import { Heading, Box, Flex } from '@chakra-ui/react';
 import { StaticImageData } from 'next/image';
-import { FullHeightHero } from './FullHeightHero';
+import { HeroImage } from './HeroImage';
 import { FadeInBox } from './FadeInBox';
 
 type HeroProps = {
@@ -21,7 +21,7 @@ export const Hero = ({ title, altText, img, motionKey }: HeroProps) => {
       justifyContent='center'
       alignItems='center'
     >
-      <FullHeightHero img={img} altText={altText} />
+      <HeroImage img={img} altText={altText} />
 
       {/* Overylay */}
       <Box position='absolute' inset='0' bg='rgba(0, 0, 0, 0.3)' />

@@ -3,16 +3,16 @@ import { Box, BoxProps } from '@chakra-ui/react';
 import Image, { StaticImageData } from 'next/image';
 import { FadeInBox } from './FadeInBox';
 
-type FullHeightHeroProps = BoxProps & {
+type HeroImageProps = BoxProps & {
   img: StaticImageData | string;
   altText: string;
 };
 
-export const FullHeightHero = ({
+export const HeroImage = ({
   img,
   altText = 'placeholder',
   ...props
-}: FullHeightHeroProps) => {
+}: HeroImageProps) => {
   return (
     <Box {...props} w='full' height={{ base: '200px', md: '300px' }}>
       <FadeInBox h='full'>
