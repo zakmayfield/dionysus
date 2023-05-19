@@ -4,7 +4,7 @@ import Image, { StaticImageData } from 'next/image';
 import { FadeInBox } from './FadeInBox';
 
 type FullHeightHeroProps = BoxProps & {
-  img: StaticImageData;
+  img: StaticImageData | string;
   altText: string;
 };
 

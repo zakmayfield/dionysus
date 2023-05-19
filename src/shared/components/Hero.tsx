@@ -1,16 +1,18 @@
 'use client';
 import { Heading, Box, Flex } from '@chakra-ui/react';
+import { StaticImageData } from 'next/image';
+import { FullHeightHero } from './FullHeightHero';
 import { FadeInBox } from './FadeInBox';
 
 type HeroProps = {
   title: string;
-  imgSrc: string;
+  img: StaticImageData | string;
   /** This key is set as the motion key which will run the animation when the
    * key changes */
   key?: string;
 };
 
-export const Hero = ({ title, imgSrc, key }: HeroProps) => {
+export const Hero = ({ title, img, key }: HeroProps) => {
   return (
     <Flex
       w='full'
@@ -18,31 +20,30 @@ export const Hero = ({ title, imgSrc, key }: HeroProps) => {
       position='relative'
       justifyContent='center'
       alignItems='center'
-      bgPosition='center'
-      bgRepeat='no-repeat'
-      bgSize='cover'
-      bgImage={imgSrc}
     >
-      {/* consider changing hero bg images to Next Images, for optimzation purposes? ** sidenote, on first render of the images there is a flash when the image is being rendered */}
-      <FadeInBox
-        textTransform='capitalize'
-        color='white'
-        zIndex='2'
-        px='6'
-        key={key}
-      >
-        <Heading
-          as='h1'
-          fontWeight='light'
-          letterSpacing='widest'
-          fontSize='5xl'
-        >
-          {title}
-        </Heading>
-      </FadeInBox>
+      <FullHeightHero img={img} altText='fruit' />
 
       {/* Overylay */}
       <Box position='absolute' inset='0' bg='rgba(0, 0, 0, 0.3)' />
     </Flex>
   );
 };
+
+{
+  /* <FadeInBox
+  textTransform='capitalize'
+  color='white'
+  zIndex='2'
+  px='6'
+  key={key}
+>
+  <Heading
+    as='h1'
+    fontWeight='light'
+    letterSpacing='widest'
+    fontSize='5xl'
+  >
+    {title}
+  </Heading>
+</FadeInBox> */
+}

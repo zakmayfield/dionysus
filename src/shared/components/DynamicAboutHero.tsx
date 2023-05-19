@@ -7,7 +7,7 @@ export const DynamicAboutHero = () => {
   return (
     <Hero
       title={pathHero?.title ?? ''}
-      imgSrc={pathHero?.img.src ?? ''}
+      img={pathHero?.img ?? ''}
       key={pathHero?.title}
     />
   );
