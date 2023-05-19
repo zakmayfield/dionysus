@@ -7,8 +7,6 @@ import { textareaTheme } from './textarea';
 export { buttonTheme as Button } from './button';
 export { linkTheme as Link } from './link';
 export { inputTheme as Input } from './input';
-import { selectTheme as Select } from './select';
-import { textareaTheme as Textarea } from './textarea';
 
 export const components = {
   Button: buttonTheme,
