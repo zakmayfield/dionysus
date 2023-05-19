@@ -1,5 +1,5 @@
 'use client';
-import { Heading, Box, Flex } from '@chakra-ui/react';
+import { Heading, Box, Flex, Text } from '@chakra-ui/react';
 import { StaticImageData } from 'next/image';
 import { FullHeightHero } from './FullHeightHero';
 import { FadeInBox } from './FadeInBox';
@@ -16,7 +16,6 @@ export const Hero = ({ title, img, key }: HeroProps) => {
   return (
     <Flex
       w='full'
-      minH={{ base: '300px' }}
       position='relative'
       justifyContent='center'
       alignItems='center'
@@ -25,25 +24,34 @@ export const Hero = ({ title, img, key }: HeroProps) => {
 
       {/* Overylay */}
       <Box position='absolute' inset='0' bg='rgba(0, 0, 0, 0.3)' />
+
+      {/* Centered Title */}
+      <Flex
+        position='absolute'
+        top='50%'
+        left='50%'
+        transform='translate(-50%, -50%)'
+        justifyContent='center'
+        alignItems='center'
+        flexDirection='column'
+      >
+        <FadeInBox
+          textTransform='capitalize'
+          color='white'
+          zIndex='2'
+          px='6'
+          key={key}
+        >
+          <Heading
+            as='h1'
+            fontWeight='light'
+            letterSpacing='widest'
+            fontSize='5xl'
+          >
+            {title}
+          </Heading>
+        </FadeInBox>
+      </Flex>
     </Flex>
   );
 };
-
-{
-  /* <FadeInBox
-  textTransform='capitalize'
-  color='white'
-  zIndex='2'
-  px='6'
-  key={key}
->
-  <Heading
-    as='h1'
-    fontWeight='light'
-    letterSpacing='widest'
-    fontSize='5xl'
-  >
-    {title}
-  </Heading>
-</FadeInBox> */
-}

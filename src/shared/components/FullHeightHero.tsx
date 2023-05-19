@@ -14,13 +14,15 @@ export const FullHeightHero = ({
   ...props
 }: FullHeightHeroProps) => {
   return (
-    <Box {...props}>
+    <Box {...props} w='full' height={{ base: '200px', md: '300px' }}>
       <FadeInBox h='full'>
         <Image
           src={img}
           alt={altText}
+          priority={true}
           style={{
             height: '100%',
+            width: '100%',
             objectFit: 'cover',
             objectPosition: 'center',
           }}
