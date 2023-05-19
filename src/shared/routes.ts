@@ -9,6 +9,7 @@ export default {
   faq: '/faq',
   contact: '/contact',
   about: '/about',
+  ourStory: aboutRoute('our-story'),
   philosophy: aboutRoute('philosophy'),
   deliveryArea: aboutRoute('delivery-area'),
 } as const;
