@@ -9,7 +9,7 @@ import HeroImg from '@/shared/assets/faq/kiwi-bg.jpeg';
 export const FaqPage = () => {
   return (
     <Box>
-      <Hero title='Frequenty asked questions' imgSrc={HeroImg.src} />
+      <Hero title='Frequenty asked questions' img={HeroImg} altText='kiwi' />
       {faqsData.map((faqSection) => {
         return <FaqSection key={faqSection.key} section={faqSection} />;
       })}

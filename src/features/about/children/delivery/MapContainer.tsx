@@ -2,6 +2,7 @@ import { Box, Flex } from '@chakra-ui/react';
 import { Legend } from './Legend';
 import map from '@/shared/assets/about/delivery-area-map.jpeg';
 
+// TODO: refactor background image to Next Image
 export const MapContainer = () => {
   return (
     <Flex
@@ -10,8 +11,6 @@ export const MapContainer = () => {
       alignItems='center'
       flexFlow='column'
     >
-      {/* map bg image */}
-      {/* consider changing to a Next image for optimization */}
       <Box
         bgImage={map.src}
         pb='50vh'
