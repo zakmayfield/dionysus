@@ -19,13 +19,20 @@ export const NotFoundPage = () => {
       maxW='container.2xl'
     >
       {/* Orange circle */}
-      <Box w='750px' h='750px' bg='rgb(248,206,88)' rounded='full' />
+      <Box
+        w={{ lg: '750px', md: '700px', sm: '550px', base: '400px' }}
+        h={{ lg: '750px', md: '700px', sm: '550px', base: '400px' }}
+        bg='rgb(248,206,88)'
+        rounded='full'
+      />
+
+      {/* 404 Heading & Juice Image */}
       <Flex
         position='absolute'
         top='0'
         direction='column'
         justifyContent='center'
-        alignItems='center'
+        alignItems={{ lg: 'center', base: 'flex-end' }}
       >
         <Heading
           as='h1'
@@ -41,12 +48,22 @@ export const NotFoundPage = () => {
         >
           404
         </Heading>
-        <Box position='absolute' top='18vh' transform='rotate(10deg)'>
+        <Box
+          position='absolute'
+          top='18vh'
+          transform='rotate(10deg)'
+          width={{
+            md: FeaturedJuice.width / 1.3,
+            base: FeaturedJuice.width / 2,
+          }}
+          height={{
+            md: FeaturedJuice.height / 1.3,
+            base: FeaturedJuice.height / 2,
+          }}
+        >
           <NextImage
-            src={FeaturedJuice.src}
+            src={FeaturedJuice}
             alt='Bottle of chasers juice lychee cactus pear juice'
-            width={FeaturedJuice.width / 1.3}
-            height={FeaturedJuice.height / 1.3}
             quality={100}
             style={{
               filter: 'drop-shadow(30px 15px 4px rgba(0, 0, 0, 0.08))',
@@ -54,18 +71,25 @@ export const NotFoundPage = () => {
           />
         </Box>
       </Flex>
+
+      {/* Left text box */}
       <Box
         position='absolute'
-        maxW='prose'
+        maxW={{ lg: 'prose', sm: '40ch', base: '30ch' }}
         left='0'
-        px={{ md: '12', base: '6' }}
+        px={{ lg: '12', base: '6' }}
       >
         <Heading>Oops!</Heading>
         <Heading>Page not found</Heading>
         <Text mt='3'>
           It looks like the page you&apos;re trying to visit doesn&apos;t exist.
         </Text>
-        <Button onClick={() => router.back()} variant='outline' mt='3'>
+        <Button
+          onClick={() => router.back()}
+          colorScheme='lightAccent'
+          variant='outline'
+          mt='3'
+        >
           Go back
         </Button>
       </Box>
