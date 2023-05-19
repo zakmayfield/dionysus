@@ -10,6 +10,7 @@ import SmoothiesImg from '@/shared/assets/products/smoothies.jpg';
 import GarnishImg from '@/shared/assets/products/garnish.jpg';
 import CleanseImg from '@/shared/assets/products/cleanses.jpg';
 import IcePopsImg from '@/shared/assets/products/ice-pops.jpg';
+import CustomLabellingImg from '@/shared/assets/products/custom-labelling.jpg';
 
 export const ProductImages: Record<string, StaticImageData> = {
   citrus: CitrusImg,
@@ -23,4 +24,5 @@ export const ProductImages: Record<string, StaticImageData> = {
   cleanse: CleanseImg,
   garnish: GarnishImg,
   ice_pops: IcePopsImg,
+  custom_labelling: CustomLabellingImg,
 };
