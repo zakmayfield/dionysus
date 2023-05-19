@@ -1,16 +1,13 @@
 'use client';
 
 import { Stack } from '@chakra-ui/react';
-import {
-  philosophyTitle,
-  philosophySubtitle,
-  philosophyContent,
-} from '../constants';
 import { AboutTextContent } from '../AboutTextContent';
+import philosophyContent from './PhilosophyContent.json';
 import { FullHeightImage } from '@/shared/components';
 import FeaturedImg from '@/shared/assets/about/juice-cluster-beach.jpg';
 
 export const Philosophy = () => {
+  const { title, subtitle, content } = philosophyContent;
   return (
     <Stack
       as='section'
@@ -24,9 +21,9 @@ export const Philosophy = () => {
     >
       <AboutTextContent
         maxW={{ base: '100%', lg: '50%' }}
-        title={philosophyTitle}
-        subtitle={philosophySubtitle}
-        textContent={philosophyContent}
+        title={title}
+        subtitle={subtitle}
+        textContent={content}
       />
       <FullHeightImage
         img={FeaturedImg}

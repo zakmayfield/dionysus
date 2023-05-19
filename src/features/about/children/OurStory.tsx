@@ -1,17 +1,13 @@
 'use client';
 import { Stack } from '@chakra-ui/react';
 import { AboutTextContent } from '../AboutTextContent';
-import {
-  storyTitle,
-  storySubtitle,
-  storyContent,
-  storyContent2,
-} from '../constants';
+import ourStoryContent from './OurStoryContent.json';
 import { FullHeightImage } from '@/shared/components';
 import PomJuice from '@/shared/assets/about/pom.jpeg';
 import OrangeJuice from '@/shared/assets/about/orange-juice.jpg';
 
 export const OurStory = () => {
+  const { title, subtitle, content, content2 } = ourStoryContent;
   return (
     <Stack
       mt='6'
@@ -28,9 +24,9 @@ export const OurStory = () => {
       >
         <AboutTextContent
           maxW={{ base: '100%', lg: '50%' }}
-          title={storyTitle}
-          subtitle={storySubtitle}
-          textContent={storyContent}
+          title={title}
+          subtitle={subtitle}
+          textContent={content}
         />
         <FullHeightImage img={PomJuice} altText='Pomegranate juice on beach' />
       </Stack>
@@ -47,7 +43,7 @@ export const OurStory = () => {
           pr={{ lg: '6' }}
           pt={{ lg: '6' }}
           hasHeading={false}
-          textContent={storyContent2}
+          textContent={content2}
         />
         <FullHeightImage
           img={OrangeJuice}
