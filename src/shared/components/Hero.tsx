@@ -48,6 +48,7 @@ export const Hero = ({ title, altText, img, motionKey }: HeroProps) => {
             fontWeight='light'
             letterSpacing='widest'
             fontSize='5xl'
+            textAlign='center'
           >
             {title}
           </Heading>
