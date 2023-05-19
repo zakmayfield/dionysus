@@ -10,7 +10,7 @@ import BgImg from '@/shared/assets/contact/fruit-bg.jpg';
 export const ContactPage = () => {
   return (
     <Box>
-      <Hero title='Contact Us' imgSrc={HeroImg.src} />
+      <Hero title='Contact Us' img={HeroImg} altText='citrus' />
       <Box
         bgImage={BgImg.src}
         w='full'

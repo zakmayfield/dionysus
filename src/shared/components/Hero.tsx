@@ -1,18 +1,19 @@
 'use client';
-import { Heading, Box, Flex, Text } from '@chakra-ui/react';
+import { Heading, Box, Flex } from '@chakra-ui/react';
 import { StaticImageData } from 'next/image';
 import { FullHeightHero } from './FullHeightHero';
 import { FadeInBox } from './FadeInBox';
 
 type HeroProps = {
   title: string;
+  altText: string;
   img: StaticImageData | string;
   /** This key is set as the motion key which will run the animation when the
    * key changes */
-  key?: string;
+  motionKey?: string;
 };
 
-export const Hero = ({ title, img, key }: HeroProps) => {
+export const Hero = ({ title, altText, img, motionKey }: HeroProps) => {
   return (
     <Flex
       w='full'
@@ -20,7 +21,7 @@ export const Hero = ({ title, img, key }: HeroProps) => {
       justifyContent='center'
       alignItems='center'
     >
-      <FullHeightHero img={img} altText='fruit' />
+      <FullHeightHero img={img} altText={altText} />
 
       {/* Overylay */}
       <Box position='absolute' inset='0' bg='rgba(0, 0, 0, 0.3)' />
@@ -40,7 +41,7 @@ export const Hero = ({ title, img, key }: HeroProps) => {
           color='white'
           zIndex='2'
           px='6'
-          key={key}
+          key={motionKey}
         >
           <Heading
             as='h1'

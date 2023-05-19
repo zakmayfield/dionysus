@@ -7,8 +7,9 @@ export const DynamicAboutHero = () => {
   return (
     <Hero
       title={pathHero?.title ?? ''}
+      altText={pathHero?.altText ?? ''}
       img={pathHero?.img ?? ''}
-      key={pathHero?.title}
+      motionKey={pathHero?.title}
     />
   );
 };
