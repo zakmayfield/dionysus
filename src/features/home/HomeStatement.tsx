@@ -12,7 +12,7 @@ export default function HomeStatement() {
         py={{ md: '28', base: '12' }}
       >
         <Heading as='h2' fontSize='4xl' w='full' fontWeight='semibold'>
-          Freshly Pressed with&nbsp;
+          Made Fresh With&nbsp;
           <Text as='span' color='primary.600' aria-label='Heart icon - love'>
             ♡
           </Text>
