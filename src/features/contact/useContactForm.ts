@@ -2,6 +2,8 @@ import React, { FormEvent, useState } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
 import { Errors } from '@/shared/components';
+import { formatPhoneNumber } from '@/shared/utils';
+import { chasersJuice } from '@/shared/constants';
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -83,7 +85,9 @@ export const useContactForm = (
           })
           .catch((error) => {
             setFormError(
-              `There has been an error: ${error}. Please call us directly at (416) 259-1557`
+              `There has been an error: ${error}. Please call us directly at ${formatPhoneNumber(
+                chasersJuice.phone
+              )}`
             );
           });
       })

@@ -12,6 +12,8 @@ import {
 import NextLink from 'next/link';
 import React from 'react';
 import routes from '@/shared/routes';
+import { chasersJuice } from '@/shared/constants';
+import { formatPhoneNumber } from '@/shared/utils';
 
 const Faq1A = () => {
   return (
@@ -51,7 +53,7 @@ const Faq1B = () => {
   return (
     <Text>
       Of course it&apos;s 100% FREE! Just contact us through our form&nbsp;
-      <Link as={NextLink} href={routes.contact}>
+      <Link as={NextLink} href={routes.contact} aria-label='Contact us'>
         here
       </Link>
       &nbsp;and we will send you a quick and easy form to fill out so you can
@@ -117,9 +119,7 @@ const Faq2B = () => {
     <VStack spacing='4' alignItems='flex-start'>
       <Text>
         Send us an email anytime at&nbsp;
-        <Link href='mailto:orders@chasersjuice.com'>
-          orders@chasersjuice.com
-        </Link>
+        <Link href={`mailto:${chasersJuice.email}`}>{chasersJuice.email}</Link>
         &nbsp;with the following information:
       </Text>
       <UnorderedList stylePosition='inside'>
@@ -150,9 +150,12 @@ const Faq2C = () => {
     <VStack spacing='4' alignItems='flex-start'>
       <Text>
         Call us at&nbsp;
-        <Link href='tel:416-259-1557'>416-259-1557</Link>. If someone is not
-        there to answer your call, follow the instructions to leave a message at
-        the orders desk. Leave a message with the following information:
+        <Link href={`tel:${chasersJuice.phone}`}>
+          {formatPhoneNumber(chasersJuice.phone)}
+        </Link>
+        . If someone is not there to answer your call, follow the instructions
+        to leave a message at the orders desk. Leave a message with the
+        following information:
       </Text>
       <UnorderedList stylePosition='inside'>
         <ListItem>Your name and business</ListItem>
@@ -188,7 +191,10 @@ const Faq3A = () => {
       </Text>
       <Text>
         For more information about our delivery area,&nbsp;
-        <Link href={routes.deliveryArea}>click here</Link>.
+        <Link href={routes.deliveryArea} aria-label='Delivery area page'>
+          click here
+        </Link>
+        .
       </Text>
     </VStack>
   );
@@ -248,7 +254,10 @@ const Faq3E = () => {
       </Text>
       <Text>
         For more information about our main delivery area,&nbsp;
-        <Link href={routes.deliveryArea}>click here</Link>.
+        <Link href={routes.deliveryArea} aria-label='Delivery area page'>
+          click here
+        </Link>
+        .
       </Text>
     </VStack>
   );
@@ -271,21 +280,26 @@ const Faq3F = () => {
       </Text>
       <Text>
         If you don&apos;t see what you&apos;re looking for,&nbsp;
-        <Link href={routes.deliveryArea}>ask us</Link> and we will see if we can
-        get it for you!
+        <Link href={routes.contact}>ask us</Link> and we will see if we can get
+        it for you!
       </Text>
     </VStack>
   );
 };
 const Faq3G = () => {
   return (
-    <Flex alignItems='flex-start'>
+    <VStack spacing='4' alignItems='flex-start'>
       <Text>
-        Chasers Fresh Juice is located at 218 North Queen Street in Etobicoke,
-        Ontario. Located only a short drive away from Sherway Gardens Mall, near
-        the intersection of North Queen St. and Queensway.
+        Chasers Fresh Juice is located at {chasersJuice.address.address}
+        &nbsp;in&nbsp;
+        {chasersJuice.address.city}, {chasersJuice.address.state}. Located only
+        a short drive away from Sherway Gardens Mall, near the intersection of
+        North Queen St. and Queensway.
       </Text>
-    </Flex>
+      <Link href={chasersJuice.address.googleMapsLink} target='_blank'>
+        Click here for directions
+      </Link>
+    </VStack>
   );
 };
 const Faq4A = () => {
@@ -367,8 +381,10 @@ const Faq4D = () => {
         any water to their juices, so staying hydrated throughout the process is
         a must. Chasers has a variety of different cleanse packages ranging from
         single juice orders to 3, 5 and 7 day cleanse packages.&nbsp;
-        <Link href={routes.products}>Click here</Link> for more information
-        about available cleanse packages.
+        <Link href={routes.products} aria-label='Products page'>
+          Click here
+        </Link>
+        &nbsp;for more information about available cleanse packages.
       </Text>
     </Flex>
   );

@@ -9,6 +9,7 @@ export const SocialMediaLinks = () => {
       <Link
         href='https://www.facebook.com/chasersjuicetoronto/'
         target='_blank'
+        aria-label='Chasers Juice Facebook Page'
       >
         <Box
           border='1px solid black'
@@ -25,6 +26,7 @@ export const SocialMediaLinks = () => {
       <Link
         href='https://www.instagram.com/chasersjuicetoronto/'
         target='_blank'
+        aria-label='Chasers Juice Instagram Page'
       >
         <Box
           border='1px solid black'
