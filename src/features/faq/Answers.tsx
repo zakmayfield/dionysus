@@ -53,7 +53,7 @@ const Faq1B = () => {
   return (
     <Text>
       Of course it&apos;s 100% FREE! Just contact us through our form&nbsp;
-      <Link as={NextLink} href={routes.contact}>
+      <Link as={NextLink} href={routes.contact} aria-label='Contact us'>
         here
       </Link>
       &nbsp;and we will send you a quick and easy form to fill out so you can
@@ -191,7 +191,10 @@ const Faq3A = () => {
       </Text>
       <Text>
         For more information about our delivery area,&nbsp;
-        <Link href={routes.deliveryArea}>click here</Link>.
+        <Link href={routes.deliveryArea} aria-label='Delivery area page'>
+          click here
+        </Link>
+        .
       </Text>
     </VStack>
   );
@@ -251,7 +254,10 @@ const Faq3E = () => {
       </Text>
       <Text>
         For more information about our main delivery area,&nbsp;
-        <Link href={routes.deliveryArea}>click here</Link>.
+        <Link href={routes.deliveryArea} aria-label='Delivery area page'>
+          click here
+        </Link>
+        .
       </Text>
     </VStack>
   );
@@ -274,8 +280,8 @@ const Faq3F = () => {
       </Text>
       <Text>
         If you don&apos;t see what you&apos;re looking for,&nbsp;
-        <Link href={routes.deliveryArea}>ask us</Link> and we will see if we can
-        get it for you!
+        <Link href={routes.contact}>ask us</Link> and we will see if we can get
+        it for you!
       </Text>
     </VStack>
   );
@@ -375,8 +381,10 @@ const Faq4D = () => {
         any water to their juices, so staying hydrated throughout the process is
         a must. Chasers has a variety of different cleanse packages ranging from
         single juice orders to 3, 5 and 7 day cleanse packages.&nbsp;
-        <Link href={routes.products}>Click here</Link> for more information
-        about available cleanse packages.
+        <Link href={routes.products} aria-label='Products page'>
+          Click here
+        </Link>
+        &nbsp;for more information about available cleanse packages.
       </Text>
     </Flex>
   );
