@@ -12,6 +12,8 @@ import {
 import NextLink from 'next/link';
 import React from 'react';
 import routes from '@/shared/routes';
+import { chasersJuice } from '@/shared/constants';
+import { formatPhoneNumber } from '@/shared/utils';
 
 const Faq1A = () => {
   return (
@@ -117,9 +119,7 @@ const Faq2B = () => {
     <VStack spacing='4' alignItems='flex-start'>
       <Text>
         Send us an email anytime at&nbsp;
-        <Link href='mailto:orders@chasersjuice.com'>
-          orders@chasersjuice.com
-        </Link>
+        <Link href={`mailto:${chasersJuice.email}`}>{chasersJuice.email}</Link>
         &nbsp;with the following information:
       </Text>
       <UnorderedList stylePosition='inside'>
@@ -150,9 +150,12 @@ const Faq2C = () => {
     <VStack spacing='4' alignItems='flex-start'>
       <Text>
         Call us at&nbsp;
-        <Link href='tel:416-259-1557'>416-259-1557</Link>. If someone is not
-        there to answer your call, follow the instructions to leave a message at
-        the orders desk. Leave a message with the following information:
+        <Link href={`tel:${chasersJuice.phone}`}>
+          {formatPhoneNumber(chasersJuice.phone)}
+        </Link>
+        . If someone is not there to answer your call, follow the instructions
+        to leave a message at the orders desk. Leave a message with the
+        following information:
       </Text>
       <UnorderedList stylePosition='inside'>
         <ListItem>Your name and business</ListItem>
@@ -279,13 +282,18 @@ const Faq3F = () => {
 };
 const Faq3G = () => {
   return (
-    <Flex alignItems='flex-start'>
+    <VStack spacing='4' alignItems='flex-start'>
       <Text>
-        Chasers Fresh Juice is located at 218 North Queen Street in Etobicoke,
-        Ontario. Located only a short drive away from Sherway Gardens Mall, near
-        the intersection of North Queen St. and Queensway.
+        Chasers Fresh Juice is located at {chasersJuice.address.address}
+        &nbsp;in&nbsp;
+        {chasersJuice.address.city}, {chasersJuice.address.state}. Located only
+        a short drive away from Sherway Gardens Mall, near the intersection of
+        North Queen St. and Queensway.
       </Text>
-    </Flex>
+      <Link href={chasersJuice.address.googleMapsLink} target='_blank'>
+        Click here for directions
+      </Link>
+    </VStack>
   );
 };
 const Faq4A = () => {

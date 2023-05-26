@@ -12,6 +12,8 @@ import NextLink from 'next/link';
 import { SocialMediaLinks } from './SocialMediaLinks';
 import logo from '~shared/assets/chasers-juice-logo.png';
 import { FadeInBox } from '@/shared/components';
+import { chasersJuice } from '@/shared/constants';
+import { formatPhoneNumber } from '@/shared/utils';
 
 export default function Footer() {
   return (
@@ -46,10 +48,10 @@ export default function Footer() {
               transitionDuration='200ms'
               color='black'
               _hover={{ color: 'primary.600' }}
-              href='tel:416-259-1557'
+              href={`tel:${chasersJuice.phone}`}
               display='block'
             >
-              416-259-1557
+              {formatPhoneNumber(chasersJuice.phone)}
             </Link>
             <Link
               as={NextLink}
@@ -58,10 +60,10 @@ export default function Footer() {
               transitionDuration='200ms'
               color='black'
               _hover={{ color: 'primary.600' }}
-              href='mailto:orders@chasersjuice.com'
+              href={`mailto:${chasersJuice.email}`}
               display='block'
             >
-              orders@chasersjuice.com
+              {chasersJuice.email}
             </Link>
           </FadeInBox>
         </GridItem>
@@ -106,7 +108,12 @@ export default function Footer() {
             fontWeight='semibold'
             letterSpacing='0.5'
           >
-            CHASERS FRESH JUICE INC. 218 North Queen St. Etobicoke, ON M9C 4Y1
+            <Text as='span' textTransform='uppercase'>
+              {chasersJuice.legalName}
+            </Text>
+            &nbsp;{chasersJuice.address.address} {chasersJuice.address.city}
+            ,&nbsp;
+            {chasersJuice.address.state}, {chasersJuice.address.zip}
           </Text>
         </Flex>
       </Box>
