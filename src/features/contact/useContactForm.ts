@@ -1,6 +1,6 @@
 import React, { FormEvent, useRef, useState } from 'react';
 import * as yup from 'yup';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Errors } from '@/shared/components';
 import { formatPhoneNumber } from '@/shared/utils';
@@ -76,7 +76,7 @@ export const useContactForm = (
     event.preventDefault();
     setIsLoading(true);
     const token = await (recaptchaRef && recaptchaRef.current
-      ? recaptchaRef.current.executeAsync() + '!'
+      ? recaptchaRef.current.executeAsync()
       : '');
 
     schema
@@ -102,10 +102,11 @@ export const useContactForm = (
               throw new Error('Failed to send email');
             }
           })
-          .catch((error) => {
+          .catch((error: AxiosError<{ message: string }>) => {
+            setIsLoading(false);
             setFormError(
               `There has been an error: ${
-                error.message ?? error
+                error.response?.data.message ?? error
               }. Please call us directly at ${formatPhoneNumber(
                 chasersJuice.phone
               )}`
