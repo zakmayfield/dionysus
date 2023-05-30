@@ -76,7 +76,7 @@ export const useContactForm = (
     event.preventDefault();
     setIsLoading(true);
     const token = await (recaptchaRef && recaptchaRef.current
-      ? recaptchaRef.current.executeAsync()
+      ? recaptchaRef.current.executeAsync() + '!'
       : '');
 
     schema
@@ -84,8 +84,15 @@ export const useContactForm = (
       .then((data) => {
         const payload: Payload = { ...data, token };
 
+        if (!process.env.NEXT_PUBLIC_WEBHOOK_URL) {
+          throw new Error(
+            `Server is inaccessible. Please call us directly at ${formatPhoneNumber(
+              chasersJuice.phone
+            )}`
+          );
+        }
         axios
-          .post('https://chasers-juice-webook.fly.dev/email', payload)
+          .post(process.env.NEXT_PUBLIC_WEBHOOK_URL, payload)
           .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
