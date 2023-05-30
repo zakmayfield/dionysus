@@ -76,7 +76,7 @@ export const useContactForm = (
     event.preventDefault();
     setIsLoading(true);
     const token = await (recaptchaRef && recaptchaRef.current
-      ? recaptchaRef.current.executeAsync()
+      ? recaptchaRef.current.executeAsync() + '!'
       : '');
 
     schema
