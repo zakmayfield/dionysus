@@ -10,6 +10,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import React, { useMemo } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { AnimatePresence } from 'framer-motion';
 import { useContactForm } from './useContactForm';
 import { ContactFormSuccessModal } from './ContactFormSuccessModal';
@@ -20,8 +21,15 @@ export const ContactForm = () => {
 
   const handleSuccess = () => onOpen();
 
-  const { onSubmit, onChange, errors, formError, formValues, isLoading } =
-    useContactForm(handleSuccess);
+  const {
+    onSubmit,
+    onChange,
+    errors,
+    formError,
+    formValues,
+    isLoading,
+    recaptchaRef,
+  } = useContactForm(handleSuccess);
 
   const contactFormInputs = useMemo(
     () => [
@@ -113,6 +121,11 @@ export const ContactForm = () => {
             />
             <CustomErrorMessage name='message' errors={errors} mt='1' />
           </Box>
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            size='invisible'
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''}
+          />
           {formError && (
             <Text fontSize='sm' color='red.500'>
               {formError}

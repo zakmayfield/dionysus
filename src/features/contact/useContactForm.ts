@@ -1,6 +1,7 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useRef, useState } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { Errors } from '@/shared/components';
 import { formatPhoneNumber } from '@/shared/utils';
 import { chasersJuice } from '@/shared/constants';
@@ -31,10 +32,14 @@ interface ContactFormValues {
   message: string;
 }
 
+type Payload = ContactFormValues & {
+  token: string | null;
+};
+
 export const useContactForm = (
   onSuccess: (data: ContactFormValues) => void
 ) => {
-  const defaultFormValues = {
+  const defaultFormValues: ContactFormValues = {
     name: '',
     company: '',
     phone: '',
@@ -49,6 +54,8 @@ export const useContactForm = (
   const [errors, setErrors] = useState<Errors>({});
   const [formError, setFormError] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
+
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const resetData = () => {
     setFormValues(defaultFormValues);
@@ -65,15 +72,20 @@ export const useContactForm = (
     setFormValues((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
+    const token = await (recaptchaRef && recaptchaRef.current
+      ? recaptchaRef.current.executeAsync()
+      : '');
 
     schema
       .validate(formValues, { abortEarly: false })
       .then((data) => {
+        const payload: Payload = { ...data, token };
+
         axios
-          .post('https://chasers-juice-webook.fly.dev/email', data)
+          .post('https://chasers-juice-webook.fly.dev/email', payload)
           .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
@@ -103,5 +115,13 @@ export const useContactForm = (
       });
   };
 
-  return { onSubmit, onChange, errors, formError, formValues, isLoading };
+  return {
+    onSubmit,
+    onChange,
+    errors,
+    formError,
+    formValues,
+    isLoading,
+    recaptchaRef,
+  };
 };
