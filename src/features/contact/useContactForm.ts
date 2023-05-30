@@ -86,7 +86,7 @@ export const useContactForm = (
 
         if (!process.env.NEXT_PUBLIC_WEBHOOK_URL) {
           throw new Error(
-            `Server is inaccessible. Please call us directly at ${formatPhoneNumber(
+            `Webhook URL is inaccessible. Please call us directly at ${formatPhoneNumber(
               chasersJuice.phone
             )}`
           );
@@ -104,7 +104,9 @@ export const useContactForm = (
           })
           .catch((error) => {
             setFormError(
-              `There has been an error: ${error}. Please call us directly at ${formatPhoneNumber(
+              `There has been an error: ${
+                error.message ?? error
+              }. Please call us directly at ${formatPhoneNumber(
                 chasersJuice.phone
               )}`
             );
