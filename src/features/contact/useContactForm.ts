@@ -32,10 +32,14 @@ interface ContactFormValues {
   message: string;
 }
 
+type Payload = ContactFormValues & {
+  token: string | null;
+};
+
 export const useContactForm = (
   onSuccess: (data: ContactFormValues) => void
 ) => {
-  const defaultFormValues = {
+  const defaultFormValues: ContactFormValues = {
     name: '',
     company: '',
     phone: '',
@@ -78,8 +82,10 @@ export const useContactForm = (
     schema
       .validate(formValues, { abortEarly: false })
       .then((data) => {
+        const payload: Payload = { ...data, token };
+
         axios
-          .post('https://chasers-juice-webook.fly.dev/email', data)
+          .post('https://chasers-juice-webook.fly.dev/email', payload)
           .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
