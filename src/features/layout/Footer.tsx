@@ -92,7 +92,7 @@ export default function Footer() {
           borderColor='gray.700'
           textAlign='center'
           alignItems='center'
-          flexDir={{ md: 'row', base: 'column' }}
+          flexDir='column'
         >
           <Box
             position={{ md: 'absolute', base: 'relative' }}
@@ -101,6 +101,17 @@ export default function Footer() {
           >
             <Image src={logo} alt='Chasers Juice logo' width='65' />
           </Box>
+
+          {/* mobile mb='6' desktop mb='3' */}
+          <Text
+            as='span'
+            fontSize='xs'
+            letterSpacing='0.5'
+            mb={{ base: '6', md: '3' }}
+            mt={{ base: '3', md: '0' }}
+          >
+            <NextLink href='/privacy'>Privacy Policy</NextLink>
+          </Text>
 
           <Text
             w='full'
