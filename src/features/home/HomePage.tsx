@@ -16,7 +16,7 @@ export default function HomePage() {
       </FadeInBox>
       <HomeNarrativeHub />
       <ProductsHero />
-      <InstagramGallery />
+      {/* <InstagramGallery /> */}
     </Box>
   );
 }
