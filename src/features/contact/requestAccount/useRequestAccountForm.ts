@@ -10,47 +10,50 @@ const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 const schema = yup.object().shape({
-  name: yup.string().required('Name is required'),
-  company: yup.string().required('Company is required'),
+  companyName: yup.string().required('Company is required'),
+  contact: yup.string().required('Full contact name and position is required'),
+  billingAddress: yup.string().required('Billing address is required'),
+  shippingAddress: yup.string().required('Shipping address is required'),
   phone: yup
     .string()
     .matches(phoneRegExp, 'Phone number is not valid')
     .required('Phone number is required'),
   email: yup.string().email().required('Email address is required'),
-  found: yup.string().required('Please select an option'),
-  foundOtherDesc: yup.string(),
-  message: yup.string().required('Please let us know what you are looking for'),
+  apEmail: yup.string().email().required('A/P email address is required'),
+  paymentMethod: yup.string().required('Payment method is required'),
 });
 
-interface ContactFormValues {
-  name: string;
-  company: string;
+interface RequestAccountFormValues {
+  companyName: string;
+  contact: string;
+  billingAddress: string;
+  shippingAddress: string;
   phone: string;
   email: string;
-  found: string;
-  foundOtherDesc?: string;
-  message: string;
+  apEmail: string;
+  paymentMethod: string;
 }
 
-type Payload = ContactFormValues & {
+type Payload = RequestAccountFormValues & {
   token: string | null;
 };
 
-export const useContactForm = (
-  onSuccess: (data: ContactFormValues) => void
+export const useRequestAccountForm = (
+  onSuccess: (data: RequestAccountFormValues) => void
 ) => {
-  const defaultFormValues: ContactFormValues = {
-    name: '',
-    company: '',
+  const defaultFormValues: RequestAccountFormValues = {
+    companyName: '',
+    contact: '',
+    billingAddress: '',
+    shippingAddress: '',
     phone: '',
     email: '',
-    found: '',
-    foundOtherDesc: undefined,
-    message: '',
+    apEmail: '',
+    paymentMethod: '',
   };
 
   const [formValues, setFormValues] =
-    useState<ContactFormValues>(defaultFormValues);
+    useState<RequestAccountFormValues>(defaultFormValues);
   const [errors, setErrors] = useState<Errors>({});
   const [formError, setFormError] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
