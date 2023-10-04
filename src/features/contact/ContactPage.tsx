@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import { Box, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
-import { ContactForm } from './ContactForm';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { ContactInfo } from './ContactInfo';
+import { Forms } from './Forms';
 import { ContentContainer, FadeInBox, Hero } from '@/shared/components';
 import HeroImg from '@/shared/assets/contact/citrus-hero.jpg';
 import BgImg from '@/shared/assets/contact/fruit-bg.jpg';
@@ -32,23 +32,7 @@ export const ContactPage = () => {
               </FadeInBox>
             </GridItem>
             <GridItem>
-              <Box
-                minW='40%'
-                boxShadow='7px 12px 20px 0 rgba(0,0,0, 0.3)'
-                rounded='md'
-                bg={{ lg: 'transparent', base: 'whiteAlpha.900' }}
-                p='12'
-              >
-                <FadeInBox>
-                  <Heading as='h3' size='lg' fontWeight='semibold' mb='3'>
-                    Get In Touch
-                  </Heading>
-                  <Text mb='6'>
-                    Set up an account with us prior to your first order!
-                  </Text>
-                  <ContactForm />
-                </FadeInBox>
-              </Box>
+              <Forms />
             </GridItem>
           </Grid>
         </ContentContainer>
