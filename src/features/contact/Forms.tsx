@@ -1,6 +1,6 @@
 'use client';
-import { Box, Heading, Text } from '@chakra-ui/react';
-import { ContactForm } from './ContactForm';
+import { Box, Button, Flex, Heading } from '@chakra-ui/react';
+import { ContactForm } from './contactForm/ContactForm';
 import { FadeInBox } from '@/shared/components';
 
 export const Forms = () => {
@@ -13,10 +13,13 @@ export const Forms = () => {
       p='12'
     >
       <FadeInBox>
-        <Heading as='h3' size='lg' fontWeight='semibold' mb='3'>
-          Get In Touch
-        </Heading>
-        <Text mb='6'>Set up an account with us prior to your first order!</Text>
+        <Flex alignItems='center' gap='6' marginBottom='6'>
+          <Heading as='h3' size='lg' fontWeight='semibold'>
+            Get In Touch
+          </Heading>
+          <span>or</span>
+          <Button>Request an Account</Button>
+        </Flex>
         <ContactForm />
       </FadeInBox>
     </Box>
