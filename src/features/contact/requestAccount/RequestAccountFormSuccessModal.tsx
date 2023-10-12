@@ -13,15 +13,15 @@ import React from 'react';
 import { BsCheckCircleFill } from 'react-icons/bs';
 import { MotionBox } from '@/shared/components';
 
-type ContactFormSuccessModalProps = {
+type RequestAccountFormSuccessModalProps = {
   isOpen: boolean;
   onClose: () => void;
 };
 
-export const ContactFormSuccessModal = ({
+export const RequestAccountFormSuccessModal = ({
   isOpen,
   onClose,
-}: ContactFormSuccessModalProps) => {
+}: RequestAccountFormSuccessModalProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} size='2xl'>
       <ModalOverlay />

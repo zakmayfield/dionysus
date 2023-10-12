@@ -5,18 +5,16 @@ import {
   Input,
   Select,
   Text,
-  Textarea,
   VStack,
   useDisclosure,
 } from '@chakra-ui/react';
 import React, { useMemo } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { AnimatePresence } from 'framer-motion';
-import { useContactForm } from './useRequestAccountForm';
-import { ContactFormSuccessModal } from './RequestAccountFormSuccessModal';
-import { CustomErrorMessage, MotionBox } from '@/shared/components';
+import { useRequestAccountForm } from './useRequestAccountForm';
+import { RequestAccountFormSuccessModal } from './RequestAccountFormSuccessModal';
+import { CustomErrorMessage } from '@/shared/components';
 
-export const ContactForm = () => {
+export const RequestAccountForm = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   const handleSuccess = () => onOpen();
@@ -29,33 +27,74 @@ export const ContactForm = () => {
     formValues,
     isLoading,
     recaptchaRef,
-  } = useContactForm(handleSuccess);
+  } = useRequestAccountForm(handleSuccess);
 
-  const contactFormInputs = useMemo(
+  const RequestAccountFormInputs = useMemo(
     () => [
-      { label: 'Name', name: 'name', value: formValues.name },
-      { label: 'Company', name: 'company', value: formValues.company },
-      { label: 'Phone Number', name: 'phone', value: formValues.phone },
-      { label: 'Email Address', name: 'email', value: formValues.email },
+      {
+        label: 'Company Name',
+        name: 'companyName',
+        value: formValues.companyName,
+      },
+      {
+        label: 'Contact',
+        name: 'contact',
+        value: formValues.contact,
+      },
+      {
+        label: 'Billing Address',
+        name: 'billingAddress',
+        value: formValues.billingAddress,
+      },
+      {
+        label: 'Shipping Address',
+        name: 'shippingAddress',
+        value: formValues.shippingAddress,
+      },
+      {
+        label: 'Phone',
+        name: 'phone',
+        value: formValues.phone,
+      },
+      {
+        label: 'Email',
+        name: 'email',
+        value: formValues.email,
+      },
+      {
+        label: 'A/P Email',
+        name: 'apEmail',
+        value: formValues.apEmail,
+      },
     ],
-    [formValues.company, formValues.email, formValues.name, formValues.phone]
+    [
+      formValues.companyName,
+      formValues.contact,
+      formValues.billingAddress,
+      formValues.shippingAddress,
+      formValues.phone,
+      formValues.email,
+      formValues.apEmail,
+    ]
   );
 
-  const foundOptions = [
-    { label: 'Instagram', value: 'instagram' },
-    { label: 'Facebook', value: 'facebook' },
-    { label: 'Google', value: 'google' },
-    { label: 'Word of mouth', value: 'wordOfMouth' },
-    { label: 'Other ', value: 'other' },
+  const paymentMethods = [
+    { label: 'COD - Pay Delivery Driver', value: 'COD - Pay Delivery Driver' },
+    {
+      label: 'Credit Card - Automated Chasers Account',
+      value: 'Credit Card - Automated Chasers Account',
+    },
+    {
+      label: 'Pay On Pick-Up Arrival At Chasers Juice',
+      value: 'Pay On Pick-Up Arrival At Chasers Juice',
+    },
   ];
-
-  const isFoundOther = formValues.found === 'other';
 
   return (
     <>
       <form onSubmit={onSubmit}>
         <VStack w='full' spacing='4' alignItems='flex-start'>
-          {contactFormInputs.map((input) => (
+          {RequestAccountFormInputs.map((input) => (
             <Box w='full' key={input.name}>
               <FormLabel hidden>{input.label}</FormLabel>
               <Input
@@ -69,57 +108,21 @@ export const ContactForm = () => {
             </Box>
           ))}
           <Box w='full'>
-            <FormLabel hidden>How did you find us?</FormLabel>
+            <FormLabel hidden>Payment Method</FormLabel>
             <Select
-              name='found'
-              placeholder='How did you find us?'
-              value={formValues.found}
+              name='paymentMethod'
+              placeholder='Payment Methods'
+              value={formValues.paymentMethod}
               onChange={onChange}
               colorScheme='blacks'
             >
-              {foundOptions.map((op) => (
+              {paymentMethods.map((op) => (
                 <option key={op.value} value={op.value}>
                   {op.label}
                 </option>
               ))}
             </Select>
-            <CustomErrorMessage name='found' errors={errors} mt='1' />
-          </Box>
-          <AnimatePresence>
-            {isFoundOther && (
-              <MotionBox
-                w='full'
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-              >
-                <FormLabel hidden>Please describe</FormLabel>
-                <Input
-                  name='foundOtherDesc'
-                  placeholder='Please describe'
-                  value={formValues.foundOtherDesc}
-                  onChange={onChange}
-                  colorScheme='blacks'
-                />
-                <CustomErrorMessage
-                  name='foundOtherDesc'
-                  errors={errors}
-                  mt='1'
-                />
-              </MotionBox>
-            )}
-          </AnimatePresence>
-          <Box w='full'>
-            <FormLabel hidden>Message</FormLabel>
-            <Textarea
-              name='message'
-              placeholder='Your Message'
-              minH='32'
-              value={formValues.message}
-              onChange={onChange}
-              colorScheme='blacks'
-            />
-            <CustomErrorMessage name='message' errors={errors} mt='1' />
+            <CustomErrorMessage name='Paym' errors={errors} mt='1' />
           </Box>
           <ReCAPTCHA
             ref={recaptchaRef}
@@ -141,7 +144,7 @@ export const ContactForm = () => {
           </Button>
         </VStack>
       </form>
-      <ContactFormSuccessModal isOpen={isOpen} onClose={onClose} />
+      <RequestAccountFormSuccessModal isOpen={isOpen} onClose={onClose} />
     </>
   );
 };
