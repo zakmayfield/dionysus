@@ -103,7 +103,6 @@ export const useContactForm = (
             }
           })
           .catch((error: AxiosError<{ message: string }>) => {
-            console.log('error?', error);
             setIsLoading(false);
             setFormError(
               `There has been an error: ${
