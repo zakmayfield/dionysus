@@ -127,7 +127,7 @@ export const RequestAccountForm = () => {
           <ReCAPTCHA
             ref={recaptchaRef}
             size='invisible'
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''}
+            sitekey={process.env.RECAPTCHA_SITE_KEY_REQUEST_ACCOUNT ?? ''}
           />
           {formError && (
             <Text fontSize='sm' color='red.500'>

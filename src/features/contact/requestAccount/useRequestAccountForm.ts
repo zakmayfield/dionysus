@@ -87,7 +87,7 @@ export const useRequestAccountForm = (
       .then((data) => {
         const payload: Payload = { ...data, token };
 
-        if (!process.env.NEXT_PUBLIC_WEBHOOK_URL) {
+        if (!process.env.NEXT_PUBLIC_REQUEST_ACCOUNT_WEBHOOK_URL) {
           throw new Error(
             `Webhook URL is inaccessible. Please call us directly at ${formatPhoneNumber(
               chasersJuice.phone
@@ -95,7 +95,7 @@ export const useRequestAccountForm = (
           );
         }
         axios
-          .post(process.env.NEXT_PUBLIC_WEBHOOK_URL, payload)
+          .post(process.env.NEXT_PUBLIC_REQUEST_ACCOUNT_WEBHOOK_URL, payload)
           .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
@@ -106,6 +106,7 @@ export const useRequestAccountForm = (
             }
           })
           .catch((error: AxiosError<{ message: string }>) => {
+            console.log('error?', error);
             setIsLoading(false);
             setFormError(
               `There has been an error: ${
