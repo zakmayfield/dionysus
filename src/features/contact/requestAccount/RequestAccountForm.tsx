@@ -32,37 +32,39 @@ export const RequestAccountForm = () => {
   const RequestAccountFormInputs = useMemo(
     () => [
       {
-        label: 'Company Name',
+        label:
+          'Full Company Name (This will be your account name with us - write N/A if you do not have one)',
         name: 'companyName',
         value: formValues.companyName,
       },
       {
-        label: 'Contact',
+        label: 'Full Contact Name & Position',
         name: 'contact',
         value: formValues.contact,
       },
       {
-        label: 'Billing Address',
+        label: 'Full Billing Address (including postal code)',
         name: 'billingAddress',
         value: formValues.billingAddress,
       },
       {
-        label: 'Shipping Address',
+        label:
+          'Full Shipping Address (please include any special delivery instructions e.g. Deliver to side door...etc.)',
         name: 'shippingAddress',
         value: formValues.shippingAddress,
       },
       {
-        label: 'Phone',
+        label: 'Contact Phone Number',
         name: 'phone',
         value: formValues.phone,
       },
       {
-        label: 'Email',
+        label: 'Contact E-mail Address',
         name: 'email',
         value: formValues.email,
       },
       {
-        label: 'A/P Email',
+        label: 'Any applicable A/P Email address',
         name: 'apEmail',
         value: formValues.apEmail,
       },
@@ -96,10 +98,9 @@ export const RequestAccountForm = () => {
         <VStack w='full' spacing='4' alignItems='flex-start'>
           {RequestAccountFormInputs.map((input) => (
             <Box w='full' key={input.name}>
-              <FormLabel hidden>{input.label}</FormLabel>
+              <FormLabel>{input.label}</FormLabel>
               <Input
                 name={input.name}
-                placeholder={input.label}
                 value={input.value}
                 onChange={onChange}
                 colorScheme='blacks'
@@ -108,7 +109,7 @@ export const RequestAccountForm = () => {
             </Box>
           ))}
           <Box w='full'>
-            <FormLabel hidden>Payment Method</FormLabel>
+            <FormLabel>Payment Method</FormLabel>
             <Select
               name='paymentMethod'
               placeholder='Payment Methods'
