@@ -7,10 +7,10 @@ import { sharedMetadata } from '@/shared/metadata';
 export const metadata = sharedMetadata;
 
 export default async function Home() {
-  const { data } = await getInstagramData();
+  // const { data } = await getInstagramData();
   return (
-    <GalleryContextProvider data={data}>
-      <HomePage />
-    </GalleryContextProvider>
+    // <GalleryContextProvider data={data}>
+    <HomePage />
+    // </GalleryContextProvider>
   );
 }

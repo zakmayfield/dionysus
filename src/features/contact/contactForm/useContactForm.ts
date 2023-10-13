@@ -84,7 +84,7 @@ export const useContactForm = (
       .then((data) => {
         const payload: Payload = { ...data, token };
 
-        if (!process.env.NEXT_PUBLIC_WEBHOOK_URL) {
+        if (!process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL) {
           throw new Error(
             `Webhook URL is inaccessible. Please call us directly at ${formatPhoneNumber(
               chasersJuice.phone
@@ -92,7 +92,7 @@ export const useContactForm = (
           );
         }
         axios
-          .post(process.env.NEXT_PUBLIC_WEBHOOK_URL, payload)
+          .post(process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL, payload)
           .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
