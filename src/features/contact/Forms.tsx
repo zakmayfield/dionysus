@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import { Box, Button, Flex, Heading } from '@chakra-ui/react';
 import { ContactForm } from './contactForm/ContactForm';
 import { RequestAccountForm } from './requestAccount/RequestAccountForm';
@@ -40,9 +39,7 @@ export const Forms = () => {
             {activeForm === 1 ? 'Request Account' : 'Get in Contact'}
           </Button>
         </Flex>
-        <AnimatePresence>
-          {activeForm === 1 ? <ContactForm /> : <RequestAccountForm />}
-        </AnimatePresence>
+        {activeForm === 1 ? <ContactForm /> : <RequestAccountForm />}
       </FadeInBox>
     </Box>
   );
