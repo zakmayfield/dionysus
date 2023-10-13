@@ -98,24 +98,31 @@ export const RequestAccountForm = () => {
         <VStack w='full' spacing='4' alignItems='flex-start'>
           {RequestAccountFormInputs.map((input) => (
             <Box w='full' key={input.name}>
-              <FormLabel>{input.label}</FormLabel>
+              <FormLabel>
+                {input.label}&nbsp;
+                <span style={{ color: 'red' }}>*</span>
+              </FormLabel>
               <Input
                 name={input.name}
                 value={input.value}
                 onChange={onChange}
                 colorScheme='blacks'
+                required
               />
               <CustomErrorMessage name={input.name} errors={errors} mt='1' />
             </Box>
           ))}
           <Box w='full'>
-            <FormLabel>Payment Method</FormLabel>
+            <FormLabel>
+              Payment Method&nbsp;<span style={{ color: 'red' }}>*</span>
+            </FormLabel>
             <Select
               name='paymentMethod'
               placeholder='Payment Methods'
               value={formValues.paymentMethod}
               onChange={onChange}
               colorScheme='blacks'
+              required
             >
               {paymentMethods.map((op) => (
                 <option key={op.value} value={op.value}>
@@ -123,7 +130,7 @@ export const RequestAccountForm = () => {
                 </option>
               ))}
             </Select>
-            <CustomErrorMessage name='Paym' errors={errors} mt='1' />
+            <CustomErrorMessage name='paymentMethod' errors={errors} mt='1' />
           </Box>
           <ReCAPTCHA
             ref={recaptchaRef}

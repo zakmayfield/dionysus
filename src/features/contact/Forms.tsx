@@ -1,20 +1,27 @@
 'use client';
 import { useState } from 'react';
-import { Box, Button, Flex, Heading } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react';
 import { ContactForm } from './contactForm/ContactForm';
 import { RequestAccountForm } from './requestAccount/RequestAccountForm';
 import { FadeInBox } from '@/shared/components';
 
 export const Forms = () => {
-  // const [activeForm, setActiveForm] = useState(1);
+  const [activeForm, setActiveForm] = useState(1);
 
-  // function handleSwitchForm() {
-  //   if (activeForm === 1) {
-  //     setActiveForm(2);
-  //   } else {
-  //     setActiveForm(1);
-  //   }
-  // }
+  function handleSwitchForm() {
+    if (activeForm === 1) {
+      setActiveForm(2);
+    } else {
+      setActiveForm(1);
+    }
+  }
+
+  /**
+   * TODO
+   * Heading mobile friendly
+   * Fade in and out changing form
+   * Query string for form selection
+   */
 
   return (
     <Box
@@ -25,26 +32,43 @@ export const Forms = () => {
       p='12'
     >
       <FadeInBox>
-        <Flex
-          alignItems='center'
-          justifyContent='space-between'
-          gap='6'
-          marginBottom='6'
-        >
-          <Heading as='h3' size='lg' fontWeight='semibold'>
-            Get In Touch
-          </Heading>
-        </Flex>
-        <ContactForm />
-        {/* <Heading as='h3' size='lg' fontWeight='semibold'>
-          {activeForm === 1 ? 'Get In Touch' : 'Request Account'}
-        </Heading>
-        <span>or</span>
-        <Button onClick={handleSwitchForm}>
-          {activeForm === 1 ? 'Request Account' : 'Get in Contact'}
-        </Button>
-      </Flex>
-      {activeForm === 1 ? <ContactForm /> : <RequestAccountForm />} */}
+        <Box marginBottom='6'>
+          <Flex alignItems='center' justifyContent='space-between' gap='6'>
+            <Heading as='h3' size='lg' fontWeight='semibold'>
+              {activeForm === 1 ? 'Get In Touch' : 'Create Account'}
+            </Heading>
+            <span>or</span>
+            <Button
+              onClick={handleSwitchForm}
+              variant='outline'
+              colorScheme='orange'
+              _hover={{ background: 'rgba(192, 86, 33, 0.1)' }}
+            >
+              {activeForm === 1 ? 'Create Account' : 'Get in Contact'}
+            </Button>
+          </Flex>
+          {activeForm === 1 && (
+            <Text
+              fontSize='sm'
+              marginTop='2'
+              textAlign='center'
+              color='gray.700'
+            >
+              If you would like to place an order, you must{' '}
+              <Button
+                variant='link'
+                onClick={() => setActiveForm(2)}
+                fontSize='sm'
+                colorScheme='orange'
+                fontWeight='normal'
+              >
+                create an account
+              </Button>{' '}
+              first.
+            </Text>
+          )}
+        </Box>
+        {activeForm === 1 ? <ContactForm /> : <RequestAccountForm />}
       </FadeInBox>
     </Box>
   );
