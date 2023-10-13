@@ -51,6 +51,12 @@ export const ContactForm = () => {
 
   const isFoundOther = formValues.found === 'other';
 
+  // question: site key is coming back with a value, why is it throwing? ... EDIT: was throwing (its no longer throwing atm)
+  console.log(
+    'sitekey from env',
+    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_CONTACT
+  );
+
   return (
     <>
       <form onSubmit={onSubmit}>
@@ -124,7 +130,7 @@ export const ContactForm = () => {
           <ReCAPTCHA
             ref={recaptchaRef}
             size='invisible'
-            sitekey={process.env.RECAPTCHA_SITE_KEY_CONTACT ?? ''}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_CONTACT ?? ''}
           />
           {formError && (
             <Text fontSize='sm' color='red.500'>
