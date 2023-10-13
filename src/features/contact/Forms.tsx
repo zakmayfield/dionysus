@@ -6,15 +6,15 @@ import { RequestAccountForm } from './requestAccount/RequestAccountForm';
 import { FadeInBox } from '@/shared/components';
 
 export const Forms = () => {
-  const [activeForm, setActiveForm] = useState(1);
+  // const [activeForm, setActiveForm] = useState(1);
 
-  function handleSwitchForm() {
-    if (activeForm === 1) {
-      setActiveForm(2);
-    } else {
-      setActiveForm(1);
-    }
-  }
+  // function handleSwitchForm() {
+  //   if (activeForm === 1) {
+  //     setActiveForm(2);
+  //   } else {
+  //     setActiveForm(1);
+  //   }
+  // }
 
   return (
     <Box
@@ -32,14 +32,19 @@ export const Forms = () => {
           marginBottom='6'
         >
           <Heading as='h3' size='lg' fontWeight='semibold'>
-            {activeForm === 1 ? 'Get In Touch' : 'Request Account'}
+            Get In Touch
           </Heading>
-          <span>or</span>
-          <Button onClick={handleSwitchForm}>
-            {activeForm === 1 ? 'Request Account' : 'Get in Contact'}
-          </Button>
         </Flex>
-        {activeForm === 1 ? <ContactForm /> : <RequestAccountForm />}
+        <ContactForm />
+        {/* <Heading as='h3' size='lg' fontWeight='semibold'>
+          {activeForm === 1 ? 'Get In Touch' : 'Request Account'}
+        </Heading>
+        <span>or</span>
+        <Button onClick={handleSwitchForm}>
+          {activeForm === 1 ? 'Request Account' : 'Get in Contact'}
+        </Button>
+      </Flex>
+      {activeForm === 1 ? <ContactForm /> : <RequestAccountForm />} */}
       </FadeInBox>
     </Box>
   );
