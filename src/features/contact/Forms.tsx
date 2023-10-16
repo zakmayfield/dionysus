@@ -32,9 +32,18 @@ export const Forms = () => {
       p='12'
     >
       <FadeInBox>
-        <Box marginBottom='6'>
-          <Flex alignItems='center' justifyContent='space-between' gap='6'>
-            <Heading as='h3' size='lg' fontWeight='semibold'>
+        <Box marginBottom='12'>
+          <Flex
+            flexDirection={{ base: 'column', md: 'row' }}
+            alignItems='center'
+            justifyContent='space-around'
+            gap='6'
+          >
+            <Heading
+              as='h3'
+              size={{ base: 'xl', lg: 'md' }}
+              fontWeight='semibold'
+            >
               {activeForm === 1 ? 'Get In Touch' : 'Create Account'}
             </Heading>
             <span>or</span>
@@ -43,6 +52,7 @@ export const Forms = () => {
               variant='outline'
               colorScheme='orange'
               _hover={{ background: 'rgba(192, 86, 33, 0.1)' }}
+              size={{ base: 'md', lg: 'sm' }}
             >
               {activeForm === 1 ? 'Create Account' : 'Get in Contact'}
             </Button>
@@ -50,7 +60,7 @@ export const Forms = () => {
           {activeForm === 1 && (
             <Text
               fontSize='sm'
-              marginTop='2'
+              marginTop='4'
               textAlign='center'
               color='gray.700'
             >
