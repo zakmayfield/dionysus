@@ -18,7 +18,7 @@ export const Forms = () => {
 
   /**
    * TODO
-   * Heading mobile friendly
+   * Heading mobile friendly ✅
    * Fade in and out changing form
    * Query string for form selection
    */
@@ -32,7 +32,7 @@ export const Forms = () => {
       p='12'
     >
       <FadeInBox>
-        <Box marginBottom='12'>
+        <Box marginBottom={{ base: '12', lg: '6' }}>
           <Flex
             flexDirection={{ base: 'column', md: 'row' }}
             alignItems='center'
