@@ -75,8 +75,8 @@ export const Forms = () => {
             {activeForm === FormTypes.CONTACT && (
               <Text
                 fontSize='sm'
-                marginTop='4'
-                textAlign='center'
+                marginTop={{ base: '8', lg: '4' }}
+                textAlign={{ base: 'center', lg: 'left' }}
                 color='gray.700'
               >
                 If you would like to place an order, you must{' '}
