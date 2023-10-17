@@ -11,7 +11,7 @@ enum FormTypes {
 }
 
 export const Forms = () => {
-  const [activeForm, setActiveForm] = useState(FormTypes.CONTACT);
+  const [activeForm, setActiveForm] = useState<FormTypes>(FormTypes.CONTACT);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
