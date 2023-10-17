@@ -49,7 +49,7 @@ export const Forms = () => {
             <Flex
               flexDirection={{ base: 'column', md: 'row' }}
               alignItems='center'
-              justifyContent='space-around'
+              justifyContent='space-between'
               gap='6'
             >
               <Heading
