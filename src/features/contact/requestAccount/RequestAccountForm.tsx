@@ -64,7 +64,7 @@ export const RequestAccountForm = () => {
         value: formValues.email,
       },
       {
-        label: 'Any applicable A/P Email address',
+        label: 'A/P Email address',
         name: 'apEmail',
         value: formValues.apEmail,
       },
