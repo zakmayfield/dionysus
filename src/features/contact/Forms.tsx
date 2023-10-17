@@ -1,26 +1,39 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react';
 import { ContactForm } from './contactForm/ContactForm';
 import { RequestAccountForm } from './requestAccount/RequestAccountForm';
 import { FadeInBox } from '@/shared/components';
 
+enum FormTypes {
+  CONTACT = 'contact',
+  CREATE_ACCOUNT = 'createAccount',
+}
+
 export const Forms = () => {
-  const [activeForm, setActiveForm] = useState(1);
+  const [activeForm, setActiveForm] = useState(FormTypes.CONTACT);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const form = params.get('form');
+    if (form === FormTypes.CREATE_ACCOUNT) {
+      setActiveForm(FormTypes.CREATE_ACCOUNT);
+    }
+  }, []);
 
   function handleSwitchForm() {
-    if (activeForm === 1) {
-      setActiveForm(2);
+    if (activeForm === 'contact') {
+      setActiveForm(FormTypes.CREATE_ACCOUNT);
     } else {
-      setActiveForm(1);
+      setActiveForm(FormTypes.CONTACT);
     }
   }
 
   /**
    * TODO
    * Heading mobile friendly ✅
+   * Query string for form selection ✅
    * Fade in and out changing form
-   * Query string for form selection
    */
 
   return (
@@ -44,7 +57,7 @@ export const Forms = () => {
               size={{ base: 'xl', lg: 'md' }}
               fontWeight='semibold'
             >
-              {activeForm === 1 ? 'Get In Touch' : 'Create Account'}
+              {activeForm === 'contact' ? 'Get In Touch' : 'Create Account'}
             </Heading>
             <span>or</span>
             <Button
@@ -54,10 +67,12 @@ export const Forms = () => {
               _hover={{ background: 'rgba(192, 86, 33, 0.1)' }}
               size={{ base: 'md', lg: 'sm' }}
             >
-              {activeForm === 1 ? 'Create Account' : 'Get in Contact'}
+              {activeForm === FormTypes.CONTACT
+                ? 'Create Account'
+                : 'Get in Contact'}
             </Button>
           </Flex>
-          {activeForm === 1 && (
+          {activeForm === FormTypes.CONTACT && (
             <Text
               fontSize='sm'
               marginTop='4'
@@ -67,7 +82,7 @@ export const Forms = () => {
               If you would like to place an order, you must{' '}
               <Button
                 variant='link'
-                onClick={() => setActiveForm(2)}
+                onClick={() => setActiveForm(FormTypes.CREATE_ACCOUNT)}
                 fontSize='sm'
                 colorScheme='orange'
                 fontWeight='normal'
@@ -78,7 +93,11 @@ export const Forms = () => {
             </Text>
           )}
         </Box>
-        {activeForm === 1 ? <ContactForm /> : <RequestAccountForm />}
+        {activeForm === FormTypes.CONTACT ? (
+          <ContactForm />
+        ) : (
+          <RequestAccountForm />
+        )}
       </FadeInBox>
     </Box>
   );
