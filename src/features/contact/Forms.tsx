@@ -1,9 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { ContactForm } from './contactForm/ContactForm';
 import { RequestAccountForm } from './requestAccount/RequestAccountForm';
-import { FadeInBox } from '@/shared/components';
 
 enum FormTypes {
   CONTACT = 'contact',
@@ -22,19 +22,12 @@ export const Forms = () => {
   }, []);
 
   function handleSwitchForm() {
-    if (activeForm === 'contact') {
-      setActiveForm(FormTypes.CREATE_ACCOUNT);
-    } else {
-      setActiveForm(FormTypes.CONTACT);
-    }
+    setActiveForm((prevForm) =>
+      prevForm === FormTypes.CONTACT
+        ? FormTypes.CREATE_ACCOUNT
+        : FormTypes.CONTACT
+    );
   }
-
-  /**
-   * TODO
-   * Heading mobile friendly ✅
-   * Query string for form selection ✅
-   * Fade in and out changing form
-   */
 
   return (
     <Box
@@ -44,61 +37,70 @@ export const Forms = () => {
       bg={{ lg: 'transparent', base: 'whiteAlpha.900' }}
       p='12'
     >
-      <FadeInBox>
-        <Box marginBottom={{ base: '12', lg: '6' }}>
-          <Flex
-            flexDirection={{ base: 'column', md: 'row' }}
-            alignItems='center'
-            justifyContent='space-around'
-            gap='6'
-          >
-            <Heading
-              as='h3'
-              size={{ base: 'xl', lg: 'md' }}
-              fontWeight='semibold'
+      <AnimatePresence mode='wait'>
+        <motion.div
+          key={activeForm}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 20 }}
+          transition={{ duration: 0.2 }} // Animation duration
+        >
+          <Box marginBottom={{ base: '12', lg: '6' }}>
+            <Flex
+              flexDirection={{ base: 'column', md: 'row' }}
+              alignItems='center'
+              justifyContent='space-around'
+              gap='6'
             >
-              {activeForm === 'contact' ? 'Get In Touch' : 'Create Account'}
-            </Heading>
-            <span>or</span>
-            <Button
-              onClick={handleSwitchForm}
-              variant='outline'
-              colorScheme='orange'
-              _hover={{ background: 'rgba(192, 86, 33, 0.1)' }}
-              size={{ base: 'md', lg: 'sm' }}
-            >
-              {activeForm === FormTypes.CONTACT
-                ? 'Create Account'
-                : 'Get in Contact'}
-            </Button>
-          </Flex>
-          {activeForm === FormTypes.CONTACT && (
-            <Text
-              fontSize='sm'
-              marginTop='4'
-              textAlign='center'
-              color='gray.700'
-            >
-              If you would like to place an order, you must{' '}
-              <Button
-                variant='link'
-                onClick={() => setActiveForm(FormTypes.CREATE_ACCOUNT)}
-                fontSize='sm'
-                colorScheme='orange'
-                fontWeight='normal'
+              <Heading
+                as='h3'
+                size={{ base: 'xl', lg: 'md' }}
+                fontWeight='semibold'
               >
-                create an account
-              </Button>{' '}
-              first.
-            </Text>
+                {activeForm === 'contact' ? 'Get In Touch' : 'Create Account'}
+              </Heading>
+              <span>or</span>
+              <Button
+                onClick={handleSwitchForm}
+                variant='outline'
+                colorScheme='orange'
+                _hover={{ background: 'rgba(192, 86, 33, 0.1)' }}
+                size={{ base: 'md', lg: 'sm' }}
+              >
+                {activeForm === FormTypes.CONTACT
+                  ? 'Create Account'
+                  : 'Get in Contact'}
+              </Button>
+            </Flex>
+            {activeForm === FormTypes.CONTACT && (
+              <Text
+                fontSize='sm'
+                marginTop='4'
+                textAlign='center'
+                color='gray.700'
+              >
+                If you would like to place an order, you must{' '}
+                <Button
+                  variant='link'
+                  onClick={() => setActiveForm(FormTypes.CREATE_ACCOUNT)}
+                  fontSize='sm'
+                  colorScheme='orange'
+                  fontWeight='normal'
+                >
+                  create an account
+                </Button>{' '}
+                first.
+              </Text>
+            )}
+          </Box>
+
+          {activeForm === FormTypes.CONTACT ? (
+            <ContactForm />
+          ) : (
+            <RequestAccountForm />
           )}
-        </Box>
-        {activeForm === FormTypes.CONTACT ? (
-          <ContactForm />
-        ) : (
-          <RequestAccountForm />
-        )}
-      </FadeInBox>
+        </motion.div>
+      </AnimatePresence>
     </Box>
   );
 };
