@@ -1,4 +1,4 @@
-const aboutRoute = (route: string) => {
+const constructAboutRoute = (route: string) => {
   return `/about/${route}`;
 };
 
@@ -9,7 +9,8 @@ export default {
   faq: '/faq',
   contact: '/contact',
   about: '/about',
-  ourStory: aboutRoute('our-story'),
-  philosophy: aboutRoute('philosophy'),
-  deliveryArea: aboutRoute('delivery-area'),
+  ourStory: constructAboutRoute('our-story'),
+  philosophy: constructAboutRoute('philosophy'),
+  sustainability: constructAboutRoute('sustainability'),
+  deliveryArea: constructAboutRoute('delivery-area'),
 } as const;

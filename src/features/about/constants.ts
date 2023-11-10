@@ -2,6 +2,7 @@ import { StaticImageData } from 'next/image';
 import blueberries from '@/shared/assets/about/blueberries.jpeg';
 import mixedberries from '@/shared/assets/about/mixedberries.jpeg';
 import redberries from '@/shared/assets/about/redberries.jpeg';
+import raspberries from '@/shared/assets/about/raspberries.jpeg';
 
 export type pathItem = {
   id: number;
@@ -28,6 +29,13 @@ export const pathData: pathItem[] = [
   },
   {
     id: 2,
+    title: 'Sustainability',
+    altText: 'Close up of fruit',
+    slug: 'sustainability',
+    img: raspberries,
+  },
+  {
+    id: 3,
     title: 'Delivery Area',
     altText: 'Close up of mixed red berries',
     slug: 'delivery-area',
