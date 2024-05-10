@@ -15,6 +15,10 @@
       {
         "question": "What are your hours of operation?",
         "answerKey": "1C"
+      },
+      {
+        "question": "What days are you closed this year?",
+        "answerKey": "1D"
       }
     ]
   },

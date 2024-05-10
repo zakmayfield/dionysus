@@ -124,7 +124,7 @@ export const ContactForm = () => {
           <ReCAPTCHA
             ref={recaptchaRef}
             size='invisible'
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_CONTACT ?? ''}
           />
           {formError && (
             <Text fontSize='sm' color='red.500'>

@@ -61,6 +61,20 @@ const Faq1B = () => {
     </Text>
   );
 };
+const Faq1D = () => {
+  return (
+    <VStack spacing='4' alignItems='flex-start'>
+      <Text>Upcoming dates we are closed:</Text>
+      <Box>
+        <UnorderedList>
+          <ListItem>Monday December 25, 2023</ListItem>
+          <ListItem>Tuesday December 26, 2023</ListItem>
+          <ListItem>Monday January 1, 2024</ListItem>
+        </UnorderedList>
+      </Box>
+    </VStack>
+  );
+};
 const Faq1C = () => {
   return (
     <VStack spacing='4' alignItems='flex-start'>
@@ -458,6 +472,7 @@ export const FaqAnswers: Record<string, JSX.Element> = {
   '1A': <Faq1A />,
   '1B': <Faq1B />,
   '1C': <Faq1C />,
+  '1D': <Faq1D />,
   '2A': <Faq2A />,
   '2B': <Faq2B />,
   '2C': <Faq2C />,

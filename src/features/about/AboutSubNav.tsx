@@ -7,6 +7,7 @@ import routes from '@/shared/routes';
 const aboutSubNavItems = [
   { label: 'Our Story', route: routes.ourStory },
   { label: 'Philosophy', route: routes.philosophy },
+  { label: 'Sustainability', route: routes.sustainability },
   { label: 'Delivery Area', route: routes.deliveryArea },
 ];
 
