@@ -1,6 +1,8 @@
 import { Heading, Text, Button } from '@chakra-ui/react';
 import React from 'react';
+import NextLink from 'next/link';
 import { ContentContainer, FadeInBox } from '@/shared/components';
+import routes from '@/shared/routes';
 
 export const ProductsStatement = () => {
   return (
@@ -17,7 +19,9 @@ export const ProductsStatement = () => {
           We proudly serve restaurants, bars, cafes & grocery stores all across
           the country! We also offer bulk pricing for all of our products.
         </Text>
-        <Button colorScheme='lightAccent'>Place An Order</Button>
+        <Button colorScheme='lightAccent' as={NextLink} href={routes.contact}>
+          Place An Order
+        </Button>
       </ContentContainer>
     </FadeInBox>
   );
